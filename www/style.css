@@ -1,4 +1,67 @@
-header {
-    font-size:20px;
+@charset "UTF-8";
+
+body {
+    background: #CDE7FF;
     font-family: YuGothic,'Yu Gothic',sans-serif;
+    font-size: 16px;
+    width: 1250px;
+}
+
+
+header h1 {
+    font-size:40px;
+    text-decoration: none;
+    line-height: 1.1;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+.title-left img {
+    width: 152px;
+    height: 94px;
+}
+.title-right img {
+    width: 193px;
+    height: 193px;
+}
+
+
+/*-----navigation--------*/
+nav {
+    text-align: center;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    min-width: 90px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+nav ul li a:hover {
+    color: black;
+}
+
+.navigation img {
+    width: 1200px;
+    height: 120px;
+    margin: 0 10px 0 10px;
+}
+
+
+
+
+
+/*------footer-------*/
+footer p {
+    margin: 0;
+    padding: 20px;
+    height: 15px;
+    color: #333;
+    text-align: center;
 }
