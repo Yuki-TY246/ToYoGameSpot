@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オセロゲーム</title>
+    <style>
+        body {
+            width: 1280px;
+            height: 2274px;
+        }
+
+        .game_title{
+            font-size: 48px;
+            margin: 60px 0px 50px 130px;
+            font-weight: bold;
+        }
+
+        .game_box{
+            display: flex;
+            justify-content: center;
+        }
+
+        .game_operation{
+            font-size: 48px;
+            margin: 50px;
+            text-decoration: underline;
+        }
+
+        .operation_description{
+            margin: 50px;
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="game_title">オセロ</div>
+    <div class="game_box">
+      <iframe id="contentFrame" src="game1.html" width="1000" height="808"></iframe> <!-- html表示するiframeを作成。IDを設定し、サイズを指定 -->
+    </div>
+    <div class="game_operation">操作説明</div>
+    <div class="operation_description">操作方法クリックするとコマを置けます。</div>
+    
+</body>
+</html>
