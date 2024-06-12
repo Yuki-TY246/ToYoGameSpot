@@ -10,15 +10,15 @@
     text-align: center;
     width: 100%;
     font-size: 80px;
-    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .start{
-    height: 150px;
     width: 350px;
+    height: 120px;
     border: solid 2px #000;
-    text-align: center;
     padding-top: 15px;
-    background-color: aquamarine;
 }
 .game-main3{
     height: calc(100% -300px -200px);
@@ -34,4 +34,24 @@
     margin-left: 80%;
     text-align: center;
     padding-top: 15px;
+}
+.game-main{
+text-align: center;
+font-size: 50px;
+}
+.game-main4{
+    height: 100%;
+    width: 100%;
+    margin-top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-flow: column;
+}
+.select{
+    font-size: 50px;
+    width: 210px;
+    text-align: center;
+    border: solid 2px #000;
+    margin-top: 50px;
 }
