@@ -1,0 +1,88 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #BBFFFF;
+}
+
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 20px; /* 必要に応じて上部のマージンを設定 */
+}
+
+/* ---------------------タイトル--------------------- */
+
+.container {
+    position: relative;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.text {
+    position: absolute; /* 絶対位置を設定して画像の上に重ねる */
+    top: 40%; /* コンテナの中央に配置 */
+    left: 50%; /* コンテナの中央に配置 */
+    transform: translate(-50%, -50%); /* 中央に寄せる */
+    z-index: 2; /* テキストを画像の上に表示するために1より大きい値を設定 */
+    color: white; /* テキストの色を白に設定（画像により見えやすくするため） */
+    font-size: 50px; /* テキストのサイズを調整 */
+}
+
+.overlay-image {
+    display: block;
+    margin: 0 auto;
+    width: 400px; /* 画像の幅をコンテナに合わせて設定 */
+    height: auto;
+    z-index: 1; /* テキストの下に表示するために低い値を設定 */
+}
+
+/* ---------------------メンバー--------------------- */
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* 縦に要素を並べる */
+    width: 100%;
+    margin-top: 40px; /* タイトルのコンテナと距離を保つためのマージン */
+}
+
+.item {
+    font-weight: bold;
+    font-size: 40px; /* テキストのサイズを大きくする */
+}
+
+.member-item {
+    font-size: 30px;
+}
+
+.member-container {
+    display: flex;
+    align-items: center;
+}
+
+.member-container img {
+    margin-right: 20px;
+    width: 250px;
+    height: auto;
+    position: relative;
+}
+
+.member-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+}
+
+.member-info .item {
+    margin: 0;
+}
+
+.member-info p {
+    margin: 0;
+}
