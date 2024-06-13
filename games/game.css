@@ -15,10 +15,10 @@
     justify-content: center;
 }
 .start{
-    width: 350px;
+    width: 290px;
     height: 120px;
-    border: solid 2px #000;
     padding-top: 15px;
+    font-size: 50px;
 }
 .game-main3{
     height: calc(100% -300px -200px);
@@ -30,10 +30,9 @@
 .rule{
     height: 90px;
     width: 180px;
-    border: solid 2px #000;
     margin-left: 80%;
     text-align: center;
-    padding-top: 15px;
+    font-size: 40px;
 }
 .game-main{
 text-align: center;
@@ -50,8 +49,12 @@ font-size: 50px;
 }
 .select{
     font-size: 50px;
-    width: 210px;
+    width: 220px;
     text-align: center;
     border: solid 2px #000;
     margin-top: 50px;
 }
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
