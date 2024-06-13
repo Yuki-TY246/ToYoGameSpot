@@ -1,0 +1,170 @@
+body, html {
+    margin: 0 auto; /* 水平方向に中央揃え */
+    padding: 0;
+    height: 100%;
+    width: 1250px; /* 幅を1250pxに固定 */
+    background-color: #CDE7FF;
+    font-family: YuGothic,'Yu Gothic',sans-serif;
+    color: #333333;
+}
+
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 20px; /* 必要に応じて上部のマージンを設定 */
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.text {
+    position: absolute; /* 絶対位置を設定して画像の上に重ねる */
+    top: 30%; /* コンテナの中央に配置 */
+    left: 50%; /* コンテナの中央に配置 */
+    transform: translate(-50%, -50%); /* 中央に寄せる */
+    z-index: 2; /* テキストを画像の上に表示するために1より大きい値を設定 */
+    color: white; /* テキストの色を白に設定（画像により見えやすくするため） */
+    font-size: 50px; /* テキストのサイズを調整 */
+    font-weight: bold;
+}
+
+.overlay-image {
+    display: block;
+    margin: 0 auto;
+    width: 400px; /* 画像の幅をコンテナに合わせて設定 */
+    height: auto;
+    z-index: 1; /* テキストの下に表示するために低い値を設定 */
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* 縦に要素を並べる */
+    width: calc(100% - 80px); /* 親要素の幅から左右のマージンを引いた幅を設定 */
+    max-width: 1000px; /* 最大幅を1000pxに設定 */
+    height: 300px; /* 高さを300pxに設定 */
+    margin: 40px auto; /* 上下左右に40pxのマージンを設定し、中央に配置 */
+    background: #ffffee;
+    box-shadow: 0px 0px 0px 10px #ffffee;
+    border: dashed 3px #CDE7FF;
+    padding: 0.5em 1.0em;
+    overflow: hidden; /* コンテンツがはみ出た場合は表示しない */
+    opacity: 0; /* 初期状態で要素を透明にする */
+    transition: opacity 1s ease-in; /* フェードインのアニメーションを設定 */
+}
+
+.fadeIn {
+    opacity: 1; /* 不透明にする */
+}
+
+.item {
+    font-weight: bold;
+    font-size: 30px; /* テキストのサイズを大きくする */
+    background: linear-gradient(transparent 50%, #bde4f7 50%);
+    padding: 0 0.1em;
+}
+
+.member-item-name {
+    font-weight: bold;
+    font-size: 25px;
+    padding: 15px 0 ;
+}
+
+.member-item-role {
+    font-size: 20px;
+    padding: 15px 0;
+}
+
+.member-container {
+    display: flex;
+    align-items: center;
+}
+
+.member-container img {
+    margin-right: 20px;
+    width: 250px;
+    height: auto;
+    position: relative;
+}
+
+.member-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+    margin-right: 20px;
+}
+
+.member-info .item {
+    margin: 0;
+}
+
+.member-info p {
+    margin: 0;
+}
+
+.comment-info {
+    margin-left: 20px;
+    position: relative;
+    width: fit-content;
+    padding: 12px 16px;
+}
+
+.comment-info::before {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    width: 100%;
+    height: 50%;
+    box-sizing: border-box;
+    border: 2px solid #333333;
+    border-top: none;
+    border-bottom-right-radius: 50px; /* 左下の角丸 */
+    border-bottom-left-radius: 50px; /* 右下の角丸 */
+    translate: -50%;
+}
+
+.comment-info::after {
+    content: "";
+    position: absolute;
+    top: calc(100% + 8px); /* フキダシのサイズに応じて調整してください */
+    left: 50%;
+    width: 30px;
+    height: 2px;
+    box-sizing: border-box;
+    background-color: #333333;
+    box-shadow: 0 2px 0 #ffffff, 0 -2px 0 #ffffff;
+    rotate: 50deg;
+    translate: -50%;
+}
+
+.comment-item {
+    font-size: 18px;
+}
+
+.message {
+    color: #939090;
+    font-weight: bold;
+    font-size: 50px;
+    display: flex;
+    justify-content: center; /* 要素を中央に配置する */
+    align-items: center; /* 要素を垂直方向に中央に配置する */
+    padding-bottom: 100px;
+}
+
+.container {
+    display: flex; /* 要素を横並びに配置する */
+    align-items: center; /* 縦方向の中央揃え */
+}
+.member-img img {
+    max-width: 100px; /* 画像の最大幅を指定 */
+    height: auto; /* 高さを自動調整 */
+    margin-right: 20px; /* 画像の右側に余白を追加 */
+}

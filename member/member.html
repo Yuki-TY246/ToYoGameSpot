@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link rel="stylesheet" href="member.css" type="text/css">
+    <title>MEMBER</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="container">
+        <p class="text">MEMBER</p>
+        <img src="image/title_game.png" alt="Sample Image" class="overlay-image">
+    </div>
+    
+    <div style="padding-bottom: 60px;">
+        <!-- 1 -->
+        <div class="main-container">
+            <div class="member-container">
+                <img src="image/animal_penguin.png" alt="">
+                <div class="member-info">
+                    <div class="item">NAME</div>
+                    <p class="member-item-name">　渡邉 友基</p>
+                    <div class="item">ROLE</div>
+                    <p class="member-item-role">ゲーム紹介ページの作成</p>
+                </div>
+                <div class="comment-info">
+                    <div class="item">COMMENT</div>
+                    <p class="comment-item">コメントを記述<br>コメントを記述しますあああああああああああああ</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="main-container">
+            <div class="member-container">
+                <img src="image/animal_panda.png" alt="">
+                <div class="member-info">
+                    <div class="item">NAME</div>
+                    <p class="member-item-name">　遠藤 愛奈</p>
+                    <div class="item">ROLE</div>
+                    <p class="member-item-role">役割</p>
+                </div>
+                <div class="comment-info">
+                    <div class="item">COMMENT</div>
+                    <p class="comment-item">コメントを記述</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="main-container">
+            <div class="member-container">
+                <img src="image/animal_hamster.png" alt="">
+                <div class="member-info">
+                    <div class="item">NAME</div>
+                    <p class="member-item-name">　佐藤 優萌華</p>
+                    <div class="item">ROLE</div>
+                    <p class="member-item-role">役割</p>
+                </div>
+                <div class="comment-info">
+                    <div class="item">COMMENT</div>
+                    <p class="comment-item">コメントを記述</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="main-container">
+            <div class="member-container">
+                <img src="image/animal_hiyoko.png" alt="">
+                <div class="member-info">
+                    <div class="item">NAME</div>
+                    <p class="member-item-name">　久米田 周哉</p>
+                    <div class="item">ROLE</div>
+                    <p class="member-item-role">役割</p>
+                </div>
+                <div class="comment-info">
+                    <div class="item">COMMENT</div>
+                    <p class="comment-item">コメントを記述</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="main-container">
+            <div class="member-container">
+                <img src="image/animal_neko.png" alt="">
+                <div class="member-info">
+                    <div class="item">NAME</div>
+                    <p class="member-item-name">　古川 和磨</p>
+                    <div class="item">ROLE</div>
+                    <p class="member-item-role">役割</p>
+                </div>
+                <div class="comment-info">
+                    <div class="item">COMMENT</div>
+                    <p class="comment-item">コメントを記述</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="member-img">
+            <img src="../www/img/game1.png" alt="aaa">
+        </div>
+        <h1 class="message">Hope your enjoy!</h1>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // IntersectionObserverの設定
+            let observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fadeIn');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // .main-container要素を監視
+            document.querySelectorAll('.main-container').forEach(container => {
+                observer.observe(container);
+            });
+        });
+    </script>
+</body>
+</html>
