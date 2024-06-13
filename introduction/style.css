@@ -2,7 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100vh;
-    width: 100%;
+    width: 1250px;
     background-color: #CDE7FF;
     font-family: YuGothic,'Yu Gothic',sans-serif;
 }
@@ -11,16 +11,19 @@ body, html {
     position: relative;
     text-align: center;
     padding-top: 50px;
+    display: flex;
+    align-items: center;
 }
 
 .text {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
     color: white;
-    font-size: 50px;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .overlay-image {
@@ -33,7 +36,8 @@ body, html {
 
 
 .intro_contents{
-    border: 1px solid black;
+    border: 1px solid #000080;
+    border-radius: 10px;
     width: 70vw;
     display: flex;
     flex-direction: column;
@@ -86,6 +90,7 @@ body, html {
 .intro_text{
     padding-bottom: 10px;
     font-size: 15px;
+    color: #333;
 }
 
 .intro_play_time{
@@ -109,6 +114,7 @@ body, html {
     color: white;
     text-shadow: 0 0 10px #fff,0 0 15px #fff;
     text-decoration: none;
+    border-radius: 10px;
 }
 
 .andmore{
