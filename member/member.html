@@ -4,16 +4,6 @@
     <link rel="stylesheet" href="member.css" type="text/css">
     <title>MEMBER</title>
     <meta charset="UTF-8">
-    <style>
-        /* ここにCSSを記述 */
-        .main-container {
-            opacity: 0; /* 初期状態で要素を透明にする */
-            transition: opacity 1s ease-in; /* フェードインのアニメーションを設定 */
-        }
-        .fadeIn {
-            opacity: 1; /* 不透明にする */
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -25,10 +15,10 @@
         <!-- 1 -->
         <div class="main-container">
             <div class="member-container">
-                <p class="member-img"><img src="image/animal_penguin.png" alt="よくある質問ページへ"></p>
+                <img src="image/animal_penguin.png" alt="">
                 <div class="member-info">
                     <div class="item">NAME</div>
-                    <p class="member-item-name">渡邉 友基</p>
+                    <p class="member-item-name">　渡邉 友基</p>
                     <div class="item">ROLE</div>
                     <p class="member-item-role">ゲーム紹介ページの作成</p>
                 </div>
@@ -42,10 +32,10 @@
         <!-- 2 -->
         <div class="main-container">
             <div class="member-container">
-                <p class="member-img"><img src="image/animal_panda.png" alt="よくある質問ページへ"></p>
+                <img src="image/animal_panda.png" alt="">
                 <div class="member-info">
                     <div class="item">NAME</div>
-                    <p class="member-item-name">遠藤 愛奈</p>
+                    <p class="member-item-name">　遠藤 愛奈</p>
                     <div class="item">ROLE</div>
                     <p class="member-item-role">役割</p>
                 </div>
@@ -59,10 +49,10 @@
         <!-- 3 -->
         <div class="main-container">
             <div class="member-container">
-                <p class="member-img"><img src="image/animal_hamster.png" alt="よくある質問ページへ"></p>
+                <img src="image/animal_hamster.png" alt="">
                 <div class="member-info">
                     <div class="item">NAME</div>
-                    <p class="member-item-name">佐藤 優萌華</p>
+                    <p class="member-item-name">　佐藤 優萌華</p>
                     <div class="item">ROLE</div>
                     <p class="member-item-role">役割</p>
                 </div>
@@ -76,10 +66,10 @@
         <!-- 4 -->
         <div class="main-container">
             <div class="member-container">
-                <p class="member-img"><img src="image/animal_hiyoko.png" alt="よくある質問ページへ"></p>
+                <img src="image/animal_hiyoko.png" alt="">
                 <div class="member-info">
                     <div class="item">NAME</div>
-                    <p class="member-item-name">久米田 周哉</p>
+                    <p class="member-item-name">　久米田 周哉</p>
                     <div class="item">ROLE</div>
                     <p class="member-item-role">役割</p>
                 </div>
@@ -93,10 +83,10 @@
         <!-- 5 -->
         <div class="main-container">
             <div class="member-container">
-                <p class="member-img"><img src="image/animal_neko.png" alt="よくある質問ページへ"></p>
+                <img src="image/animal_neko.png" alt="">
                 <div class="member-info">
                     <div class="item">NAME</div>
-                    <p class="member-item-name">古川 和磨</p>
+                    <p class="member-item-name">　古川 和磨</p>
                     <div class="item">ROLE</div>
                     <p class="member-item-role">役割</p>
                 </div>
@@ -107,20 +97,29 @@
             </div>
         </div>
     </div>
+
+    <div class="container">
+        <div class="member-img">
+            <img src="../www/img/game1.png" alt="aaa">
+        </div>
+        <h1 class="message">Hope your enjoy!</h1>
+    </div>
+
     <script>
-        // スクロールイベントリスナーを追加
-        window.addEventListener('scroll', function() {
-            // 全ての .main-container 要素に対して処理を行う
-            var containers = document.querySelectorAll('.main-container');
-            containers.forEach(function(container) {
-                // 要素が画面内に入ったかどうかをチェック
-                var positionFromTop = container.getBoundingClientRect().top;
-                var windowHeight = window.innerHeight;
-                if (positionFromTop - windowHeight <= 0) {
-                    container.classList.add('fadeIn');
-                } else {
-                    container.classList.remove('fadeIn'); // 画面外ならフェードインを解除する
-                }
+        document.addEventListener('DOMContentLoaded', function() {
+            // IntersectionObserverの設定
+            let observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fadeIn');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // .main-container要素を監視
+            document.querySelectorAll('.main-container').forEach(container => {
+                observer.observe(container);
             });
         });
     </script>
