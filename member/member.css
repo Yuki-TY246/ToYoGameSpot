@@ -57,7 +57,7 @@ body, html {
     padding: 0.5em 1.0em;
     overflow: hidden; /* コンテンツがはみ出た場合は表示しない */
     opacity: 0; /* 初期状態で要素を透明にする */
-    transition: opacity 1s ease-in; /* フェードインのアニメーションを設定 */
+    transition: opacity 0.5s ease-in; /* フェードインのアニメーションを設定 */
 }
 
 .fadeIn {
@@ -153,18 +153,34 @@ body, html {
     color: #939090;
     font-weight: bold;
     font-size: 50px;
+}
+
+.container {
     display: flex;
     justify-content: center; /* 要素を中央に配置する */
     align-items: center; /* 要素を垂直方向に中央に配置する */
     padding-bottom: 100px;
 }
-
-.container {
-    display: flex; /* 要素を横並びに配置する */
-    align-items: center; /* 縦方向の中央揃え */
-}
-.member-img img {
+.game-img img {
     max-width: 100px; /* 画像の最大幅を指定 */
     height: auto; /* 高さを自動調整 */
-    margin-right: 20px; /* 画像の右側に余白を追加 */
+    margin-right: 30px; /* 画像の右側に余白を追加 */
 }
+
+.game-img {
+    transform: rotate(-10deg);
+}
+
+.fuwafuwa {
+    animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
+  }
+  @keyframes floating-y {
+    0% {
+      transform: translateY(-10%);
+    }
+    100% {
+      transform: translateY(10%);
+    }
+}
+  
+    
