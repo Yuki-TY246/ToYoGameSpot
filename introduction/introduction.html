@@ -84,6 +84,21 @@
       新規ゲームも製作中・・・
     </div>
 
+
+    <script>
+      window.addEventListener("load", function(){
+        const playArticle = document.querySelectorAll(".intro_play_btn")
+        playArticle.forEach(function(articles) {
+          articles.addEventListener("mouseover", function(){
+            articles.setAttribute("style", "text-shadow: 0 0 10px #fff,0 0 15px #fff;")
+          })
+          articles.addEventListener("mouseout", function(){
+            articles.removeAttribute("style")
+          })
+        })
+      })
+    </script>
+
     <footer>
       <!-- レンダリング -->
     </footer>
