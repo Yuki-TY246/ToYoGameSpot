@@ -1,10 +1,11 @@
 body, html {
-    margin: 0;
+    margin: 0 auto; /* 水平方向に中央揃え */
     padding: 0;
-    height: 100vh;
-    width: 1250px;
+    height: 100%;
+    width: 1250px; /* 幅を1250pxに固定 */
     background-color: #CDE7FF;
     font-family: YuGothic,'Yu Gothic',sans-serif;
+    color: #333333;
 }
 
 .container {
@@ -33,6 +34,15 @@ body, html {
     z-index: 1;
 }
 
+
+.intro_space{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* 縦に要素を並べる */
+    width: 1250px;
+    margin-top: 40px;
+}
 
 .intro_contents{
     border: 1px solid #000080;
