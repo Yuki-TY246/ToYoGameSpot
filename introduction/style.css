@@ -1,26 +1,29 @@
 body, html {
-    margin: 0;
+    margin: 0 auto; /* 水平方向に中央揃え */
     padding: 0;
-    height: 100vh;
-    width: 100%;
+    height: 100%;
+    width: 1250px; /* 幅を1250pxに固定 */
     background-color: #CDE7FF;
     font-family: YuGothic,'Yu Gothic',sans-serif;
+    color: #333333;
 }
 
 .container {
     position: relative;
     text-align: center;
     padding-top: 50px;
+    display: flex;
 }
 
 .text {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
     color: white;
-    font-size: 50px;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .overlay-image {
@@ -32,12 +35,22 @@ body, html {
 }
 
 
+.intro_space{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* 縦に要素を並べる */
+    width: 1250px;
+    margin-top: 40px;
+}
+
 .intro_contents{
-    border: 1px solid black;
-    width: 70vw;
+    border: 1px solid #000080;
+    border-radius: 10px;
+    width: 750px;
     display: flex;
     flex-direction: column;
-    margin: 100px 15vw 200px 15vw;
+    margin: 100px 250px 200px 250px;
 }
 
 .intro_game_title a{
@@ -62,7 +75,7 @@ body, html {
 }
 
 .intro_textarea{
-    width: 70vw;
+    width: 750px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,7 +84,7 @@ body, html {
 }
 
 .intro_texts_main{
-    width: 50vw;
+    width: 500px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -86,6 +99,7 @@ body, html {
 .intro_text{
     padding-bottom: 10px;
     font-size: 15px;
+    color: #333;
 }
 
 .intro_play_time{
@@ -100,7 +114,7 @@ body, html {
 
 .intro_play_btn a{
     background-color: #3059C2;
-    width: 70vw;
+    width: 750px;
     height: 70px;
     display: flex;
     justify-content: center;
@@ -109,6 +123,7 @@ body, html {
     color: white;
     text-shadow: 0 0 10px #fff,0 0 15px #fff;
     text-decoration: none;
+    border-radius: 10px;
 }
 
 .andmore{
