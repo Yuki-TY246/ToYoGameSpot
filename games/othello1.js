@@ -15,6 +15,12 @@ jQuery(function (){
                     var masu = new Masu($(this).attr('data-r'), $(this).attr('data-c'));
                     if(masu.ishi() == ISHI_NONE){
                         masu.set(ishi);
+                        for(var dr of [-1, 0, 1]){
+                            for(var dc of [-1, 0, 1]){
+                                if(dr == 0 && dc == 0) continue;
+                                masu.reverse(0, masu, dc, dr);
+                            }
+                        }
                         ishi *= -1;
                         $('div#status').html((ishi == ISHI_BLACK ? '黒' : '白') + 'の番');
                     }else{
