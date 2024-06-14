@@ -2,16 +2,50 @@
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="member.css" type="text/css">
-    <title>MEMBER</title>
+    <link rel="stylesheet" href="../www/style.css">
+    <title>MEMBERページ</title>
     <meta charset="UTF-8">
 </head>
 <body>
+    <header>
+        <div class="title-container">
+            <div class="title-left"><img src="../www/img/game1.png" class="fuwafuwa-left"></div>
+        <h1>
+            ToYoGamSpot
+        </h1>
+        <div class="title-right"><img src="../www/img/game3.png" class="fuwafuwa-right"></div>
+        </div>
+
+        <div class="image-container">
+            <div class="image-box">
+                <a href="#">
+                    <img src="../www/img/game2.png" alt="Image 1" class="overlay-image">
+                    <div class="text">GAME</div>
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="../introduction/introduction.html">
+                    <img src="../www/img/game2.png" alt="Image 2" class="overlay-image">
+                    <div class="text">INTRODUCTION</div>
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="../member/member.html">
+                    <img src="../www/img/game2.png" alt="Image 3" class="overlay-image">
+                <div class="text">MEMBER</div>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <hr class=".hr3">
+    <!-- main -->
     <div class="container">
-        <p class="text">MEMBER</p>
+        <p class="text-member">MEMBER</p>
         <img src="image/title_game.png" alt="Sample Image" class="overlay-image">
     </div>
     
-    <div style="padding-bottom: 60px;">
+    <div style="padding-bottom: 10px;">
         <!-- 1 -->
         <div class="main-container">
             <div class="member-container">
@@ -105,6 +139,11 @@
         <h1 class="message">Hope your enjoy !</h1>
     </div>
 
+    <footer>
+        <p>
+            <small>&copy;ToYo 2024</small>
+        </p>
+    </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // IntersectionObserverの設定
