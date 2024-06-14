@@ -1,0 +1,68 @@
+html{
+    background-color: rgb(44, 111, 21);
+}
+.game-main1{
+    height: 250px;
+    text-align: center;
+    width: 1000px;
+    font-size: 180px;
+    font-weight: 600;
+    padding-top: 150px;
+    }
+.game-main2{
+    height: 130px;
+    text-align: center;
+    width: 1000px;
+    font-size: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.start{
+    width: 290px;
+    height: 120px;
+    font-size: 50px;
+}
+.game-main3{
+    height: 150px;
+    text-align: right;
+    width: 1000px;
+    font-size: 50px;
+    display: flex;
+}
+.rule{
+    height: 90px;
+    width: 180px;
+    margin-left: 80%;
+    text-align: center;
+    font-size: 40px;
+}
+.game-main{
+text-align: center;
+font-size: 50px;
+}
+.game-main4{
+    height: 700px;
+    width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-flow: column;
+}
+.select{
+    font-size: 50px;
+    width: 220px;
+    text-align: center;
+    border: solid 2px #000;
+    margin-top: 50px;
+}
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
+
+.back{
+    width: 1000px;
+    height: 700px;
+    background: url(images/967589.jpg); 
+}

@@ -92,12 +92,3 @@ a {
 a {
     text-decoration: none; /* アンダーラインを削除 */
 }
-
-/*------footer-------*/
-footer p {
-    margin: 0;
-    padding: 20px;
-    height: 15px;
-    color: #333;
-    text-align: center;
-}

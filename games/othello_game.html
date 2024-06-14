@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オセロゲーム</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100%;
+            background-color: #CDE7FF;
+            font-family: YuGothic,'Yu Gothic',sans-serif;
+        }
+        .container {
+            position: relative;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .text {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            color: white;
+            font-size: 50px;
+        }
+        .overlay-image {
+            display: block;
+            margin: 0 auto;
+            width: 400px;
+            height: auto;
+            z-index: 1;
+        }
+        .game_title {
+            font-size: 50px;
+            margin: 60px 0px 50px 130px;
+            font-weight: bold;
+        }
+        .game_box {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        #contentFrame {
+            width: 1025px;
+            height: 725px;
+            border: 2px solid black;
+            box-sizing: border-box; 
+        }
+        .game_operation {
+            font-size: 50px;
+            margin: 50px;
+            text-decoration: underline;
+        }
+        .operation_description {
+            height: 500px;
+            margin: 50px;
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="text">GAME</p>
+        <img src="img/title_game.png" alt="Sample Image" class="overlay-image">
+    </div>
+    <div class="game_title">オセロゲーム</div>
+    <div class="game_box">
+        <iframe id="contentFrame" src="game1.html"></iframe>
+    </div>
+    <div class="game_operation">操作説明</div>
+    <div class="operation_description">クリックするとコマを置けます。<br>詳細なルールはゲームのルールから確認できます。</div>
+</body>
+</html>
