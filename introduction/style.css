@@ -81,14 +81,7 @@ body, html {
     font-size: 50px;
 }
 
-.splide__pagination {
-    counter-reset: pagination-num;
-}
-  
-.splide__pagination__page:before {
-    counter-increment: pagination-num;
-    content: counter( pagination-num );
-}
+
 
 .intro_game_image{
     height: 100%;
