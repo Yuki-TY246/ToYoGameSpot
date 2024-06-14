@@ -1,109 +1,39 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>オセロゲーム</title>
-  <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
+<style type='text/css'><!--
+    table#board {
+        background-color: black;
     }
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      background-color: #8be48b;  /* 背景色の変更 */
-      font-family: Arial, sans-serif;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+    table#board td {
+        width: 30px;
+        height: 30px;
+        background-color: green;
+        padding: 5px;
     }
 
-    .buttons {
-      text-align: center;
-      margin: 20px 0;
+    div.black {
+        background-color: black;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
     }
 
-    .title_button {
-      padding: 10px 20px;
-      font-size: 16px;
-      margin: 5px;
+    div.white {
+        background-color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
     }
-
-    .board-container {
-      padding: 20px;
-      background-color: #502c12; 
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .stage {
-      display: flex;
-      flex-wrap: wrap;
-      width: 404px;
-      height: 404px;
-      background-color: #006400; /* オセロ盤の背景色*/
-    }
-
-    .square {
-      position: relative;
-      width: 50px;
-      height: 50px;
-      border: solid black;
-      border-width: 0 4px 4px 0;
-      cursor: pointer;
-    }
-
-    .square:nth-child(-n + 8) {
-      border-width: 4px 4px 4px 0;
-      height: 54px;
-    }
-
-    .square:nth-child(8n + 1) {
-      border-width: 0 4px 4px 4px;
-      width: 54px;
-    }
-
-    .square:first-child {
-      border-width: 4px;
-      width: 54px;
-      height: 54px;
-    }
-
-    .stone {
-      position: absolute;
-      top: 2px;
-      bottom: 0;
-      left: 2px;
-      width: 42px;
-      height: 42px;
-      border-radius: 21px;
-      background-color: black;
-    }
-
-    #square-template {
-      display: none;
-    }
-  </style>
+--></style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="game.js"></script>
+<script src="othello1.js"></script>
 </head>
 <body>
-  <!-- ボタン -->
-  <div class="buttons">
-    <button onclick="location.href='game1.html';" class="title_button">タイトルに戻る</button>
-    <button onclick="location.href='game5.html';" class="title_button">ゲーム終了</button>
-  </div>
-
-  <!-- 盤 -->
-  <div class="board-container">
-    <div id="stage" class="stage"></div>
-  </div>
-
-  <!-- 各マスを描画するためのテンプレート -->
-  <div id="square-template" class="square">
-    <div class="stone"></div>
-  </div>
-
-  <script src="main.js"></script>
+<table id='board'>
+</table>
+<div id='status'></div>
 </body>
 </html>
