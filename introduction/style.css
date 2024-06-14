@@ -56,7 +56,7 @@ body, html {
 .intro_game_title a{
     font-size: 40px;
     text-decoration: none;
-    padding-left: 10px;
+    padding-left: 15px;
 }
 
 .intro_content{
@@ -65,7 +65,6 @@ body, html {
     align-items: center;
     flex-direction: column;
 }
-
 
 .splide__slide img {
     width: 100%;
@@ -150,13 +149,15 @@ body, html {
     padding-bottom: 100px;
 }
 
-.andmore span {
-    animation: pyon 0.3s linear;
-    position: relative;
+.andmore{
+    animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
   }
-
-@keyframes pyon {
-    0% {top: 0}
-    50% {top:-30px}
-    100%{top: 0}
+  @keyframes floating-y {
+    0% {
+      transform: translateY(-10%);
+    }
+    100% {
+      transform: translateY(10%);
+    }
 }
+
