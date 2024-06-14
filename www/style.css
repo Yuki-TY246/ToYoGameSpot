@@ -92,3 +92,10 @@ a {
 a {
     text-decoration: none; /* アンダーラインを削除 */
 }
+
+hr.kugiri {
+    margin-top: 50px;
+	border: 0;
+	height: 2px;
+	background-image: repeating-linear-gradient(90deg, #777 0px, #777 4px, rgba(0,0,0,0) 4px, rgba(0,0,0,0) 12px);
+}
