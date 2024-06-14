@@ -69,17 +69,23 @@ body, html {
     font-size: 30px; /* テキストのサイズを大きくする */
     background: linear-gradient(transparent 50%, #bde4f7 50%);
     padding: 0 0.1em;
+    width: 180px; /* 横幅を指定 */
+    display: inline-block; /* 要素がブロックとして扱われるようにする */
 }
 
 .member-item-name {
     font-weight: bold;
     font-size: 25px;
     padding: 15px 0 ;
+    width: 200px; /* 横幅を指定 */
+    display: inline-block; /* 要素がブロックとして扱われるようにする */
 }
 
 .member-item-role {
     font-size: 20px;
     padding: 15px 0;
+    width: 200px; /* 横幅を指定 */
+    display: inline-block; /* 要素がブロックとして扱われるようにする */
 }
 
 .member-container {
@@ -114,6 +120,8 @@ body, html {
     position: relative;
     width: fit-content;
     padding: 12px 16px;
+    width: 450px; /* 横幅を指定 */
+    display: inline-block; /* 要素がブロックとして扱われるようにする */
 }
 
 .comment-info::before {
