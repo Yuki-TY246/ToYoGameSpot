@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../splide-master/dist/css/splide-core.min.css" />
     <title>ToYoGameSpot</title>
   </head>
   <body>
@@ -22,9 +23,21 @@
           <a href="../games/othello_game.html">オセロゲーム</a>
         </div>
         <div class="intro_content">
-          <div class="intro_game_screen">
-            <a href="../games/othello_game.html"><img src="img/animal_kuma.png" alt="プレイ画面" class="intro_game_image"></a>
-          </div>
+          <section id="image-carousel" class="splide" aria-label="お気に入りの写真">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img src="img/game1.png" alt="">
+                </li>
+                <li class="splide__slide">
+                  <img src="img/game2.png" alt="">
+                </li>
+                <li class="splide__slide">
+                  <img src="img/game3.png" alt="">
+                </li>
+              </ul>
+            </div>
+          </section>
           <div class="intro_textarea">
             <div class="intro_texts_main">
               <div class="intro_text_title">
@@ -86,6 +99,8 @@
     </div>
 
 
+    <script src="../splide-master/dist/js/splide.min.js"></script>
+
     <script>
       window.addEventListener("load", function(){
         const playArticle = document.querySelectorAll(".intro_play_btn")
@@ -115,6 +130,12 @@
         }
         hopping()
       })
+    </script>
+
+    <script>
+      document.addEventListener( 'DOMContentLoaded', function () {
+        new Splide( '#image-carousel' ).mount();
+      } );
     </script>
 
     <footer>
