@@ -24,4 +24,22 @@ class Masu {
         }
         div.addClass(ishi == ISHI_BLACK ? 'black' : 'white');
     }
+
+    reverse (count, a0, dr, dc){
+        try{
+            var neighbor = new Masu(this.r + dr, this.c + dc);
+
+            if(ISHI_NONE == neighbor.ishi()) return 0;
+            if(a0.ishi() != neighbor.ishi()) count = neighbor.reverse(count + 1, a0, dr, dc);
+
+            if(count > 0){
+                this.set(a0.ishi());
+            }
+            return count;
+
+        // 盤面の外のとき0を返す
+        }catch(e){
+            return 0;
+        }
+    }
 }
