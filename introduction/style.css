@@ -132,3 +132,14 @@ body, html {
     font-size: 30px;
     padding-bottom: 100px;
 }
+
+.andmore span {
+    animation: pyon 0.3s linear;
+    position: relative;
+  }
+
+@keyframes pyon {
+    0% {top: 0}
+    50% {top:-30px}
+    100%{top: 0}
+}

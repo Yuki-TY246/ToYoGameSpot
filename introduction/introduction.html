@@ -48,40 +48,41 @@
       </div>
     </div>
 
-
-    <div class="intro_contents">
-      <div class="intro_game_title">
-        <a href="index.html">ゲームタイトル</a>
-      </div>
-      <div class="intro_content">
-        <div class="intro_game_screen">
-          <a href="index.html"><img src="img/animal_kuma.png" alt="プレイ画面" class="intro_game_image"></a>
+    <div class="intro_space">
+      <div class="intro_contents">
+        <div class="intro_game_title">
+          <a href="index.html">ゲームタイトル</a>
         </div>
-        <div class="intro_textarea">
-          <div class="intro_texts_main">
-            <div class="intro_text_title">
-              ゲームのキャッチコピー
-            </div>
-            <div class="intro_text">
-              ゲームの紹介文。このゲームはこういうゲームです。こんなことができるよ。
-            </div>
-            <div class="intro_play_time">
-              プレイ時間目安:300分
-            </div>
-            <div class="intro_difficulty">
-              難易度　★★★☆☆
-           </div>
+        <div class="intro_content">
+          <div class="intro_game_screen">
+            <a href="index.html"><img src="img/animal_kuma.png" alt="プレイ画面" class="intro_game_image"></a>
           </div>
-        </div>
-        <div class="intro_play_btn">
-          <a href="index.html">🎮ゲームをプレイ！🎮</a>
+          <div class="intro_textarea">
+            <div class="intro_texts_main">
+              <div class="intro_text_title">
+                ゲームのキャッチコピー
+              </div>
+              <div class="intro_text">
+                ゲームの紹介文。このゲームはこういうゲームです。こんなことができるよ。
+              </div>
+              <div class="intro_play_time">
+                プレイ時間目安:300分
+              </div>
+              <div class="intro_difficulty">
+                難易度　★★★☆☆
+             </div>
+            </div>
+          </div>
+          <div class="intro_play_btn">
+            <a href="index.html">🎮ゲームをプレイ！🎮</a>
+          </div>
         </div>
       </div>
     </div>
 
 
     <div class="andmore">
-      新規ゲームも製作中・・・
+      <span>新規ゲームも製作中・・・</span>
     </div>
 
 
@@ -96,6 +97,23 @@
             articles.removeAttribute("style")
           })
         })
+
+        const moreArticles = document.querySelectorAll(".andmore");
+        let currentIndex = 0;
+        function hopping() {
+          moreArticles.forEach(function(article) {
+            const moreText = article.textContent;
+            const moreLength = moreText.length;
+            const hopChar = moreText.substring(0, currentIndex) + "<span>" + moreText.charAt(currentIndex) + "</span>" + moreText.substring(currentIndex + 1, moreLength);
+            article.innerHTML = hopChar;
+            currentIndex++
+            if (currentIndex >= moreLength) {
+              currentIndex = 0
+              }
+            setTimeout(hopping, 300)
+          })
+        }
+        hopping()
       })
     </script>
 
