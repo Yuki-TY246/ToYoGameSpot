@@ -2,26 +2,27 @@
     height: 300px;
     text-align: center;
     width: 100%;
-    padding-top: 60px;
-    font-size: 200px;
+    padding-top: 160px;
+    font-size: 180px;
+    font-weight: 600;
     }
 .game-main2{
-    height: 200px;
+    height: 100px;
     text-align: center;
     width: 100%;
     font-size: 80px;
-    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .start{
-    height: 150px;
-    width: 350px;
-    border: solid 2px #000;
-    text-align: center;
+    width: 290px;
+    height: 120px;
     padding-top: 15px;
-    background-color: aquamarine;
+    font-size: 50px;
 }
 .game-main3{
-    height: calc(100% -300px -200px);
+    height: calc(150px -300px -200px);
     text-align: right;
     width: 100%;
     font-size: 50px;
@@ -30,8 +31,37 @@
 .rule{
     height: 90px;
     width: 180px;
-    border: solid 2px #000;
     margin-left: 80%;
     text-align: center;
-    padding-top: 15px;
+    font-size: 40px;
+}
+.game-main{
+text-align: center;
+font-size: 50px;
+}
+.game-main4{
+    height: 100%;
+    width: 100%;
+    margin-top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-flow: column;
+}
+.select{
+    font-size: 50px;
+    width: 220px;
+    text-align: center;
+    border: solid 2px #000;
+    margin-top: 50px;
+}
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
+body{
+ height: 100%;
+ width: 100%;
+ background: url(images/967589.jpg);
+ background-size: cover;
 }

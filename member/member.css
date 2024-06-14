@@ -1,9 +1,11 @@
 body, html {
-    margin: 0;
+    margin: 0 auto; /* 水平方向に中央揃え */
     padding: 0;
     height: 100%;
-    width: 100%;
-    background-color: #BBFFFF;
+    width: 1250px; /* 幅を1250pxに固定 */
+    background-color: #CDE7FF;
+    font-family: YuGothic,'Yu Gothic',sans-serif;
+    color: #333333;
 }
 
 .header-container {
@@ -15,22 +17,21 @@ body, html {
     margin-top: 20px; /* 必要に応じて上部のマージンを設定 */
 }
 
-/* ---------------------タイトル--------------------- */
-
 .container {
     position: relative;
     text-align: center;
-    padding-top: 50px;
+    padding: 60px 0;
 }
 
 .text {
     position: absolute; /* 絶対位置を設定して画像の上に重ねる */
-    top: 40%; /* コンテナの中央に配置 */
+    top: 30%; /* コンテナの中央に配置 */
     left: 50%; /* コンテナの中央に配置 */
     transform: translate(-50%, -50%); /* 中央に寄せる */
     z-index: 2; /* テキストを画像の上に表示するために1より大きい値を設定 */
     color: white; /* テキストの色を白に設定（画像により見えやすくするため） */
     font-size: 50px; /* テキストのサイズを調整 */
+    font-weight: bold;
 }
 
 .overlay-image {
@@ -41,24 +42,50 @@ body, html {
     z-index: 1; /* テキストの下に表示するために低い値を設定 */
 }
 
-/* ---------------------メンバー--------------------- */
-
 .main-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column; /* 縦に要素を並べる */
-    width: 100%;
-    margin-top: 40px; /* タイトルのコンテナと距離を保つためのマージン */
+    width: calc(100% - 80px); /* 親要素の幅から左右のマージンを引いた幅を設定 */
+    max-width: 1000px; /* 最大幅を1000pxに設定 */
+    height: 300px; /* 高さを300pxに設定 */
+    margin: 40px auto; /* 上下左右に40pxのマージンを設定し、中央に配置 */
+    background: #ffffee;
+    box-shadow: 0px 0px 0px 10px #ffffee;
+    border: dashed 3px #CDE7FF;
+    padding: 0.5em 1.0em;
+    overflow: hidden; /* コンテンツがはみ出た場合は表示しない */
+    opacity: 0; /* 初期状態で要素を透明にする */
+    transition: opacity 0.5s ease-in; /* フェードインのアニメーションを設定 */
+}
+
+.fadeIn {
+    opacity: 1; /* 不透明にする */
 }
 
 .item {
     font-weight: bold;
-    font-size: 40px; /* テキストのサイズを大きくする */
+    font-size: 30px; /* テキストのサイズを大きくする */
+    background: linear-gradient(transparent 50%, #bde4f7 50%);
+    padding: 0 0.1em;
+    width: 180px; /* 横幅を指定 */
+    display: inline-block; /* 要素がブロックとして扱われるようにする */
 }
 
-.member-item {
-    font-size: 30px;
+.member-item-name {
+    font-weight: bold;
+    font-size: 25px;
+    padding: 15px 0 ;
+    width: 200px; /* 横幅を指定 */
+    display: inline-block; /* 要素がブロックとして扱われるようにする */
+}
+
+.member-item-role {
+    font-size: 20px;
+    padding: 15px 0;
+    width: 200px; /* 横幅を指定 */
+    display: inline-block; /* 要素がブロックとして扱われるようにする */
 }
 
 .member-container {
@@ -77,6 +104,7 @@ body, html {
     display: flex;
     flex-direction: column;
     font-size: 1.2em;
+    margin-right: 20px;
 }
 
 .member-info .item {
@@ -86,8 +114,6 @@ body, html {
 .member-info p {
     margin: 0;
 }
-<<<<<<< Updated upstream
-=======
 
 .comment-info {
     margin-left: 20px;
@@ -164,4 +190,4 @@ body, html {
       transform: translateY(10%);
     }
 }
->>>>>>> Stashed changes
+
