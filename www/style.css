@@ -1,0 +1,106 @@
+<<<<<<< HEAD
+=======
+@charset "UTF-8";
+
+header h1 {
+    font-size:50px;
+    text-decoration: none;
+    line-height: 1.1;
+    position: relative;
+    color: #438fe7;
+    line-height: 1.4;
+    -webkit-box-reflect: below -10px -webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0) 10%,rgba(0, 0, 0, 0.6));
+}
+a {
+    text-decoration: none; /* アンダーラインを削除 */
+}
+
+
+.title-container {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 50px;
+}
+.title-left{
+    transform: rotate(-10deg);
+}
+.title-left img {
+    width: 100px;
+    height: auto;
+}
+.title-right img {
+    width: 100px;
+    height: auto;
+    transform: rotate(-350deg);
+}
+.fuwafuwa-left {
+    animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
+  }
+  @keyframes floating-y {
+    0% {
+      transform: translateY(-10%);
+    }
+    100% {
+      transform: translateY(15%);
+    }
+}
+.fuwafuwa-right {
+    animation: floating-y 2.6s ease-in-out infinite alternate-reverse;
+  }
+  @keyframes floating-y {
+    0% {
+      transform: translateY(-10%);
+    }
+    100% {
+      transform: translateY(15%);
+    }
+}
+
+/*-----navigation--------*/
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+}
+.image-box {
+    position: relative;
+    width: 30%;
+}
+.image-box img {
+    width: 80%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+.image-box:hover img {
+    transform: scale(1.1); /* 画像を拡大 */
+}
+.overlay-image {
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    z-index: 1; /* テキストの下に表示するために低い値を設定 */
+}
+.text {
+    position: absolute; /* 絶対位置を設定して画像の上に重ねる */
+    top: 50%; /* コンテナの中央に配置 */
+    left: 50%; /* コンテナの中央に配置 */
+    transform: translate(-50%, -50%); /* 中央に寄せる */
+    z-index: 2; /* テキストを画像の上に表示するために1より大きい値を設定 */
+    color: white; /* テキストの色を白に設定（画像により見えやすくするため） */
+    font-size: 20px; /* テキストのサイズを調整 */
+    font-weight: bold;
+}
+a {
+    text-decoration: none; /* アンダーラインを削除 */
+}
+
+/*------footer-------*/
+footer p {
+    margin: 0;
+    padding: 20px;
+    height: 15px;
+    color: #333;
+    text-align: center;
+}
+>>>>>>> 2ba5cc4 (フッダー・フッターの実装)
