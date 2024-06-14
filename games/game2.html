@@ -3,14 +3,28 @@
 <head>
  <meta charset="utf-8"> 
  <link rel="stylesheet" href="game.css">
+ <script>
+    // 順番を決めて次のページに送る関数
+    function setOrder(order) {
+        var url = 'game4.html?order=' + order;
+        location.href = url;
+    }
+
+    // ランダムな順番を生成して次のページに送る関数
+    function setRandomOrder() {
+        var order = Math.random() < 0.5 ? -1 : 1; // 1または-1の乱数を生成
+        var url = 'game4.html?order=' + order;
+        location.href = url;
+    }
+ </script>
 </head>
 <body>
 <div class="back">
 <div class="game-main4">
 <div class="game-main">順番を選んでください</div>
-<button onclick="location.href='game4.html';" class="select">先行</button>
-<button onclick="location.href='game4.html';" class="select">後攻</button>
-<button onclick="location.href='game4.html';" class="select">ランダム</button>
+<button onclick="setOrder(1);" class="select">先行</button>
+<button onclick="setOrder(-1);" class="select">後攻</button>
+<button onclick="setRandomOrder();" class="select">ランダム</button>
 </div>
 </div>
 </body>
