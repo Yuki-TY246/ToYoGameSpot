@@ -1,15 +1,18 @@
+html{
+    background-color: rgb(44, 111, 21);
+}
 .game-main1{
-    height: 300px;
+    height: 250px;
     text-align: center;
-    width: 100%;
-    padding-top: 160px;
+    width: 1000px;
     font-size: 180px;
     font-weight: 600;
+    padding-top: 150px;
     }
 .game-main2{
-    height: 100px;
+    height: 130px;
     text-align: center;
-    width: 100%;
+    width: 1000px;
     font-size: 80px;
     display: flex;
     align-items: center;
@@ -18,13 +21,12 @@
 .start{
     width: 290px;
     height: 120px;
-    padding-top: 15px;
     font-size: 50px;
 }
 .game-main3{
-    height: calc(150px -300px -200px);
+    height: 150px;
     text-align: right;
-    width: 100%;
+    width: 1000px;
     font-size: 50px;
     display: flex;
 }
@@ -40,9 +42,8 @@ text-align: center;
 font-size: 50px;
 }
 .game-main4{
-    height: 100%;
-    width: 100%;
-    margin-top: 120px;
+    height: 700px;
+    width: 1000px;
     display: flex;
     align-items: center;
     justify-content:center;
@@ -59,9 +60,9 @@ a {
     color: rgb(0, 0, 0);
     text-decoration: none;
   }
-body{
- height: 100%;
- width: 100%;
- background: url(images/967589.jpg);
- background-size: cover;
+
+.back{
+    width: 1000px;
+    height: 700px;
+    background: url(images/967589.jpg); 
 }
