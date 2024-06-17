@@ -10,29 +10,29 @@
     <header>
         <div class="title-container">
             <div class="title-left"><img src="../www/img/game1.png" class="fuwafuwa-left"></div>
-        <h1>
-            ToYoGameSpot
-        </h1>
-        <div class="title-right"><img src="../www/img/game3.png" class="fuwafuwa-right"></div>
+            <h1>
+                ToYoGameSpot
+            </h1>
+            <div class="title-right"><img src="../www/img/game3.png" class="fuwafuwa-right"></div>
         </div>
 
         <div class="image-container">
             <div class="image-box">
-                <a href="#">
+                <a href="../www/index.html">
                     <img src="../www/img/game2.png" alt="Image 1" class="overlay-image">
-                    <div class="text">GAME</div>
+                    <div class="text">TOP</div>
                 </a>
             </div>
             <div class="image-box">
                 <a href="../introduction/introduction.html">
                     <img src="../www/img/game2.png" alt="Image 2" class="overlay-image">
-                    <div class="text">INTRODUCTION</div>
+                    <div class="text">GAME</div>
                 </a>
             </div>
             <div class="image-box">
                 <a href="../member/member.html">
                     <img src="../www/img/game2.png" alt="Image 3" class="overlay-image">
-                <div class="text">MEMBER</div>
+                    <div class="text">MEMBER</div>
                 </a>
             </div>
         </div>
@@ -137,11 +137,17 @@
         <h1 class="message">Hope your enjoy !</h1>
     </div>
 
+    <!-- トップへ戻るボタン -->
+    <button id="scrollToTopBtn" class="scrollToTopBtn">
+        <img src="../www/img/yajirushi.png" alt="Top Arrow" class="scrollToTopImg">
+    </button>
+
     <footer>
         <p>
             <small>&copy;ToYo 2024</small>
         </p>
     </footer>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // IntersectionObserverの設定
@@ -157,6 +163,24 @@
             // .main-container要素を監視
             document.querySelectorAll('.main-container').forEach(container => {
                 observer.observe(container);
+            });
+
+            // スクロールイベントを監視し、ボタンの表示/非表示を切り替え
+            window.addEventListener('scroll', function() {
+                const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+                if (window.pageYOffset > 100) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            });
+
+            // ボタンをクリックしたときにページのトップへスクロール
+            document.getElementById('scrollToTopBtn').addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             });
         });
     </script>

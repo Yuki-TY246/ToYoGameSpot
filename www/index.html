@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--  このリンクをコピペ  -->
-    <link rel="stylesheet" href="../www/style.css">
+    <link rel="stylesheet" href="../www/style.css">   <!-- /* コピペ */ -->
     <link rel="stylesheet" href="top.css">
 
-    <title>ToYoGamSpot</title>
+    <title>ToYoGameSpot</title>
 </head>
 <body>
     <!-- ヘッダーはここから -->
@@ -15,7 +14,7 @@
         <div class="title-container">
             <div class="title-left"><img src="../www/img/game1.png" class="fuwafuwa-left"></div>
         <h1>
-            ToYoGameSpot
+            ToYoGamSpot
         </h1>
         <div class="title-right"><img src="../www/img/game3.png" class="fuwafuwa-right"></div>
         </div>
@@ -24,13 +23,13 @@
             <div class="image-box">
                 <a href="#">
                     <img src="../www/img/game2.png" alt="Image 1" class="overlay-image">
-                    <div class="text">TOP</div>
+                    <div class="text">GAME</div>
                 </a>
             </div>
             <div class="image-box">
                 <a href="../introduction/introduction.html">
                     <img src="../www/img/game2.png" alt="Image 2" class="overlay-image">
-                    <div class="text">GAME</div>
+                    <div class="text">INTRODUCTION</div>
                 </a>
             </div>
             <div class="image-box">
@@ -40,59 +39,19 @@
                 </a>
             </div>
         </div>
-    </header>
-    <hr class=".hr3">
-    <!-- ここまでをコピペ -->
+    </header> 
+    <hr class="kugiri">
+    <!-- ここまで -->
+
+
     
-   <!-- トップへ戻るボタン -->
-    <button id="scrollToTopBtn" class="scrollToTopBtn">
-        <img src="../www/img/yajirushi.png" alt="Top Arrow" class="scrollToTopImg">
-    </button>
-
-
-   <!-- フッターはここから -->
+    <!-- フッターはここから -->
    <footer>
-       <p>
-           <small>&copy;ToYo 2024</small>
-       </p>
-   </footer>
-   <!-- ここまでをコピペ -->
-   
-   <script>
-       document.addEventListener('DOMContentLoaded', function() {
-           // IntersectionObserverの設定
-           let observer = new IntersectionObserver((entries, observer) => {
-               entries.forEach(entry => {
-                   if (entry.isIntersecting) {
-                       entry.target.classList.add('fadeIn');
-                       observer.unobserve(entry.target);
-                   }
-               });
-           }, { threshold: 0.1 });
+        <p>
+            <small>&copy;ToYo 2024</small>
+        </p>
+    </footer>
+    <!-- ここまで -->
 
-           // .main-container要素を監視
-           document.querySelectorAll('.main-container').forEach(container => {
-               observer.observe(container);
-           });
-
-           // スクロールイベントを監視し、ボタンの表示/非表示を切り替え
-           window.addEventListener('scroll', function() {
-               const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-               if (window.pageYOffset > 100) {
-                   scrollToTopBtn.classList.add('show');
-               } else {
-                   scrollToTopBtn.classList.remove('show');
-               }
-           });
-
-           // ボタンをクリックしたときにページのトップへスクロール
-           document.getElementById('scrollToTopBtn').addEventListener('click', function() {
-               window.scrollTo({
-                   top: 0,
-                   behavior: 'smooth'
-               });
-           });
-       });
-   </script>
 </body>
 </html>

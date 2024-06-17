@@ -9,16 +9,12 @@ header h1 {
     line-height: 1.4;
     -webkit-box-reflect: below -10px -webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0) 10%,rgba(0, 0, 0, 0.6));
 }
-a {
-    text-decoration: none; /* アンダーラインを削除 */
-}
-
 
 .title-container {
     display: flex;
     justify-content: space-around;
     text-align: center;
-    padding: 50px;
+    padding: 30px;
 }
 .title-left{
     transform: rotate(-10deg);
@@ -66,7 +62,7 @@ a {
     width: 30%;
 }
 .image-box img {
-    width: 60%;
+    width: 80%;
     height: auto;
     transition: transform 0.3s ease;
 }
@@ -86,7 +82,7 @@ a {
     transform: translate(-50%, -50%); /* 中央に寄せる */
     z-index: 2; /* テキストを画像の上に表示するために1より大きい値を設定 */
     color: white; /* テキストの色を白に設定（画像により見えやすくするため） */
-    font-size: 25px; /* テキストのサイズを調整 */
+    font-size: 20px; /* テキストのサイズを調整 */
     font-weight: bold;
 }
 a {
@@ -100,26 +96,5 @@ footer p {
     height: 15px;
     color: #333;
     text-align: center;
-}
-
-/* トップへ戻るボタンのスタイル */
-.scrollToTopBtn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    background-color: transparent; /* 背景色を透明に */
-    border: none;
-    padding: 0; /* パディングを削除 */
-    cursor: pointer;
-    transition: opacity 0.3s, visibility 0.3s;
-}
-
-.scrollToTopBtn.show {
-    display: block;
-}
-
-.scrollToTopImg {
-    width: 100px; /* 画像の幅 */
-    height: auto; /* 画像の高さ */
+    font-weight: bold;
 }
