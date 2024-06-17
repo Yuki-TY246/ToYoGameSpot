@@ -19,7 +19,7 @@ header {
     position: fixed; /* ヘッダーを固定位置に */
     top: 0; /* 上部に配置 */
     left: 0; /* 左端に配置 */
-    background: #b0c4de;
+    background: #a1c5f5;
     box-sizing: border-box;
     padding: 0 100px;
     z-index: 1000; /* 他の要素より手前に表示 */
@@ -29,7 +29,7 @@ header {
 }
 .logo h1 {
     font-size: 40px;
-    color: #708090;
+    color: #ffffff;
     margin: 0;
     padding: 0;
 }
