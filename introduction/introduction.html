@@ -4,12 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../www/style.css">
     <link rel="stylesheet" href="../splide-master/dist/css/splide-core.min.css" />
     <title>ToYoGameSpot</title>
   </head>
   <body>
     <header>
-      <!-- レンダリング -->
+      <div class="logo">
+        <a href="../www/index.html"> <!-- トップページのリンクを正しいパスに設定 -->
+          <h1>ToYoGameSpot</h1>
+        </a>
+      </div>
+      <nav>
+        <ul class="menu-list">
+          <li><a class="my-parts" href="../www/index.html">トップページ</a></li>
+          <li><a class="my-parts" href="../introduction/introduction.html">ゲーム紹介</a></li>
+          <li><a class="my-parts" href="../member/member.html">メンバー紹介</a></li>
+        </ul>
+      </nav>
     </header>
 
     <div class="container">
@@ -159,7 +171,9 @@
     </script>
 
     <footer>
-      <!-- レンダリング -->
+      <p>
+        <small>&copy;ToYo 2024</small>
+      </p>
     </footer>
   </body>
 </html>
