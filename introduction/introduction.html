@@ -3,13 +3,26 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_intro.css">
+    <link rel="stylesheet" href="../www/style.css">
     <link rel="stylesheet" href="../splide-master/dist/css/splide-core.min.css" />
     <title>ToYoGameSpot</title>
   </head>
   <body>
+
     <header>
-      <!-- レンダリング -->
+        <div class="logo">
+            <a href="../www/index.html"> <!-- トップページのリンクを正しいパスに設定 -->
+                <h1>ToYoGameSpot</h1>
+            </a>
+        </div>
+        <nav>
+            <ul class="menu-list">
+                <li><a href="../www/index.html">トップページ</a></li>
+                <li><a href="../introduction/introduction.html">ゲーム紹介</a></li>
+                <li><a href="../member/member.html">メンバー紹介</a></li>
+            </ul>
+        </nav>
     </header>
 
     <div class="container">
@@ -132,6 +145,10 @@
       <p>新しいゲームも<ruby>製作中<rt>せいさくちゅう</rt></ruby>！</p>
     </div>
 
+    <button id="scrollToTopBtn" class="scrollToTopBtn">
+      <img src="../www/img/yajirushi.png" alt="Top Arrow" class="scrollToTopImg">
+    </button>
+
 
     <script src="../splide-master/dist/js/splide.min.js"></script>
 
@@ -158,8 +175,31 @@
       } );
     </script>
 
+    <script>
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'  // スムーズにスクロールする
+          });
+        }
+        window.addEventListener('scroll', function() {
+          const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+          if (window.pageYOffset > 100) {
+            scrollToTopBtn.classList.add('show');
+          } else {
+            scrollToTopBtn.classList.remove('show');
+          }
+        });
+        document.getElementById('scrollToTopBtn').addEventListener('click', function() {
+          scrollToTop(); // scrollToTop 関数を呼び出し
+          });
+    </script> 
+
     <footer>
-      <!-- レンダリング -->
+      <p>
+        <small>&copy;ToYo 2024</small>
+      </p>
     </footer>
+
   </body>
 </html>
