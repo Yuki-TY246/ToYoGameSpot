@@ -144,6 +144,10 @@
       <p>新しいゲームも<ruby>製作中<rt>せいさくちゅう</rt></ruby>！</p>
     </div>
 
+    <button id="scrollToTopBtn" class="scrollToTopBtn">
+      <img src="../www/img/yajirushi.png" alt="Top Arrow" class="scrollToTopImg">
+    </button>
+
 
     <script src="../splide-master/dist/js/splide.min.js"></script>
 
@@ -168,6 +172,26 @@
       document.addEventListener( 'DOMContentLoaded', function () {
         new Splide( '#image-carousel2' ).mount();
       } );
+    </script>
+
+    <script>
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'  // スムーズにスクロールする
+        });
+      }
+      window.addEventListener('scroll', function() {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        if (window.pageYOffset > 100) {
+          scrollToTopBtn.classList.add('show');
+        } else {
+          scrollToTopBtn.classList.remove('show');
+        }
+      });
+      document.getElementById('scrollToTopBtn').addEventListener('click', function() {
+        scrollToTop(); // scrollToTop 関数を呼び出し
+        });
     </script>
 
     <footer>
