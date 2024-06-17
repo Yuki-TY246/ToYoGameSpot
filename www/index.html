@@ -21,7 +21,6 @@
         </nav>
     </header>
     
-   <!-- トップへ戻るボタン -->
     <button id="scrollToTopBtn" class="scrollToTopBtn">
         <img src="../www/img/yajirushi.png" alt="Top Arrow" class="scrollToTopImg">
     </button>
@@ -32,5 +31,26 @@
            <small>&copy;ToYo 2024</small>
        </p>
    </footer>
+
+   <!-- JavaScriptの直接記述 -->
+   <script>
+       // 画面をトップにスクロールする関数
+       function scrollToTop() {
+           window.scrollTo({
+               top: 0,
+               behavior: 'smooth'  // スムーズにスクロールする
+           });
+       }
+
+       // スクロール位置に応じてトップへ戻るボタンの表示/非表示を切り替える
+       window.addEventListener('scroll', function() {
+           const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+           if (window.pageYOffset > 100) {
+               scrollToTopBtn.classList.add('show');
+           } else {
+               scrollToTopBtn.classList.remove('show');
+           }
+       });
+   </script>
 </body>
 </html>
