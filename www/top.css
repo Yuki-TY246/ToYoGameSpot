@@ -8,6 +8,7 @@ body, html {
     color: #333333;
 }
 
+/* タイトル */
 .container {
     display: flex;
     justify-content: center; /* 要素を中央に配置する */
@@ -60,4 +61,35 @@ body, html {
     line-height: 1.2;
     -webkit-box-reflect: below -10px -webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0) 10%,rgba(0,0,0,.6));
     margin-bottom: calc(1em + 20px);
+}
+
+/* 本文 */
+.top-welcome-wrapper {
+  display: flex;
+  justify-content: center; /* コンテンツを中央に揃える */
+  padding: 20px;
+  max-width: 1250px; /* 最大幅を設定 */
+  margin: 0 auto; /* 中央揃え */
+}
+
+.top-welcome {
+  text-align: left; /* 左揃え */
+  max-width: 800px; /* 内部コンテンツの最大幅を設定 */
+}
+
+.text-item {
+  font-size: 20px;
+}
+
+.game-ichiran-wrapper {
+  display: flex;
+  justify-content: center; /* コンテンツを中央に揃える */
+  padding: 20px;
+  max-width: 1250px; /* 最大幅を設定 */
+  margin: 0 auto; /* 中央揃え */
+}
+
+.game-ichiran{
+  text-align: left; /* 左揃え */
+  max-width: 800px; /* 内部コンテンツの最大幅を設定 */
 }
