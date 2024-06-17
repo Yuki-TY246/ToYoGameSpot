@@ -59,6 +59,13 @@ body, html {
     padding-left: 15px;
 }
 
+.splide{
+    margin-top: 50px;
+    width: 50%;
+    height: 50%;
+}
+
+
 .intro_content{
     display: flex;
     justify-content: center;
@@ -150,7 +157,7 @@ body, html {
 }
 
 .andmore{
-    animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
+    animation: floating-y 1.5s ease-in-out infinite alternate-reverse;
   }
   @keyframes floating-y {
     0% {

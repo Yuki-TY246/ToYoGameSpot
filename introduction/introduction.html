@@ -23,11 +23,11 @@
           <a href="../games/othello_game.html">オセロゲーム</a>
         </div>
         <div class="intro_content">
-          <section id="image-carousel" class="splide" aria-label="お気に入りの写真">
+          <section id="image-carousel1" class="splide" aria-label="お気に入りの写真">
             <div class="splide__track">
               <ul class="splide__list">
                 <li class="splide__slide">
-                  <img src="img/game1.png" alt="">
+                  <img src="img/othello1.png" alt="">
                 </li>
                 <li class="splide__slide">
                   <img src="img/game2.png" alt="">
@@ -72,12 +72,32 @@
     <div class="intro_space">
       <div class="intro_contents">
         <div class="intro_game_title">
-          <a href="index.html">ゲームタイトル</a>
+          <a href="../games/othello_game.html">オセロゲーム</a>
         </div>
         <div class="intro_content">
-          <div class="intro_game_screen">
-            <a href="index.html"><img src="img/animal_kuma.png" alt="プレイ画面" class="intro_game_image"></a>
-          </div>
+          <section id="image-carousel2" class="splide" aria-label="お気に入りの写真">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img src="img/othello1.png" alt="">
+                </li>
+                <li class="splide__slide">
+                  <img src="img/game2.png" alt="">
+                </li>
+                <li class="splide__slide">
+                  <img src="img/game3.png" alt="">
+                </li>
+              </ul>
+            </div>
+            <div class="splide__arrows">
+              <button class="splide__arrow splide__arrow--prev">
+                ＜
+              </button>
+              <button class="splide__arrow splide__arrow--next">
+                ＞
+              </button>
+            </div>
+          </section>
           <div class="intro_textarea">
             <div class="intro_texts_main">
               <div class="intro_text_title">
@@ -95,7 +115,7 @@
             </div>
           </div>
           <div class="intro_play_btn">
-            <a href="index.html">🎮ゲームをプレイ！🎮</a>
+            <a href="../games/othello_game.html">🎮ゲームをプレイ！🎮</a>
           </div>
         </div>
       </div>
@@ -125,7 +145,10 @@
 
     <script>
       document.addEventListener( 'DOMContentLoaded', function () {
-        new Splide( '#image-carousel' ).mount();
+        new Splide( '#image-carousel1' ).mount();
+      } );
+      document.addEventListener( 'DOMContentLoaded', function () {
+        new Splide( '#image-carousel2' ).mount();
       } );
     </script>
 
