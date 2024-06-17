@@ -29,7 +29,9 @@ header {
     padding: 0 100px;
     z-index: 1000; /* 他の要素より手前に表示 */
 }
-
+.logo a {
+    text-decoration-line: none;
+}
 .logo h1 {
     font-size: 40px;
     color: #708090;
@@ -55,6 +57,7 @@ header {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
+    font-weight: bold;
 }
 
 .scrollToTopBtn {
