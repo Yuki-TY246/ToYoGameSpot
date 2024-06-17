@@ -1,116 +1,70 @@
 @charset "UTF-8";
-
-header h1 {
-    font-size:50px;
-    text-decoration: none;
-    line-height: 1.1;
-    position: relative;
-    color: #438fe7;
-    line-height: 1.4;
-    -webkit-box-reflect: below -10px -webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0) 10%,rgba(0, 0, 0, 0.6));
-}
-a {
-    text-decoration: none; /* アンダーラインを削除 */
+body, html {
+    margin-top: 60px;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #CDE7FF;
+    font-family: YuGothic,'Yu Gothic',sans-serif;
+    color: #333333;
 }
 
-
-.title-container {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    padding: 50px;
-}
-.title-left{
-    transform: rotate(-10deg);
-}
-.title-left img {
-    width: 100px;
-    height: auto;
-}
-.title-right img {
-    width: 100px;
-    height: auto;
-    transform: rotate(-350deg);
-}
-.fuwafuwa-left {
-    animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
-  }
-  @keyframes floating-y {
-    0% {
-      transform: translateY(-10%);
-    }
-    100% {
-      transform: translateY(15%);
-    }
-}
-.fuwafuwa-right {
-    animation: floating-y 2.6s ease-in-out infinite alternate-reverse;
-  }
-  @keyframes floating-y {
-    0% {
-      transform: translateY(-10%);
-    }
-    100% {
-      transform: translateY(15%);
-    }
-}
-
-/*-----navigation--------*/
-
-.image-container {
-    display: flex;
-    justify-content: space-between;
-}
-.image-box {
-    position: relative;
-    width: 30%;
-}
-.image-box img {
-    width: 60%;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-.image-box:hover img {
-    transform: scale(1.1); /* 画像を拡大 */
-}
-.overlay-image {
-    display: block;
+.container {
+    max-width: 1250px;
     margin: 0 auto;
-    height: auto;
-    z-index: 1; /* テキストの下に表示するために低い値を設定 */
-}
-.text {
-    position: absolute; /* 絶対位置を設定して画像の上に重ねる */
-    top: 50%; /* コンテナの中央に配置 */
-    left: 50%; /* コンテナの中央に配置 */
-    transform: translate(-50%, -50%); /* 中央に寄せる */
-    z-index: 2; /* テキストを画像の上に表示するために1より大きい値を設定 */
-    color: white; /* テキストの色を白に設定（画像により見えやすくするため） */
-    font-size: 25px; /* テキストのサイズを調整 */
-    font-weight: bold;
-}
-a {
-    text-decoration: none; /* アンダーラインを削除 */
+    padding: 0 20px;
 }
 
-/*------footer-------*/
-footer p {
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 90px; /* ヘッダーの高さを設定 */
+    position: fixed; /* ヘッダーを固定位置に */
+    top: 0; /* 上部に配置 */
+    left: 0; /* 左端に配置 */
+    background: #b0c4de;
+    box-sizing: border-box;
+    padding: 0 100px;
+    z-index: 1000; /* 他の要素より手前に表示 */
+}
+
+.logo h1 {
+    font-size: 40px;
+    color: #708090;
     margin: 0;
-    padding: 20px;
-    height: 15px;
-    color: #333;
-    text-align: center;
+    padding: 0;
 }
 
-/* トップへ戻るボタンのスタイル */
+.menu-list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-list li {
+    margin-right: 20px;
+}
+
+.menu-list li:last-child {
+    margin-right: 0;
+}
+
+.menu-list a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
 .scrollToTopBtn {
     position: fixed;
     bottom: 20px;
     right: 20px;
     display: none;
-    background-color: transparent; /* 背景色を透明に */
+    background-color: transparent;
     border: none;
-    padding: 0; /* パディングを削除 */
+    padding: 0;
     cursor: pointer;
     transition: opacity 0.3s, visibility 0.3s;
 }
@@ -120,6 +74,14 @@ footer p {
 }
 
 .scrollToTopImg {
-    width: 100px; /* 画像の幅 */
-    height: auto; /* 画像の高さ */
+    width: 100px;
+    height: auto;
+}
+
+footer p {
+    margin: 0;
+    padding: 20px;
+    height: 15px;
+    color: #333;
+    text-align: center;
 }

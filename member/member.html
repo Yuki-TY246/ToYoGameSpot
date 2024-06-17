@@ -8,35 +8,15 @@
 </head>
 <body>
     <header>
-        <div class="title-container">
-            <div class="title-left"><img src="../www/img/game1.png" class="fuwafuwa-left"></div>
-        <h1>
-            ToYoGameSpot
-        </h1>
-        <div class="title-right"><img src="../www/img/game3.png" class="fuwafuwa-right"></div>
+        <div class="logo">
+            <h1>ToYoGameSpot</h1>
         </div>
-
-        <div class="image-container">
-            <div class="image-box">
-                <a href="#">
-                    <img src="../www/img/game2.png" alt="Image 1" class="overlay-image">
-                    <div class="text">GAME</div>
-                </a>
-            </div>
-            <div class="image-box">
-                <a href="../introduction/introduction.html">
-                    <img src="../www/img/game2.png" alt="Image 2" class="overlay-image">
-                    <div class="text">INTRODUCTION</div>
-                </a>
-            </div>
-            <div class="image-box">
-                <a href="../member/member.html">
-                    <img src="../www/img/game2.png" alt="Image 3" class="overlay-image">
-                <div class="text">MEMBER</div>
-                </a>
-            </div>
-        </div>
-        <hr class="kugiri">
+        <nav>
+            <ul class="menu-list">
+                <li><a href="#home">ゲーム紹介</a></li>
+                <li><a href="../member/member.html">メンバー紹介</a></li>
+            </ul>
+        </nav>
     </header>
     
     <!-- main -->
@@ -137,11 +117,17 @@
         <h1 class="message">Hope your enjoy !</h1>
     </div>
 
-    <footer>
-        <p>
-            <small>&copy;ToYo 2024</small>
-        </p>
-    </footer>
+    <!-- トップへ戻るボタン -->
+    <button id="scrollToTopBtn" class="scrollToTopBtn">
+        <img src="../www/img/yajirushi.png" alt="Top Arrow" class="scrollToTopImg">
+    </button>
+
+   <!-- フッター -->
+   <footer>
+       <p>
+           <small>&copy;ToYo 2024</small>
+       </p>
+   </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // IntersectionObserverの設定
