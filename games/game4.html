@@ -51,6 +51,22 @@
         margin: 20px 0 0 25px;
         font-size: 20px;
     }
+    .side{
+      height: 300px;
+      font-size:30px;
+      padding-top: 40px;
+    }
+    .side1{
+      height: 300px;
+      font-size:30px;
+      padding-top: 40px;
+      margin-left: 10px;
+    }
+    .text{
+    text-align: right;
+    margin: 30px;
+    border-bottom:solid 5px #000;
+    }
 
 --></style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -61,22 +77,26 @@
 
   <div class="game1">
     <div class="game2">
-        <div id='status' class="title_button"></div>
+        <div id='status' class="side">
+        </div>
+        <div class="side">
+          <div class="text">じぶん</div>
+        </div>
     </div>
 
     <div class="game3">
       <table id='board' class="table">
       </table>
-
       <button onclick="location.href='game1.html';" class="title_button">タイトルに戻る</button>
       <button onclick="location.href='game4.html';" class="title_button">リセット</button>
-      <button onclick="location.href='game5.html';" class="title_button"> 結果表示</button>
+      <button onclick="location.href='game5.html';" class="title_button">結果表示</button>
     </div>
 
     <div class="game4">
+      <div class="side">
+        <div class="text">あいて</div>
+      </div>
     </div>
-
-    </div>
-
+    
   </body>
 </html>
