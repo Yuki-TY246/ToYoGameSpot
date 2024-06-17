@@ -1,0 +1,9 @@
+body, html {
+    margin: 0 auto; /* 水平方向に中央揃え */
+    padding: 0;
+    height: 100%;
+    width: 1250px; /* 幅を1250pxに固定 */
+    background-color: #CDE7FF;
+    font-family: YuGothic,'Yu Gothic',sans-serif;
+    color: #333333;
+}

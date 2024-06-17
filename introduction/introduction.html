@@ -13,7 +13,7 @@
     </header>
 
     <div class="container">
-      <p class="text">INTRODUCTION</p>
+      <p class="text">GAME</p>
       <img src="img/title_game.png" alt="Sample Image" class="overlay-image">
     </div>
 
@@ -37,6 +37,14 @@
                 </li>
               </ul>
             </div>
+            <div class="splide__arrows">
+              <button class="splide__arrow splide__arrow--prev">
+                ＜
+              </button>
+              <button class="splide__arrow splide__arrow--next">
+                ＞
+              </button>
+            </div>
           </section>
           <div class="intro_textarea">
             <div class="intro_texts_main">
@@ -50,7 +58,7 @@
                 プレイ時間目安:300分
               </div>
               <div class="intro_difficulty">
-                難易度　★★★☆☆
+                むずかしさ　★★★☆☆
              </div>
             </div>
           </div>
@@ -82,7 +90,7 @@
                 プレイ時間目安:300分
               </div>
               <div class="intro_difficulty">
-                難易度　★★★☆☆
+                むずかしさ　★★★☆☆
              </div>
             </div>
           </div>
@@ -95,7 +103,7 @@
 
 
     <div class="andmore">
-      <span>新規ゲームも製作中・・・</span>
+      <p>新しいゲームも<ruby>製作中<rt>せいさくちゅう</rt></ruby>！</p>
     </div>
 
 
@@ -112,23 +120,6 @@
             articles.removeAttribute("style")
           })
         })
-
-        const moreArticles = document.querySelectorAll(".andmore");
-        let currentIndex = 0;
-        function hopping() {
-          moreArticles.forEach(function(article) {
-            const moreText = article.textContent;
-            const moreLength = moreText.length;
-            const hopChar = moreText.substring(0, currentIndex) + "<span>" + moreText.charAt(currentIndex) + "</span>" + moreText.substring(currentIndex + 1, moreLength);
-            article.innerHTML = hopChar;
-            currentIndex++
-            if (currentIndex >= moreLength) {
-              currentIndex = 0
-              }
-            setTimeout(hopping, 300)
-          })
-        }
-        hopping()
       })
     </script>
 

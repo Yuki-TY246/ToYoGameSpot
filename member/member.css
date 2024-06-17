@@ -20,12 +20,12 @@ body, html {
 .container {
     position: relative;
     text-align: center;
-    padding: 60px 0;
+    padding-top: 50px;
 }
 
-.text {
+.text-member {
     position: absolute; /* 絶対位置を設定して画像の上に重ねる */
-    top: 30%; /* コンテナの中央に配置 */
+    top: 25%; /* コンテナの中央に配置 */
     left: 50%; /* コンテナの中央に配置 */
     transform: translate(-50%, -50%); /* 中央に寄せる */
     z-index: 2; /* テキストを画像の上に表示するために1より大きい値を設定 */
@@ -190,4 +190,3 @@ body, html {
       transform: translateY(10%);
     }
 }
-

@@ -23,16 +23,34 @@ class Masu {
             div.removeClass(ishi == ISHI_BLACK ? 'white' : 'black');
         }
         div.addClass(ishi == ISHI_BLACK ? 'black' : 'white');
+        return this;
     }
 
-    reverse (count, a0, dr, dc){
+    // 置いた石を除く
+    remove (){
+        $('div', this.td).removeClass('white').removeClass('black').addClass('none');
+        return this;
+    }
+
+    roundReverse(exec){
+        var count = 0;
+        for(var dr of [-1, 0, 1]){
+            for(var dc of [-1, 0, 1]){
+                if(dr == 0 && dc == 0) continue;
+                count += this.reverse(0, this, dc, dr, exec);
+            }
+        }
+        return count;
+    }
+
+    reverse (count, a0, dr, dc, exec){
         try{
             var neighbor = new Masu(this.r + dr, this.c + dc);
 
             if(ISHI_NONE == neighbor.ishi()) return 0;
-            if(a0.ishi() != neighbor.ishi()) count = neighbor.reverse(count + 1, a0, dr, dc);
+            if(a0.ishi() != neighbor.ishi()) count = neighbor.reverse(count + 1, a0, dr, dc, exec);
 
-            if(count > 0){
+            if(exec && count > 0){
                 this.set(a0.ishi());
             }
             return count;
