@@ -65,36 +65,38 @@ class CPU {
     }
 
     playTurn() {
-        var possibleMoves = [];
+        setTimeout(() => {
+            var possibleMoves = [];
 
-        for (var r = 0; r < 8; r++) {
-            for (var c = 0; c < 8; c++) {
-                var masu = new Masu(r, c);
-                if (masu.ishi() == ISHI_NONE) {
-                    var count = masu.set(this.ishi).roundReverse(false);
-                    if (count > 0) {
-                        possibleMoves.push({ r: r, c: c });
+            for (var r = 0; r < 8; r++) {
+                for (var c = 0; c < 8; c++) {
+                    var masu = new Masu(r, c);
+                    if (masu.ishi() == ISHI_NONE) {
+                        var count = masu.set(this.ishi).roundReverse(false);
+                        if (count > 0) {
+                            possibleMoves.push({ r: r, c: c });
+                        }
+                        masu.remove();
                     }
-                    masu.remove();
-                }
-            }
-        }
-
-        if (possibleMoves.length > 0) {
-            for (var i = 0; i < possibleMoves.length; i++) {
-                if (this.isCornerMove(possibleMoves[i].r, possibleMoves[i].c)) {
-                    new Masu(possibleMoves[i].r, possibleMoves[i].c).set(this.ishi).roundReverse(true);
-                    return;
                 }
             }
 
-            var randomMove = possibleMoves[Math.floor(Math.random() * possibleMoves.length)];
-            new Masu(randomMove.r, randomMove.c).set(this.ishi).roundReverse(true);
-        } else {
-            alert("CPUがパスしました。");
-            ishi *= -1;
-            $('div#status').html((ishi == ISHI_BLACK ? '黒' : '白') + 'の番');
-        }
+            if (possibleMoves.length > 0) {
+                for (var i = 0; i < possibleMoves.length; i++) {
+                    if (this.isCornerMove(possibleMoves[i].r, possibleMoves[i].c)) {
+                        new Masu(possibleMoves[i].r, possibleMoves[i].c).set(this.ishi).roundReverse(true);
+                        return;
+                    }
+                }
+
+                var randomMove = possibleMoves[Math.floor(Math.random() * possibleMoves.length)];
+                new Masu(randomMove.r, randomMove.c).set(this.ishi).roundReverse(true);
+            } else {
+                alert("CPUがパスしました。");
+                ishi *= -1;
+                $('div#status').html((ishi == ISHI_BLACK ? '黒' : 'cpu') + 'の番');
+            }
+        }, 500); // 500ミリ秒(一秒)の遅延。
     }
 
     isCornerMove(r, c) {

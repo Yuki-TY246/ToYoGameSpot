@@ -20,7 +20,7 @@ jQuery(function () {
                             if (count > 0) {
                                 masu.roundReverse(true);
                                 ishi *= -1;
-                                $('div#status').html((ishi == ISHI_BLACK ? '黒' : '白') + 'の番');
+                                $('div#status').html((ishi == ISHI_BLACK ? 'あなた' : 'cpu') + 'の番');
                                 if (ishi == ISHI_WHITE) {
                                     setTimeout(cpuPlayTurn, 500); // CPUのターンを呼び出す
                                 }
@@ -47,6 +47,6 @@ jQuery(function () {
         var cpu = new CPU(ISHI_WHITE);
         cpu.playTurn();
         ishi = ISHI_BLACK;
-        $('div#status').html('黒の番');
+        $('div#status').html('あなたの番');
     }
 });
