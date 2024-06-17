@@ -14,17 +14,14 @@ jQuery(function (){
                 .click(function (e){  // tdがクリックされたときの動作
                     var masu = new Masu($(this).attr('data-r'), $(this).attr('data-c'));
                     if(masu.ishi() == ISHI_NONE){
-                        masu.set(ishi);
-                        for(var dr of [-1, 0, 1]){
-                            for(var dc of [-1, 0, 1]){
-                                if(dr == 0 && dc == 0) continue;
-                                masu.reverse(0, masu, dc, dr);
-                            }
+                        var count = masu.set(ishi).roundReverse(false);
+                        if(count > 0){
+                            masu.roundReverse(true);
+                            ishi *= -1;
+                            $('div#status').html((ishi == ISHI_BLACK ? '黒' : '白') + 'の番');
+                        }else{
+                            masu.remove();
                         }
-                        ishi *= -1;
-                        $('div#status').html((ishi == ISHI_BLACK ? '黒' : '白') + 'の番');
-                    }else{
-                        masu.set(ishi * -1);
                     }
                 })
             );
