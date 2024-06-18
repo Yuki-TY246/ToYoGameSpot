@@ -58,14 +58,17 @@ jQuery(function () {
             else if ($(this).hasClass('white')) whiteCount++;
         });
 
+
         $('div#status').html(ishi == ISHI_BLACK ? 'あなたの番' : 'あいての番')
 
             $('div#status1').html(' 黒: ' + blackCount  +'枚');
             $('div#status2').html(' 白: ' + whiteCount  +'枚');
         
-        // 黒と白の合計が64になった場合に保存してgame5.htmlに遷移
-        if (blackCount + whiteCount === 64) {
-            saveCountsAndRedirect();
+        if (blackCount + whiteCount === 64 || blackCount === 0 || whiteCount === 0) {
+            setTimeout(function() {
+                saveCountsAndRedirect();
+            }, 1500);
+
         }
     }
 
