@@ -131,7 +131,7 @@ body, html {
   max-width: 900px; /* 内部コンテンツの最大幅を設定 */
   margin: 10em auto;
   position: relative;
-  background: #eee; /* 背景色 */
+  background: #f2f5f6; /* 背景色 */
   padding: 3em 1em 2em; /* 内側余白（上・左右・下） */
 }
 
@@ -189,7 +189,7 @@ body, html {
   font-size: 30px;
 }
 .game-setume{
-  font-size: 15px;
+  font-size: 18px;
 }
 .game-name a{
   text-decoration: none;
