@@ -60,7 +60,7 @@ jQuery(function () {
         $('div#status').html('黒: ' + blackCount + ' 白: ' + whiteCount + ' ' + (ishi == ISHI_BLACK ? 'あなたの番' : 'cpuの番'));
 
         // 黒と白の合計が64になった場合に保存してgame5.htmlに遷移
-        if (blackCount + whiteCount === 64) {
+        if (blackCount + whiteCount === 64  || blackCount == 0  || whiteCount == 0) {
             saveCountsAndRedirect();
         }
     }
