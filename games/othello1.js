@@ -57,13 +57,18 @@ jQuery(function () {
             if ($(this).hasClass('black')) blackCount++;
             else if ($(this).hasClass('white')) whiteCount++;
         });
-        $('div#status').html('黒: ' + blackCount + ' 白: ' + whiteCount + ' ' + (ishi == ISHI_BLACK ? 'あなたの番' : 'CPUの番'));
-    
-        // ゲームの終了条件を追加する（必要に応じて）
+
+
+        $('div#status').html(ishi == ISHI_BLACK ? 'あなたの番' : 'あいての番')
+
+            $('div#status1').html(' 黒: ' + blackCount  +'枚');
+            $('div#status2').html(' 白: ' + whiteCount  +'枚');
+        
         if (blackCount + whiteCount === 64 || blackCount === 0 || whiteCount === 0) {
             setTimeout(function() {
                 saveCountsAndRedirect();
             }, 1500);
+
         }
     }
 
