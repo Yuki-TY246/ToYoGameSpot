@@ -28,6 +28,8 @@ jQuery(function () {
                                 updateStatus();
                                 if (ishi == ISHI_WHITE) {
                                     setTimeout(cpuPlayTurn, 500); // CPUのターンを呼び出す
+                                } else {
+                                    checkPass(); // プレイヤーのターンにパスをチェック
                                 }
                                 if (isBoardFull()) {
                                     saveCountsAndRedirect();
@@ -93,7 +95,36 @@ jQuery(function () {
         setTimeout(updateStatus, 500); // CPUのターン後にカウントを更新
         if (isBoardFull()) {
             saveCountsAndRedirect();
+        } else {
+            checkPass(); // CPUのターン後にパスをチェック
         }
+    }
+
+    function checkPass() {
+        if (!canPlay(ishi)) {
+            alert('あなたはパスしました');
+            ishi *= -1;
+            updateStatus();
+            if (ishi == ISHI_WHITE) {
+                setTimeout(cpuPlayTurn, 500); // CPUのターンを呼び出す
+            }
+        }
+    }
+
+    function canPlay(ishi) {
+        for (var r = 0; r < 8; r++) {
+            for (var c = 0; c < 8; c++) {
+                var masu = new Masu(r, c);
+                if (masu.ishi() == ISHI_NONE) {
+                    var count = masu.set(ishi).roundReverse(false);
+                    masu.remove();
+                    if (count > 0) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 
     initBoard();
