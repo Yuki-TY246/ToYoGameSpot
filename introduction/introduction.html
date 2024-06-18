@@ -162,6 +162,15 @@
             articles.removeAttribute("style")
           })
         })
+        const titleArticle = document.querySelectorAll(".intro_game_title a")
+        titleArticle.forEach(function(articles) {
+          articles.addEventListener("mouseover", function(){
+            articles.setAttribute("style", "color: yellow;")
+          })
+          articles.addEventListener("mouseout", function(){
+            articles.removeAttribute("style")
+          })
+        })
       })
     </script>
 
