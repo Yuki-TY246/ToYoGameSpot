@@ -21,7 +21,7 @@ header {
     left: 0; /* 左端に配置 */
     background: #a1c5f5;
     box-sizing: border-box;
-    padding: 0 100px;
+    padding: 0 35px;
     z-index: 1000; /* 他の要素より手前に表示 */
 }
 .logo a {
