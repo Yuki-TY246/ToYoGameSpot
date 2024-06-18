@@ -12,26 +12,25 @@ body, html {
     position: relative;
     text-align: center;
     padding-top: 50px;
-    display: flex;
 }
 
-.text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    color: white;
-    font-size: 30px;
+.text{
+    position: absolute; /* 絶対位置を設定して画像の上に重ねる */
+    top: 45%; /* コンテナの中央に配置 */
+    left: 50%; /* コンテナの中央に配置 */
+    transform: translate(-50%, -50%); /* 中央に寄せる */
+    z-index: 2; /* テキストを画像の上に表示するために1より大きい値を設定 */
+    color: white; /* テキストの色を白に設定（画像により見えやすくするため） */
+    font-size: 38px; /* テキストのサイズを調整 */
     font-weight: bold;
 }
 
 .overlay-image {
     display: block;
     margin: 0 auto;
-    width: 400px;
+    width: 400px; /* 画像の幅をコンテナに合わせて設定 */
     height: auto;
-    z-index: 1;
+    z-index: 1; /* テキストの下に表示するために低い値を設定 */
 }
 
 
@@ -40,7 +39,7 @@ body, html {
     justify-content: center;
     align-items: center;
     flex-direction: column; /* 縦に要素を並べる */
-    width: 1250px;
+    width: 100%;
     margin-top: 40px;
 }
 
@@ -56,8 +55,15 @@ body, html {
 .intro_game_title a{
     font-size: 40px;
     text-decoration: none;
-    padding-left: 10px;
+    padding-left: 15px;
 }
+
+.splide{
+    margin-top: 15px;
+    width: 70%;
+    height: 70%;
+}
+
 
 .intro_content{
     display: flex;
@@ -65,6 +71,22 @@ body, html {
     align-items: center;
     flex-direction: column;
 }
+
+.splide__slide img {
+    width: 100%;
+    height: auto;
+}
+
+.splide__arrows{
+    display: flex;
+    justify-content: space-around;
+}
+
+.splide__arrow{
+    font-size: 50px;
+}
+
+
 
 .intro_game_image{
     height: 100%;
@@ -80,7 +102,7 @@ body, html {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .intro_texts_main{
@@ -91,7 +113,7 @@ body, html {
 }
 
 .intro_text_title{
-    font-size: 35px;
+    font-size: 25px;
     color: blue;
     text-shadow: 0 0 10px blue,0 0 15px blue;
 }
@@ -121,7 +143,6 @@ body, html {
     align-items: center;
     font-size: 30px;
     color: white;
-    text-shadow: 0 0 10px #fff,0 0 15px #fff;
     text-decoration: none;
     border-radius: 10px;
 }
@@ -133,3 +154,16 @@ body, html {
     font-size: 30px;
     padding-bottom: 100px;
 }
+
+.andmore{
+    animation: floating-y 1.5s ease-in-out infinite alternate-reverse;
+  }
+  @keyframes floating-y {
+    0% {
+      transform: translateY(-10%);
+    }
+    100% {
+      transform: translateY(10%);
+    }
+}
+

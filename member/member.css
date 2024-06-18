@@ -20,17 +20,17 @@ body, html {
 .container {
     position: relative;
     text-align: center;
-    padding: 60px 0;
+    padding-top: 50px;
 }
 
-.text {
+.text-member {
     position: absolute; /* 絶対位置を設定して画像の上に重ねる */
-    top: 30%; /* コンテナの中央に配置 */
+    top: 28%; /* コンテナの中央に配置 */
     left: 50%; /* コンテナの中央に配置 */
     transform: translate(-50%, -50%); /* 中央に寄せる */
     z-index: 2; /* テキストを画像の上に表示するために1より大きい値を設定 */
     color: white; /* テキストの色を白に設定（画像により見えやすくするため） */
-    font-size: 50px; /* テキストのサイズを調整 */
+    font-size: 38px; /* テキストのサイズを調整 */
     font-weight: bold;
 }
 
@@ -47,7 +47,7 @@ body, html {
     justify-content: center;
     align-items: center;
     flex-direction: column; /* 縦に要素を並べる */
-    width: calc(100% - 80px); /* 親要素の幅から左右のマージンを引いた幅を設定 */
+    width: 1000px; /* 子要素の横幅を変えないように、横幅を数値で指定 */
     max-width: 1000px; /* 最大幅を1000pxに設定 */
     height: 300px; /* 高さを300pxに設定 */
     margin: 40px auto; /* 上下左右に40pxのマージンを設定し、中央に配置 */
@@ -57,7 +57,7 @@ body, html {
     padding: 0.5em 1.0em;
     overflow: hidden; /* コンテンツがはみ出た場合は表示しない */
     opacity: 0; /* 初期状態で要素を透明にする */
-    transition: opacity 1s ease-in; /* フェードインのアニメーションを設定 */
+    transition: opacity 0.5s ease-in; /* フェードインのアニメーションを設定 */
 }
 
 .fadeIn {
@@ -69,17 +69,23 @@ body, html {
     font-size: 30px; /* テキストのサイズを大きくする */
     background: linear-gradient(transparent 50%, #bde4f7 50%);
     padding: 0 0.1em;
+    width: 180px; /* 横幅を指定 */
+    display: inline-block; /* 要素がブロックとして扱われるようにする */
 }
 
 .member-item-name {
     font-weight: bold;
     font-size: 25px;
     padding: 15px 0 ;
+    width: 200px; /* 横幅を指定 */
+    display: inline-block; /* 要素がブロックとして扱われるようにする */
 }
 
 .member-item-role {
     font-size: 20px;
     padding: 15px 0;
+    width: 200px; /* 横幅を指定 */
+    display: inline-block; /* 要素がブロックとして扱われるようにする */
 }
 
 .member-container {
@@ -114,6 +120,8 @@ body, html {
     position: relative;
     width: fit-content;
     padding: 12px 16px;
+    width: 450px; /* 横幅を指定 */
+    display: inline-block; /* 要素がブロックとして扱われるようにする */
 }
 
 .comment-info::before {
@@ -153,18 +161,32 @@ body, html {
     color: #939090;
     font-weight: bold;
     font-size: 50px;
+}
+
+.container {
     display: flex;
     justify-content: center; /* 要素を中央に配置する */
     align-items: center; /* 要素を垂直方向に中央に配置する */
     padding-bottom: 100px;
 }
-
-.container {
-    display: flex; /* 要素を横並びに配置する */
-    align-items: center; /* 縦方向の中央揃え */
-}
-.member-img img {
+.game-img img {
     max-width: 100px; /* 画像の最大幅を指定 */
     height: auto; /* 高さを自動調整 */
-    margin-right: 20px; /* 画像の右側に余白を追加 */
+    margin-right: 30px; /* 画像の右側に余白を追加 */
+}
+
+.game-img {
+    transform: rotate(-10deg);
+}
+
+.fuwafuwa {
+    animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
+  }
+  @keyframes floating-y {
+    0% {
+      transform: translateY(-10%);
+    }
+    100% {
+      transform: translateY(10%);
+    }
 }
