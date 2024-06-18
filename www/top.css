@@ -169,11 +169,11 @@ body, html {
 
 .game-image {
   flex: none; /* 画像を伸縮しないようにする */
-  margin-left: 20px; /* 画像と説明の間の余白 */
+  margin-top: 50px; /* 画像と説明の間の余白 */
   margin-bottom: 0; /* 下の余白を0にする */
 }
 .game-image img {
-  max-width: 200px; /* 画像の最大幅を設定 */
+  max-width: 250px; /* 画像の最大幅を設定 */
   height: auto; /* 高さを自動調整 */
   }
 
@@ -186,6 +186,15 @@ body, html {
 }
 .game-name {
   display: inline-block;
+  font-size: 30px;
+}
+.game-name a{
+  text-decoration: none;
+}
+  
+.game-name a:hover{
+  text-decoration: underline;
+  color: red;
 }
 
 /* 区切り線 */
