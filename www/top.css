@@ -190,11 +190,14 @@ body, html {
 }
 .game-name a{
   text-decoration: none;
+  background: linear-gradient(transparent 50%, #bde4f7 50%);
+  padding: 0 0.1em;
+  font-weight: bold;
 }
   
 .game-name a:hover{
   text-decoration: underline;
-  color: red;
+  color: blue;
 }
 
 /* 区切り線 */
