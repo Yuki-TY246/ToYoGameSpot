@@ -3,36 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <!-- ↓ここコピペ -->
+    <link rel="stylesheet" href="../www/style.css">
+    <link rel="stylesheet" href="top.css">
     <title>ToYoGamSpot</title>
 </head>
 <body>
+    <!-- ヘッダー -->
     <header>
-        <h1>
-            ToYoGamSpot
-        </h1>
-        <div class="title-left"><img src="img/game1.png"></div>
-        <div class="title-right"><img src="img/game3.png"></div>
-        <div class="navigation"><img src="img/navigation.png"></div>
+        <div class="logo">
+            <a href="../www/index.html"> <!-- トップページのリンクを正しいパスに設定 -->
+                <h1>ToYoGameSpot</h1>
+            </a>
+        </div>
         <nav>
-            <ul>
-                <li><a href="#">GAME</a></li>
-                <li><a href="#">INTRODUCTION</a></li>
-                <li><a href="#">MEMBER</a></li>
-            </ul>   
+            <ul class="menu-list">
+                <li><a class="my-parts" href="../www/index.html">トップページ</a></li>
+                <li><a class="my-parts" href="../introduction/introduction.html">ゲーム紹介</a></li>
+                <li><a class="my-parts" href="../member/member.html">メンバー紹介</a></li>
+            </ul>
         </nav>
+    </header>
+    <!-- ここまでコピペ↑ -->
 
-    </header>  
-   
+    <div class="container">
+        <div class="left-img">
+            <img src="../www/img/game1.png" alt="aaa" class="fuwafuwa-left">
+        </div>
+        <h1 class="message">ToYoGameSpot</h1>
+        <div class="right-img">
+            <img src="../www/img/game3.png" alt="aaa" class="fuwafuwa-right">
+        </div>
+    </div>
 
+    <div class="top-welcome-wrapper">
+        <div class="top-welcome">
+            <h1>ToYoGameSpotへようこそ！</h1>
+            <div class="text-item">このサイトは、こどもから大人まで、みんなが楽しめるゲームサイトを目指して作られました！</div>
+            <div class="text-item">まずは、ゲーム紹介ページで、ゲームを探してみることをおすすめします！</div>
+            <div class="text-item">やってみたいゲームを見つけたらクリックしてね！きっと、あなたに合うゲームに出会えるはず！</div>
+            <div class="text-item">メンバー紹介ページでは、サイトを作ったみんなの紹介をしているよ！</div>
+            <div class="text-item">気になる人は、見てみてね！</div>
+            <div class="text-item">たくさん楽しんでいってね～！</div>
+        </div>
+    </div>
 
-
+    <div class="game-ichiran-wrapper">
+        <div class="game-ichiran">
+            <h1>ゲーム一覧</h1>
+        </div>
+    </div>
     
-   <footer>
-    <p>
-        <small>&copy;ToYo 2024</small>
-    </p>
-</footer>
+    <!-- トップへ戻るボタン -->
+    <button id="scrollToTopBtn" class="scrollToTopBtn">
+        <img src="../www/img/yajirushi.png" alt="Top Arrow" class="scrollToTopImg">
+    </button>
+    <!-- ここコピペ↑ -->
+
+    <!-- フッター -->
+    <footer>
+        <p>
+            <small>&copy;ToYo 2024</small>
+        </p>
+    </footer>
+    <!-- ここまでコピペ↑ -->
+
+    <!-- JavaScript -->
+    <script>
+        // 画面をトップにスクロールする関数
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'  // スムーズにスクロールする
+            });
+        }
+
+        // スクロール位置に応じてトップへ戻るボタンの表示/非表示を切り替える
+        window.addEventListener('scroll', function() {
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            if (window.pageYOffset > 100) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        // ボタンをクリックしたときにページのトップへスクロール
+        document.getElementById('scrollToTopBtn').addEventListener('click', function() {
+            scrollToTop(); // scrollToTop 関数を呼び出し
+        });
+    </script>
+    <!-- ここまでコピペ↑ -->
 
 </body>
 </html>

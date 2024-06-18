@@ -4,27 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../www/style.css">
+    <link rel="stylesheet" href="../splide-master/dist/css/splide-core.min.css" />
     <title>ToYoGameSpot</title>
   </head>
   <body>
     <header>
-      <!-- レンダリング -->
+      <div class="logo">
+        <a href="../www/index.html"> <!-- トップページのリンクを正しいパスに設定 -->
+          <h1>ToYoGameSpot</h1>
+        </a>
+      </div>
+      <nav>
+        <ul class="menu-list">
+          <li><a class="my-parts" href="../www/index.html">トップページ</a></li>
+          <li><a class="my-parts" href="../introduction/introduction.html">ゲーム紹介</a></li>
+          <li><a class="my-parts" href="../member/member.html">メンバー紹介</a></li>
+        </ul>
+      </nav>
     </header>
 
     <div class="container">
-      <p class="text">INTRODUCTION</p>
+      <p class="text">ゲーム<ruby>紹介<rt>しょうかい</rt></ruby></p>
       <img src="img/title_game.png" alt="Sample Image" class="overlay-image">
     </div>
 
     <div class="intro_space">
       <div class="intro_contents">
         <div class="intro_game_title">
-          <a href="index.html">ゲームタイトル</a>
+          <a href="../games/othello_game.html">オセロゲーム</a>
         </div>
         <div class="intro_content">
-          <div class="intro_game_screen">
-            <a href="index.html"><img src="img/animal_kuma.png" alt="プレイ画面" class="intro_game_image"></a>
+          <section id="image-carousel1" class="splide" aria-label="お気に入りの写真">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img src="img/othello3.png" alt="">
+                </li>
+                <li class="splide__slide">
+                  <img src="img/othello4.png" alt="">
+                </li>
+                <li class="splide__slide">
+                  <img src="img/othello2.png" alt="">
+                </li>
+              </ul>
+            </div>
+            <div class="splide__arrows">
+              <button class="splide__arrow splide__arrow--prev">
+                ＜
+              </button>
+              <button class="splide__arrow splide__arrow--next">
+                ＞
+              </button>
+            </div>
+          </section>
+          <div class="intro_textarea">
+            <div class="intro_texts_main">
+              <div class="intro_text_title">
+                ゲームの<ruby>内容<rt>ないよう</rt></ruby>
+              </div>
+              <div class="intro_text">
+                <b>
+                  <ruby>交互<rt>こうご</rt></ruby>に<ruby>石<rt>いし</rt></ruby>をおいて、<ruby>相手<rt>あいて</rt></ruby>の<ruby>石<rt>いし</rt></ruby>を<ruby>挟<rt>はさ</rt></ruby>む、シンプルなゲーム。
+                  <ruby>最後<rt>さいご</rt></ruby>に<ruby>自分<rt>じぶん</rt></ruby>の<ruby>色<rt>いろ</rt></ruby>の<ruby>石<rt>いし</rt></ruby>が<ruby>多<rt>おお</rt></ruby>かったら<ruby>勝<rt>か</rt></ruby>ちだよ。
+                <br>
+                ４つの<ruby>角<rt>かど</rt></ruby>は<ruby>相手<rt>あいて</rt></ruby>に<ruby>取<rt>と</rt></ruby>られないから、<ruby>強<rt>つよ</rt></ruby>いかも？
+                よ～く<ruby>考<rt>かんが</rt></ruby>えて、<ruby>石<rt>いし</rt></ruby>を<ruby>一気<rt>いっき</rt></ruby>にひっくりかえそう！
+                </b>
+              </div>
+              <div class="intro_play_time">
+                プレイ時間目安:10分
+              </div>
+            </div>
           </div>
+          <div class="intro_play_btn">
+            <a href="../games/othello_game.html">🎮ゲームをプレイ！🎮</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="intro_space">
+      <div class="intro_contents">
+        <div class="intro_game_title">
+          <a href="../games/othello_game.html">オセロゲーム</a>
+        </div>
+        <div class="intro_content">
+          <section id="image-carousel2" class="splide" aria-label="お気に入りの写真">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img src="img/othello1.png" alt="">
+                </li>
+                <li class="splide__slide">
+                  <img src="img/game2.png" alt="">
+                </li>
+                <li class="splide__slide">
+                  <img src="img/game3.png" alt="">
+                </li>
+              </ul>
+            </div>
+            <div class="splide__arrows">
+              <button class="splide__arrow splide__arrow--prev">
+                ＜
+              </button>
+              <button class="splide__arrow splide__arrow--next">
+                ＞
+              </button>
+            </div>
+          </section>
           <div class="intro_textarea">
             <div class="intro_texts_main">
               <div class="intro_text_title">
@@ -37,55 +125,85 @@
                 プレイ時間目安:300分
               </div>
               <div class="intro_difficulty">
-                難易度　★★★☆☆
+                むずかしさ　★★★☆☆
              </div>
             </div>
           </div>
           <div class="intro_play_btn">
-            <a href="index.html">🎮ゲームをプレイ！🎮</a>
+            <a href="../games/othello_game.html">🎮ゲームをプレイ！🎮</a>
           </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="intro_contents">
-      <div class="intro_game_title">
-        <a href="index.html">ゲームタイトル</a>
-      </div>
-      <div class="intro_content">
-        <div class="intro_game_screen">
-          <a href="index.html"><img src="img/animal_kuma.png" alt="プレイ画面" class="intro_game_image"></a>
-        </div>
-        <div class="intro_textarea">
-          <div class="intro_texts_main">
-            <div class="intro_text_title">
-              ゲームのキャッチコピー
-            </div>
-            <div class="intro_text">
-              ゲームの紹介文。このゲームはこういうゲームです。こんなことができるよ。
-            </div>
-            <div class="intro_play_time">
-              プレイ時間目安:300分
-            </div>
-            <div class="intro_difficulty">
-              難易度　★★★☆☆
-           </div>
-          </div>
-        </div>
-        <div class="intro_play_btn">
-          <a href="index.html">🎮ゲームをプレイ！🎮</a>
         </div>
       </div>
     </div>
 
 
     <div class="andmore">
-      新規ゲームも製作中・・・
+      <p><b>新しいゲームも<ruby>製作中<rt>せいさくちゅう</rt></ruby>！</b></p>
     </div>
 
+    <button id="scrollToTopBtn" class="scrollToTopBtn">
+      <img src="../www/img/yajirushi.png" alt="Top Arrow" class="scrollToTopImg">
+    </button>
+
+
+    <script src="../splide-master/dist/js/splide.min.js"></script>
+
+    <script>
+      window.addEventListener("load", function(){
+        const playArticle = document.querySelectorAll(".intro_play_btn")
+        playArticle.forEach(function(articles) {
+          articles.addEventListener("mouseover", function(){
+            articles.setAttribute("style", "text-shadow: 0 0 10px #fff,0 0 15px #fff;")
+          })
+          articles.addEventListener("mouseout", function(){
+            articles.removeAttribute("style")
+          })
+        })
+        const titleArticle = document.querySelectorAll(".intro_game_title a")
+        titleArticle.forEach(function(articles) {
+          articles.addEventListener("mouseover", function(){
+            articles.setAttribute("style", "color: yellow;")
+          })
+          articles.addEventListener("mouseout", function(){
+            articles.removeAttribute("style")
+          })
+        })
+      })
+    </script>
+
+    <script>
+      document.addEventListener( 'DOMContentLoaded', function () {
+        new Splide( '#image-carousel1' ).mount();
+      } );
+      document.addEventListener( 'DOMContentLoaded', function () {
+        new Splide( '#image-carousel2' ).mount();
+      } );
+    </script>
+
+    <script>
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'  // スムーズにスクロールする
+        });
+      }
+      window.addEventListener('scroll', function() {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        if (window.pageYOffset > 100) {
+          scrollToTopBtn.classList.add('show');
+        } else {
+          scrollToTopBtn.classList.remove('show');
+        }
+      });
+      document.getElementById('scrollToTopBtn').addEventListener('click', function() {
+        scrollToTop(); // scrollToTop 関数を呼び出し
+        });
+    </script>
+
     <footer>
-      <!-- レンダリング -->
+      <p>
+        <small>&copy;ToYo 2024</small>
+      </p>
     </footer>
   </body>
 </html>

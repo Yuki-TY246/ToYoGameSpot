@@ -1,0 +1,95 @@
+body, html {
+    margin: 0 auto; /* 水平方向に中央揃え */
+    padding: 0;
+    height: 100%;
+    width: 1250px; /* 幅を1250pxに固定 */
+    background-color: #CDE7FF;
+    font-family: YuGothic,'Yu Gothic',sans-serif;
+    color: #333333;
+}
+
+/* タイトル */
+.container {
+    display: flex;
+    justify-content: center; /* 要素を中央に配置する */
+    align-items: center; /* 要素を垂直方向に中央に配置する */
+    padding-top: 150px;
+}
+.left-img img {
+    max-width: 120px; /* 画像の最大幅を指定 */
+    height: auto; /* 高さを自動調整 */
+    margin-right: 80px; /* 画像の右側に余白を追加 */
+}
+.left-img {
+    transform: rotate(-10deg);
+}
+.right-img img {
+    max-width: 120px; /* 画像の最大幅を指定 */
+    height: auto; /* 高さを自動調整 */
+    margin-left: 70px; /* 画像の右側に余白を追加 */
+}
+.right-img {
+    transform: rotate(10deg);
+}
+
+.fuwafuwa-left {
+    animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
+  }
+  @keyframes floating-y {
+    0% {
+      transform: translateY(-10%);
+    }
+    100% {
+      transform: translateY(15%);
+    }
+}
+.fuwafuwa-right {
+    animation: floating-y 2.0s ease-in-out infinite alternate-reverse;
+  }
+  @keyframes floating-y {
+    0% {
+      transform: translateY(-10%);
+    }
+    100% {
+      transform: translateY(15%);
+    }
+}
+
+.message {
+    color: #006eff;
+    font-size: 100px;
+    line-height: 1.2;
+    -webkit-box-reflect: below -10px -webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0) 10%,rgba(0,0,0,.6));
+    margin-bottom: calc(1em + 20px);
+}
+
+/* 本文 */
+.top-welcome-wrapper {
+  display: flex;
+  justify-content: center; /* コンテンツを中央に揃える */
+  padding: 20px;
+  max-width: 1250px; /* 最大幅を設定 */
+  margin: 0 auto; /* 中央揃え */
+}
+
+.top-welcome {
+  text-align: left; /* 左揃え */
+  max-width: 800px; /* 内部コンテンツの最大幅を設定 */
+}
+
+.text-item {
+  font-size: 20px;
+}
+
+.game-ichiran-wrapper {
+  display: flex;
+  justify-content: center; /* コンテンツを中央に揃える */
+  padding: 20px;
+  max-width: 1250px; /* 最大幅を設定 */
+  margin: 0 auto; /* 中央揃え */
+}
+
+.game-ichiran{
+  text-align: left; /* 左揃え */
+  max-width: 800px; /* 内部コンテンツの最大幅を設定 */
+}
