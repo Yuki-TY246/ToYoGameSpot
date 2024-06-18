@@ -6,14 +6,14 @@
  <script>
     // 順番を決めて次のページに送る関数
     function setOrder(order) {
-        var url = 'game4.html?order=' + order;
+        var url = 'game_cpu.html?order=' + order;
         location.href = url;
     }
 
     // ランダムな順番を生成して次のページに送る関数
     function setRandomOrder() {
         var order = Math.random() < 0.5 ? -1 : 1; // 1または-1の乱数を生成
-        var url = 'game4.html?order=' + order;
+        var url = 'game_cpu.html?order=' + order;
         location.href = url;
     }
  </script>
@@ -22,8 +22,8 @@
 <div class="back">
 <div class="game-main4">
 <div class="game-main"><ruby>順番<rt>じゅんばん</rt></ruby>を<ruby>選<rt>えら</rt></ruby>んでください</div>
-<button onclick="setOrder(1);" class="select"><ruby>先行<rt>せんこう</rt></ruby></button>
-<button onclick="setOrder(-1);" class="select"><ruby>後攻<rt>こうこう</rt></ruby></button>
+<button onclick="setOrder(1);" class="select"><ruby>先 行<rt>せんこう</rt></ruby></button>
+<button onclick="setOrder(-1);" class="select"><ruby>後 攻<rt>こうこう</rt></ruby></button>
 <button onclick="setRandomOrder();" class="select">ランダム</button>
 </div>
 </div>

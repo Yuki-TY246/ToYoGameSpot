@@ -14,6 +14,7 @@
             font-size: 60px;
             display: flex;
             justify-content: center;
+            margin-top: 40px;
         }
         .result_container {
             text-align: center;
@@ -43,12 +44,26 @@
             margin: 40px 0 0 0;
             padding: 10px 20px;
             font-size: 16px;
+            -webkit-transition: all 1s ease;
+        -moz-transition: all 106s ease;
+        -o-transition: all 1s ease;
+        transition: all  1s ease;
+        background-color: aliceblue;
+        }
+        .title_button:hover{
+            background-color: rgb(255, 255, 255);
         }
         .result_container span {
             font-weight: bold;
             font-size: 46px;
             position: relative;
-            top: -22px;
+        }
+        .white_circle{
+            top: 20px;
+        }
+
+        .black_circle{
+            top: 20px;
         }
     </style>
 </head>
@@ -56,12 +71,21 @@
     <div class="win_or_loss">WIN</div>
     <div class="result_container">
         <div class="circle white_circle"></div>
-        <span><b>白のコマ数:</b> 〇〇</span>
+        <span><b>白のコマ数:</b> <span id="whiteCount"></span></span>
     </div>
     <div class="result_container">
         <div class="circle black_circle"></div>
-        <span><b>黒のコマ数:</b> 〇〇</span>
+        <span><b>黒のコマ数:</b> <span id="blackCount"></span></span>
     </div>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var whiteCount = localStorage.getItem('whiteCount');
+        var blackCount = localStorage.getItem('blackCount');
+        document.getElementById('whiteCount').textContent = whiteCount;
+        document.getElementById('blackCount').textContent = blackCount;
+    });
+    </script>
     <div class="button_container">
         <button onclick="location.href='game1.html';" class="title_button">タイトルに戻る</button>
     </div>
