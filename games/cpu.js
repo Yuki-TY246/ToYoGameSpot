@@ -93,10 +93,10 @@ class CPU {
                 new Masu(randomMove.r, randomMove.c).set(this.ishi).roundReverse(true);
             } else {
                 alert("CPUがパスしました。");
-                ishi *= -1;
+                this.ishi *= -1;
                 $('div#status').html((ishi == ISHI_BLACK ? '黒' : 'cpu') + 'の番');
             }
-        }, 500); // 500ミリ秒(一秒)の遅延。
+        }, 500); // 500ミリ秒(0.5)の遅延。
     }
 
     isCornerMove(r, c) {
