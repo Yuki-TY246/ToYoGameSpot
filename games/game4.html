@@ -48,17 +48,20 @@
     .title_button{
         height: 40px;
         width: 160px;
-        margin: 15px 0 0 25px;
+        margin: 10px 15px;
         font-size: 20px;
+        font-weight: 400;
         -webkit-transition: all 1s ease;
-        -moz-transition: all 106s ease;
+        -moz-transition: all 1s ease;
         -o-transition: all 1s ease;
         transition: all  1s ease;
         background-color: aliceblue;
     }
+
     .title_button:hover{
     background-color: rgb(129, 249, 175);
-
+    height: 45px;
+    width: 180px;
     }
     .side{
       height: 300px;
@@ -75,6 +78,11 @@
     text-align: right;
     margin: 30px;
     border-bottom:solid 5px #000;
+    }
+    .game-select{
+      width: 600px;
+      display: flex;
+      justify-content: space-between;
     }
 
 --></style>
@@ -96,9 +104,11 @@
     <div class="game3">
       <table id='board' class="table">
       </table>
+      <div class="game-select">
       <button onclick="location.href='game1.html';" class="title_button">タイトルに戻る</button>
       <button onclick="location.href='game4.html';" class="title_button">リセット</button>
       <button onclick="location.href='game5.html';" class="title_button">結果表示</button>
+      </div>
     </div>
 
     <div class="game4">
