@@ -39,13 +39,13 @@
             <div class="splide__track">
               <ul class="splide__list">
                 <li class="splide__slide">
-                  <img src="img/othello1.png" alt="">
+                  <img src="img/othello3.png" alt="">
                 </li>
                 <li class="splide__slide">
-                  <img src="img/game2.png" alt="">
+                  <img src="img/othello4.png" alt="">
                 </li>
                 <li class="splide__slide">
-                  <img src="img/game3.png" alt="">
+                  <img src="img/othello2.png" alt="">
                 </li>
               </ul>
             </div>
@@ -75,9 +75,6 @@
               <div class="intro_play_time">
                 プレイ時間目安:10分
               </div>
-              <div class="intro_difficulty">
-                むずかしさ　★★☆☆☆
-             </div>
             </div>
           </div>
           <div class="intro_play_btn">
@@ -141,7 +138,7 @@
 
 
     <div class="andmore">
-      <p>新しいゲームも<ruby>製作中<rt>せいさくちゅう</rt></ruby>！</p>
+      <p><b>新しいゲームも<ruby>製作中<rt>せいさくちゅう</rt></ruby>！</b></p>
     </div>
 
     <button id="scrollToTopBtn" class="scrollToTopBtn">
@@ -157,6 +154,15 @@
         playArticle.forEach(function(articles) {
           articles.addEventListener("mouseover", function(){
             articles.setAttribute("style", "text-shadow: 0 0 10px #fff,0 0 15px #fff;")
+          })
+          articles.addEventListener("mouseout", function(){
+            articles.removeAttribute("style")
+          })
+        })
+        const titleArticle = document.querySelectorAll(".intro_game_title a")
+        titleArticle.forEach(function(articles) {
+          articles.addEventListener("mouseover", function(){
+            articles.setAttribute("style", "color: yellow;")
           })
           articles.addEventListener("mouseout", function(){
             articles.removeAttribute("style")
