@@ -59,7 +59,7 @@ jQuery(function () {
         });
 
 
-        $('div#status').html(ishi == ISHI_BLACK ? 'あなたの番' : 'あいての番')
+        $('div#status').html(ishi == ISHI_BLACK ? 'プレイヤー1の番' : 'プレイヤー2番')
 
             $('div#status1').html(' 黒: ' + blackCount  +'枚');
             $('div#status2').html(' 白: ' + whiteCount  +'枚');
