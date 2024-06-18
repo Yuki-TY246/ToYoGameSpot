@@ -157,6 +157,9 @@ body, html {
 .game-info > div {
   margin-bottom: 0; /* 各要素の下の余白を0にする */
 }
+.game-info a{
+  text-decoration-line: none;
+}
 
 .game-name {
   width: 100%; /* 幅を100%に設定 */
