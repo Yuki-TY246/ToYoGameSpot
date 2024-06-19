@@ -10,7 +10,7 @@
     <div class="back">
       <div class="top_info">
         <div class="time">TIME:30</div>
-        <div class="score">SCORE:30</div>
+        <div class="score" id="score">SCORE:0</div>
       </div>
       <div class="holes">
         <div class="holes_line">
@@ -60,13 +60,23 @@
 
     <script>
       window.addEventListener("load", function(){
+        let score = 0;
         const animalArticle = document.querySelectorAll(".overlay")
+        const scoreDisplay = document.getElementById('score');
         animalArticle.forEach(function(articles) {
-          articles.addEventListener("click", function(){
+          if (Math.random() > 0.3) {
             articles.setAttribute("style", "display: none;")
             setTimeout(function() {
+              articles.removeAttribute("style") // または 'inline-block' など、元の表示スタイルに応じて設定する
+            }, Math.floor(Math.random() * (3000 - 1000 + 1)) + 1000);
+          };
+          articles.addEventListener("click", function(){
+            articles.setAttribute("style", "display: none;")
+            score++;
+            scoreDisplay.textContent = `Score: ${score}`;
+            setTimeout(function() {
             articles.removeAttribute("style") // または 'inline-block' など、元の表示スタイルに応じて設定する
-          }, Math.floor(Math.random() * (3000 - 1000 + 1)) + 1000);
+          }, Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000);
         })
         })
       });
