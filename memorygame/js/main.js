@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       //カードの数字(1,2,...13)
       this.num=num;
       //カードの画像
-      this.front=`${suit}${num < 10 ? '0':''}${num}.gif`;
+      this.front=`${suit}${num < 10 ? '0':''}${num}.png`;
     }
   }
   //カード配列作成
