@@ -1,0 +1,22 @@
+body{
+    background-color:lightgreen;
+  }
+  #cardgrid{
+    /*テーブル全体をセンタリング*/
+    width:90%;
+    margin:10px auto;
+    /*グリッドレイアウトの設定*/
+    display:grid;
+    /*13個の要素を均等の幅で配置*/
+    grid-template-columns:repeat(13,1fr);
+    /*隙間を画面の縦幅の0.5%に設定*/
+    gap:0.5vh;
+  }
+  /*td要素でなおかつclassにcardがついている要素*/
+  div.card{
+    /*要素の縦横比をトランプ画像と同じ2:3に設定*/
+    aspect-ratio: 2 / 3;
+    /* background-color:yellow; */
+    /*コンテナいっぱいに画像を拡大縮小する*/
+    background-size:contain;
+  }
