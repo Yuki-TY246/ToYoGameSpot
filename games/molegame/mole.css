@@ -1,0 +1,153 @@
+html{
+    background-color: rgb(97, 80, 4);
+}
+
+.game-main1{
+    height: 250px;
+    text-align: center;
+    width: 1000px;
+    font-size: 130px;
+    font-weight: 600;
+    padding-top: 150px;
+}
+
+.game-main2{
+    height: 130px;
+    text-align: center;
+    width: 1000px;
+    font-size: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.start{
+    width: 300px;
+    height: 80px;
+    font-size: 37px;
+    margin: 0 50px;
+    font-family:'Courier New', Courier, monospace;
+    border-radius: 60px;
+    background-color: #ffffff;
+}
+
+.start2{
+    width: 300px;
+    height: 80px;
+    font-size: 37px;
+    margin: 0 50px;
+    font-family:'Courier New', Courier, monospace;
+    border-radius: 60px;
+    background-color: #ffffff;
+}
+
+.game-main3{
+    height: 150px;
+    text-align: right;
+    width: 1000px;
+    font-size: 50px;
+    display: flex;
+}
+
+.rule{
+    height: 60px;
+    width: 160px;
+    margin-left: 80%;
+    text-align: center;
+    font-size: 40px;
+    background-color: #ffffff;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 106s ease;
+    -o-transition: all 1s ease;
+    transition: all  1s ease;
+}
+
+.rule:hover{
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+}
+
+.game-main{
+text-align: center;
+font-size: 50px;
+}
+
+.game-main4{
+    height: 700px;
+    width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-flow: column;
+}
+
+.select{
+    height: 80px;
+    font-size: 40px;
+    width: 220px;
+    text-align: center;
+    border: solid 2px #000;
+    margin-top: 50px;
+    background-color: #ffffff;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all  1s ease;
+}
+
+.select:hover{
+    background-color: rgb(0, 0, 0);
+    width: 300px;
+    height: 100px;
+    font-size: 50px;
+    color: #ffffff;
+}
+
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.back{
+    width: 1000px;
+    height: 700px;
+    background: url(images/967589.jpg); 
+}
+
+
+/* 以下game2 */
+
+.top_info{
+    display: flex;
+    justify-content: space-around;
+    font-size: 50px;
+}
+
+.holes{
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+}
+
+.holes_line{
+    display: flex;
+    justify-content: center;
+}
+
+.hole{
+    width: 180px;
+    height: 80px;
+    border-radius: 50%;
+    background: #a5e3ff;
+    border: 5px solid #ea9000;
+    box-sizing: border-box;
+    margin: 50px 20px;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: -120px;
+    left: 0;
+    z-index: 1; /* 重なり順を設定 */
+  }
