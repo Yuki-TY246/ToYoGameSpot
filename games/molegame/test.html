@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>オセロゲーム</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100%;
+            background-color: #CDE7FF;
+            font-family: YuGothic,'Yu Gothic',sans-serif;
+        }
+        .container {
+            position: relative;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+        }
+        .overlay-image {
+            display: block;
+            margin: 0 auto;
+            width: 400px;
+            height: auto;
+            z-index: 1;
+        }
+        .game_title {
+            font-size: 50px;
+            margin: 60px 0px 50px 130px;
+            font-weight: bold;
+        }
+        .game_box {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        #contentFrame {
+            width: 1025px;
+            height: 725px;
+            border: 2px solid black;
+            box-sizing: border-box; 
+        }
+        .game_operation {
+            font-size: 50px;
+            margin: 50px;
+            text-decoration: underline;
+            padding: 0 50px;
+        }
+        .operation_description {
+            height: 500px;
+            margin: 50px;
+            font-size: 30px;
+            padding: 0 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../www/index.html"> <!-- トップページのリンクを正しいパスに設定 -->
+                <h1>ToYoGameSpot</h1>
+            </a>
+        </div>
+        <nav>
+            <ul class="menu-list">
+                <li><a class="my-parts" href="../www/index.html">トップページ</a></li>
+                <li><a class="my-parts" href="../introduction/introduction.html">ゲーム紹介</a></li>
+                <li><a class="my-parts" href="../member/member.html">メンバー紹介</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <p class="text">ゲーム</p>
+        <img src="img/game2.png" alt="Sample Image" class="overlay-image">
+    </div>
+    <div class="game_title">もぐらたたき</div>
+    <div class="game_box">
+        <iframe id="contentFrame" src="mole1.html"></iframe>
+    </div>
+    <div class="game_operation"><ruby>遊<rt>あそ</rt></ruby>び<ruby>方<rt>かた</rt></ruby></div>
+    <div class="operation_description">
+        <ruby>画面<rt>がめん</rt></ruby>のボタンをクリックすると、ゲームが<ruby>始<rt>はじ</rt></ruby>まるよ！<br>
+        マスをクリックすると、その<ruby>場所<rt>ばしょ</rt></ruby>に<ruby>石<rt>いし</rt></ruby>をおいて、<ruby>相手<rt>あいて</rt></ruby>の<ruby>石<rt>いし</rt></ruby>をはさめるよ。<br>
+        「ひとりであそぶ」を<ruby>選<rt>えら</rt></ruby>ぶと、コンピューターが<ruby>相手<rt>あいて</rt></ruby>になるよ。<br>
+        お<ruby>友<rt>とも</rt></ruby>だちと<ruby>遊<rt>あそ</rt></ruby>ぶときは、「ふたりであそぶ」を<ruby>選<rt>えら</rt></ruby>んで、<ruby>順番<rt>じゅんばん</rt></ruby>にマウスを<ruby>操作<rt>そうさ</rt></ruby>してね。<br>
+        <ruby>詳<rt>くわ</rt></ruby>しいルールは、<ruby>画面<rt>がめん</rt></ruby>の「ルール」をクリックすると<ruby>確認<rt>かくにん</rt></ruby>できるよ。<br>
+        みんなで<ruby>楽<rt>たの</rt></ruby>しく<ruby>遊<rt>あそ</rt></ruby>んでね！
+    </div>
+    <footer>
+        <p>
+            <small>&copy;ToYo 2024</small>
+        </p>
+    </footer>
+</body>
+</html>
