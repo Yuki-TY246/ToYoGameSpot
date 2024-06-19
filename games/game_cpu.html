@@ -2,52 +2,96 @@
 <html>
 <head>
 <style type='text/css'>
-html {
-    background-color: rgba(240, 240, 250, 0.877);
-}
-table#board {
-    background-color: black;
-}
-table#board td {
-    width: 63px;
-    height: 63px;
-    background-color: green;
-    padding: 5px;
-}
-div.black {
-    background-color: black;
-    width: 63px;
-    height: 63px;
-    border-radius: 50%;
-}
-div.white {
-    background-color: white;
-    width: 63px;
-    height: 63px;
-    border-radius: 50%;
-}
-.game1 {
+    html{
+        background-color: rgba(240, 240, 250, 0.877);
+    }
+    table#board {
+        background-color: black;
+    }
+
+    table#board td {
+        width: 63px;
+        height: 63px;
+        background-color: green;
+        padding: 5px;
+        font-weight: 400;
+      }
+    div.black {
+        background-color: black;
+        width: 63px;
+        height: 63px;
+        border-radius: 50%;
+    }
+
+    div.white {
+        background-color: white;
+        width: 63px;
+        height: 63px;
+        border-radius: 50%;
+    }
+
+   .game1{
     width: 1000px;
-    display: flex;
-    justify-content: space-between;
-}
-.game2 {
+      display: flex;
+      justify-content: space-between;
+    }
+    .game2{
     width: 200px;
-}
-.game3 {
+    }
+    .game3{
     width: 600px;
     margin-top: 40px;
-    margin: 0px;
-}
-.game4 {
+    }
+    .game4{
     width: 200px;
-}
-.title_button {
-    height: 40px;
-    width: 160px;
-    margin: 20px 110px 0 25px;
-    font-size: 20px;
-}
+    }
+    .title_button{
+        height: 40px;
+        width: 160px;
+        margin: 10px 15px;
+        font-size: 20px;
+        font-weight: 400;
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all  1s ease;
+        background-color: aliceblue;
+    }
+
+    .title_button:hover{
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    height: 45px;
+    width: 180px;
+    }
+    .side{
+      height: 300px;
+      font-size:50px;
+      padding-top: 40px;
+    }
+    .side1{
+      height: 300px;
+      font-size:50px;
+      padding-top: 40px;
+      margin-left: 10px;
+    }
+    .side2{
+      height: 100px;
+      font-size:30px;
+      padding-top: 40px;
+      margin: 0 10px;
+    }
+    .text2{
+    text-align: left;
+    margin: 0 25px;
+    border-bottom: solid 3px #000;
+    }
+    .game-select{
+      width: 600px;
+      display: flex;
+      justify-content: space-between;
+    }
+
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="cpu.js"></script> 
@@ -56,21 +100,39 @@ div.white {
 </head>
 <body>
 
-<div class="game1">
-    <div class="game2">
-        <div id='status' class="title_button">黒の番</div>
-    </div>
-
-    <div class="game3">
-        <table id='board' class="table"></table>
-        <button onclick="location.href='game1.html';" class="title_button">タイトルに戻る</button>
-        <button onclick="location.href='game_cpu.html';" class="title_button">リセット</button>
-    </div>
-
-    <div class="game4">
-    </div>
-
-</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="game.js"></script>
+    <script src="othello1.js"></script>
+    </head>
+      <body>
+    
+      <div class="game1">
+        <div class="game2">
+            <div id='status' class="side1">
+            </div>
+            <div class="side">
+             <div class="side2">じぶん
+             <div id='status1' class="text2"></div>
+            </div>
+            </div>
+        </div>
+    
+        <div class="game3">
+          <table id='board' class="table">
+          </table>
+          <div class="game-select">
+          <button onclick="location.href='game1.html';" class="title_button">タイトルに戻る</button>
+          <button onclick="location.href='game4.html';" class="title_button">リセット</button>
+          </div>
+        </div>
+    
+        <div class="game4">
+          <div class="side">
+            <div class="side2">
+            CPU<div id='status2' class="text2"></div>
+          </div>
+        </div>
+        </div>
 
 </body>
 </html>

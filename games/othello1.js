@@ -58,11 +58,10 @@ jQuery(function () {
             else if ($(this).hasClass('white')) whiteCount++;
         });
 
-
-        $('div#status').html(ishi == ISHI_BLACK ? '<ruby>黒<rt>くろ</rt></ruby>の<ruby>番<rt>ばん</rt></ruby>' : '<ruby>白<rt>しろ</rt></ruby>の<ruby>番<rt>ばん</rt></ruby>')
-
-            $('div#status1').html('<ruby>黒<rt>くろ</rt></ruby>:' +  blackCount  + '<ruby>枚<rt>まい</rt></ruby>');
-            $('div#status2').html('<ruby>白<rt>しろ</rt></ruby>:' +  whiteCount  + '<ruby>枚<rt>まい</rt></ruby>');
+        $('div#status1').html('<ruby>黒<rt>くろ</rt></ruby>:' +  blackCount  + '<ruby>枚<rt>まい</rt></ruby>');
+        $('div#status2').html('<ruby>白<rt>しろ</rt></ruby>:' +  whiteCount  + '<ruby>枚<rt>まい</rt></ruby>');
+        $('div#status').html(ishi == ISHI_BLACK ? '<ruby>黒<rt>くろ</rt></ruby>の<ruby>番<rt>ばん</rt></ruby>' : '<ruby>白<rt>しろ</rt></ruby>の<ruby>番<rt>ばん</rt></ruby>');
+     
         
         if (blackCount + whiteCount === 64 || blackCount === 0 || whiteCount === 0) {
             setTimeout(function() {
@@ -70,6 +69,7 @@ jQuery(function () {
             }, 1500);
 
         }
+        
     }
 
     function saveCountsAndRedirect() {
