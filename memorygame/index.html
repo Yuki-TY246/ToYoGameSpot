@@ -1,13 +1,21 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>神経衰弱</title>
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/main.js"></script>
-  </head>
-  <body>
-    <button id="startBt">START</button>
-    <div id="cardgrid"> </div>
-  </body>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>神経衰弱</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/start.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <div id="title">神経衰弱</div>
+  <button id="startBt">スタート</button>
+  <div id="cardgrid"></div>
+  <div id="timer">00:00</div>
+  <div id="gameResult" class="centered">
+    <h1>ゲームクリア！</h1>
+    <p>クリアタイム: <span id="clearTime"></span></p>
+    <button id="backBt">ゲームに戻る</button>
+  </div>
+</body>
 </html>
