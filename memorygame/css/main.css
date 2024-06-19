@@ -47,3 +47,31 @@ div.fadeout{
   /*アニメーション終了時の挙動*/
   animation-fill-mode:forwards; 
 }
+/* タイマー表示のスタイル */
+#timer {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white; /* 文字色を白にする */
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒背景 */
+  padding: 5px 10px; /* 内側の余白を追加 */
+  border-radius: 5px; /* 角を丸くする */
+  display: none;
+}
+
+/* ゲーム結果のスタイル */
+#gameResult {
+  display: none;
+  text-align: center;
+  font-size: 24px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
