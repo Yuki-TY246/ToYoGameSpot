@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative; /* 相対位置指定 */
-    background-image: url('../images/dod.jpeg'); /* 画像のパスを指定 */
+    background-image: url('../images/trumpf.png'); /* 画像のパスを指定 */
     background-size: cover; /* 背景画像を画面全体にカバーする */
     background-position: center; /* 背景画像の位置を中央に設定 */
     background-repeat: no-repeat; /* 背景画像を繰り返し表示しない */
@@ -33,11 +33,26 @@ body {
 #title {
     font-size: 200px;
     font-weight: bold;
-    color: rgb(65, 70, 65);
+    color: #fffff8;
+    text-shadow: 2px 2px 10px #b3ff87, -2px 2px 10px #2bca35, 2px -2px 10px #32ca37, -2px -2px 10px #4d9bc1;
 }
 
 #startBt {
+    width: 200px;
+    height: 80px;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 30px;
     cursor: pointer;
+    background-color: #ffffff; /* ボタンの背景色 */
+    color: #42793a; /* ボタンの文字色 */
+    border: 5px solid #4dbb32; /* ボタンの枠線 */
+    border-radius: 8px; /* 角を丸くする */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 影を追加する */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* ホバー時のトランジション */
+}
+
+#startBt:hover {
+    background-color: #f0f0f0; /* ホバー時の背景色 */
+    color: #555555; /* ホバー時の文字色 */
+    transform: translateY(-2px); /* ホバー時に少し上に移動 */
 }
