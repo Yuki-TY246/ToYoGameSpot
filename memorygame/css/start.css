@@ -1,0 +1,43 @@
+/* start.css */
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* 相対位置指定 */
+    background-image: url('../images/dod.jpeg'); /* 画像のパスを指定 */
+    background-size: cover; /* 背景画像を画面全体にカバーする */
+    background-position: center; /* 背景画像の位置を中央に設定 */
+    background-repeat: no-repeat; /* 背景画像を繰り返し表示しない */
+    font-family: YuGothic, 'Yu Gothic', sans-serif;
+    color: #333333;
+    z-index: 0; /* 親要素 body の z-index を設定 */
+}
+
+.body-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* 白っぽい半透明の色を設定 */
+    z-index: 1; /* 背景画像よりも手前に配置 */
+}
+
+.start-container {
+    text-align: center;
+}
+
+#title {
+    font-size: 200px;
+    font-weight: bold;
+    color: rgb(65, 70, 65);
+}
+
+#startBt {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}

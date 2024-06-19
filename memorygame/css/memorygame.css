@@ -22,3 +22,19 @@ body, html {
     border: 2px solid black;
     box-sizing: border-box; 
 }
+.bg_pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffe9a7;
+    opacity: 0.4;
+    z-index: -1;
+  }
+  .Rhombus {
+    background-image:  linear-gradient(135deg, #ffc107 25%, transparent 25%), linear-gradient(225deg, #ffc107 25%, transparent 25%), linear-gradient(45deg, #ffc107 25%, transparent 25%), linear-gradient(315deg, #ffc107 25%, #ffe9a7 25%);
+    background-position:  20px 0, 20px 0, 0 0, 0 0;
+    background-size: 20px 20px;
+    background-repeat: repeat;
+  }

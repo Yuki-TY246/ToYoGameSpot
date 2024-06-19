@@ -1,5 +1,11 @@
-body{
-  background-color:lightgreen;
+body {
+  background-color: lightgreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
 }
 #cardgrid{
   /*テーブル全体をセンタリング*/
