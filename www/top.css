@@ -128,10 +128,10 @@ body, html {
 /* ゲーム一覧 */
 .game-ichiran-wrapper {
   text-align: left; /* 左揃え */
-  max-width: 800px; /* 内部コンテンツの最大幅を設定 */
+  max-width: 900px; /* 内部コンテンツの最大幅を設定 */
   margin: 10em auto;
   position: relative;
-  background: #eee; /* 背景色 */
+  background: #f2f5f6; /* 背景色 */
   padding: 3em 1em 2em; /* 内側余白（上・左右・下） */
 }
 
@@ -188,13 +188,15 @@ body, html {
   display: inline-block;
   font-size: 30px;
 }
+.game-setume{
+  font-size: 18px;
+}
 .game-name a{
   text-decoration: none;
   background: linear-gradient(transparent 50%, #bde4f7 50%);
   padding: 0 0.1em;
   font-weight: bold;
 }
-  
 .game-name a:hover{
   text-decoration: underline;
   color: blue;
