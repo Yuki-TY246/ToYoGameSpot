@@ -36,7 +36,7 @@ div.back {
 
 div.fadeout {
   animation-name: fadeout;
-  animation-duration: 2s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
 
@@ -44,7 +44,7 @@ div.fadeout {
   position: absolute;
   top: 10px;
   left: 10px;
-  font-size: 24px;
+  font-size: 40px;
   font-weight: bold;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
@@ -72,4 +72,8 @@ div.fadeout {
 
 .hidden {
   display: none;
+}
+#backBt{
+  border: 3px solid #909090;
+  border-radius: 8px;
 }
