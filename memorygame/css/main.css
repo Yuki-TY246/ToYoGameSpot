@@ -24,3 +24,20 @@ div.card{
 div.back{
   background-image:url(../images/z01.png) !important;
 }
+/*アニメーションの定義（名前はfadeout)*/
+@keyframes fadeout{
+  40%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+div.fadeout{
+  /*使用するアニメーション名*/
+  animation-name:fadeout;
+  /*アニメーション時間*/
+  animation-duration:2s;
+  /*アニメーション終了時の挙動*/
+  animation-fill-mode:forwards; 
+}
