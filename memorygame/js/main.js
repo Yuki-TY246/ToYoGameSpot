@@ -48,10 +48,19 @@ document.addEventListener('DOMContentLoaded',()=>{
       }
     }
   };
+  //カードシャッフル関数(Fisher–Yates shuffle)
+  const shuffle=()=>{
+    let i=cards.length;
+    while(i){
+      let index=Math.floor(Math.random()*i--);
+      [cards[index],cards[i]]=[cards[i],cards[index]]
+    }
+  };
   //ボタンのDOM取得
   const startBt=document.getElementById('startBt');
   //ボタンを押したときの処理
   startBt.addEventListener('click',()=>{
+    shuffle();
     initgrid();
   }); 
 });
