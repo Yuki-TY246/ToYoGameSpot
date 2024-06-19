@@ -115,7 +115,7 @@ a {
 }
 
 
-/* 以下game2 */
+/* 以下mole2 */
 
 .top_info{
     display: flex;
@@ -150,4 +150,18 @@ a {
     top: -120px;
     left: 0;
     z-index: 1; /* 重なり順を設定 */
-  }
+}
+
+.hidden {
+    display: none;
+}
+  
+#game-over {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid #333333;
+}
