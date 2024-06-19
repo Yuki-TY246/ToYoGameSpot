@@ -24,6 +24,13 @@ document.addEventListener('DOMContentLoaded',()=>{
       cards.push(card);
     }
   }
+  //クリックした際の関数を定義
+  const flip=(eve)=>{
+    //クリックされた要素を特定
+    let div=eve.target;
+    //toggle(ついていたら外れ、外れていたら付く)
+    div.classList.toggle('back');
+  };
   //cardgridのDOM取得
   const cardgrid=document.getElementById('cardgrid');
   //gridを初期化する処理
@@ -41,8 +48,10 @@ document.addEventListener('DOMContentLoaded',()=>{
         //div.textContent=card.suit+':'+card.num;
         //背景画像に画像を設定
         div.style.backgroundImage=`url(images/${card.front})`;
-        //divにcardクラス追加
-        div.classList.add('card');
+        //divにcardクラスとbackクラス追加
+        div.classList.add('card','back');
+        //要素をクリックした際の挙動を登録
+        div.onclick=flip;
         //cardgrid要素に追加
         cardgrid.append(div);
       }

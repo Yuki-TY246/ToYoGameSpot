@@ -20,3 +20,7 @@ div.card{
   /*コンテナいっぱいに画像を拡大縮小する*/
   background-size:contain;
 }
+/*div要素でclassにbackがついている要素は裏面画像(importantルール適用)*/
+div.back{
+  background-image:url(../images/z01.png) !important;
+}
