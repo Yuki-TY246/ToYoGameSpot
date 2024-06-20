@@ -1,16 +1,20 @@
-const ISHI_BLACK = 1;
-const ISHI_WHITE = -1;
+const ISHI_BLACK = 1;  
+const ISHI_WHITE = -1; 
 const ISHI_NONE = 0;
 
 var ishi = ISHI_BLACK;  // 石の白黒
+var humanFirst; //プレイヤーが先行か後攻か判定
+var ishiHuman; //プレイヤーの石の色
+var ishiCPU;  //cpuの石の色
+var cpu;  // cpuのインスタンス
 
 jQuery(function () {
     // 盤面を初期化する関数
     function initBoard() {
+        $('table#board').empty(); // ボードをクリア
         for (var r = 0; r < 8; r++) {
             var tr = $("<tr>");
             for (var c = 0; c < 8; c++) {
-                // tdにid, data-r, data-c属性を設定する
                 tr.append($('<td><div class="none"></div></td>')
                     .attr({ 'id': 'r' + r + 'c' + c, 'data-r': r, 'data-c': c })
                     .hover(function () {
@@ -26,11 +30,9 @@ jQuery(function () {
                                 masu.roundReverse(true);
                                 ishi *= -1;
                                 updateStatus();
-                                if (ishi == ISHI_WHITE) {
-                                    setTimeout(cpuPlayTurn, 500); // CPUのターンを呼び出す
-                                }
-                                if (isBoardFull()) {
-                                    saveCountsAndRedirect();
+                                $('table#board td div').removeClass('highlight'); // ハイライトをクリア
+                                if (ishi == ishiCPU) {
+                                    setTimeout(cpuPlayTurn, 500); // CPUのターンを呼び出す、500ミリ秒(0.5)後に実行
                                 }
                             } else {
                                 masu.remove();
@@ -51,55 +53,153 @@ jQuery(function () {
         updateStatus();
     }
 
+        // 置ける場所をハイライトする関数
+        function highlightLegalMoves(ishi) {
+            // 既存のハイライトをクリア
+            $('table#board td div').removeClass('highlight');
+            // 盤面全体をチェック
+            for (var r = 0; r < 8; r++) {
+                for (var c = 0; c < 8; c++) {
+                    var masu = new Masu(r, c);
+                    if (masu.ishi() == ISHI_NONE) {
+                        var count = masu.set(ishi).roundReverse(false);
+                        masu.remove();
+                        if (count > 0) {
+                            $('#r' + r + 'c' + c + ' div').addClass('highlight'); // ハイライトクラスを適用
+                        }
+                    }
+                }
+            }
+        }
+    // ステータスを更新する関数 白黒のカウントと終了判定を行っている
     function updateStatus() {
         var blackCount = 0, whiteCount = 0;
         $('table#board td div').each(function () {
             if ($(this).hasClass('black')) blackCount++;
             else if ($(this).hasClass('white')) whiteCount++;
         });
-
-        $('div#status1').html('<ruby>黒<rt>くろ</rt></ruby>:' +  blackCount  + '<ruby>枚<rt>まい</rt></ruby>');
-        $('div#status2').html('<ruby>白<rt>しろ</rt></ruby>:' +  whiteCount  + '<ruby>枚<rt>まい</rt></ruby>');
-        $('div#status').html(ishi == ISHI_BLACK ? '<ruby>黒<rt>くろ</rt></ruby>の<ruby>番<rt>ばん</rt></ruby>' : '<ruby>白<rt>しろ</rt></ruby>の<ruby>番<rt>ばん</rt></ruby>');
-     
-        
+        $('div#status').html(ishi == ishiHuman ? 'あなたの番' : 'CPUの番');
+        if(ishiHuman==-1){//先行後攻の自分の色の表示の修正
+            $('div#status1').html('<ruby>白<rt>しろ</rt></ruby>:' + whiteCount + '<ruby>枚<rt>まい</rt></ruby>');
+            $('div#status2').html('<ruby>黒<rt>くろ</rt></ruby>:' + blackCount + '<ruby>枚<rt>まい</rt></ruby>');
+        }else{
+            $('div#status1').html('<ruby>黒<rt>くろ</rt></ruby>:' + blackCount + '<ruby>枚<rt>まい</rt></ruby>');
+            $('div#status2').html('<ruby>白<rt>しろ</rt></ruby>:' + whiteCount + '<ruby>枚<rt>まい</rt></ruby>');
+        }
+         // ゲームが終了した場合、結果を保存してリダイレクト
         if (blackCount + whiteCount === 64 || blackCount === 0 || whiteCount === 0) {
-            setTimeout(function() {
+            setTimeout(function () {
                 saveCountsAndRedirect();
             }, 1500);
 
         }
+        // 自分のターンの最初に置ける場所をハイライト
+        if (ishi == ishiHuman) {
+            highlightLegalMoves(ishi);
+        }
         
     }
-
+     // カウントを保存してリダイレクトする関数
     function saveCountsAndRedirect() {
         var blackCount = 0, whiteCount = 0;
         $('table#board td div').each(function () {
             if ($(this).hasClass('black')) blackCount++;
             else if ($(this).hasClass('white')) whiteCount++;
         });
+
         localStorage.setItem('blackCount', blackCount);
         localStorage.setItem('whiteCount', whiteCount);
+        // 勝敗を判定して保存
+        if (ishiHuman == ISHI_BLACK) {
+            if (blackCount > whiteCount) {
+                localStorage.setItem('result', 'あなたのかち！');
+            } else if (blackCount < whiteCount) {
+                localStorage.setItem('result', 'まけ');
+            } else {
+                localStorage.setItem('result', 'ひきわけ');
+            }
+        } else {
+            if (whiteCount > blackCount) {
+                localStorage.setItem('result', 'あなたのかち!');
+            } else if (whiteCount < blackCount) {
+                localStorage.setItem('result', 'まけ');
+            } else {
+                localStorage.setItem('result', 'ひきわけ');
+            }
+        }
         location.href = 'game5.html';
     }
 
-    function isBoardFull() {
-        var full = true;
-        $('table#board td div').each(function () {
-            if ($(this).hasClass('none')) full = false;
-        });
-        return full;
-    }
-
+    // CPUのターンを実行する関数
     function cpuPlayTurn() {
-        var cpu = new CPU(ISHI_WHITE);
         cpu.playTurn();
-        ishi = ISHI_BLACK;
+        ishi = ishiHuman;
         setTimeout(updateStatus, 500); // CPUのターン後にカウントを更新
-        if (isBoardFull()) {
-            saveCountsAndRedirect();
+        checkPass(); // CPUのターン後にパスをチェック
+    }
+     // パスをチェックする関数cpuのパス機能はcpu.jsに記述
+    function checkPass() {
+        if (!canPlay(ishiHuman)) {
+            alert('あなたはパスしました');
+            ishi *= -1;
+            updateStatus();
+            if (ishi == ISHI_WHITE) {
+                setTimeout(cpuPlayTurn, 500); // CPUのターンを呼び出す
+            }
         }
     }
 
-    initBoard();
+    // ゲームを初期化する関数
+    function initGame() {
+        var queryString = window.location.search;
+        var urlParams = new URLSearchParams(queryString);
+        var order = parseInt(urlParams.get('order'));
+
+        humanFirst = order === 1;
+        ishiHuman = humanFirst ? ISHI_BLACK : ISHI_WHITE;
+        ishiCPU = humanFirst ? ISHI_WHITE : ISHI_BLACK;
+
+        $('div#status').html(humanFirst ? 'あなたの番' : 'CPUの番');
+
+        ishi = ishiHuman;
+        cpu = new CPU(ishiCPU);
+
+        initBoard();
+
+        if (!humanFirst) {
+            $('div#status').html('CPUの番');
+            setTimeout(cpuPlayTurn, 10); // CPUが先攻の場合、CPUのターンを始める
+        }
+    }
+
+     // 指定された色で置けるかできるかどうかを判定する関数
+    function canPlay(ishi) {
+        for (var r = 0; r < 8; r++) {
+            for (var c = 0; c < 8; c++) {
+                var masu = new Masu(r, c);
+                if (masu.ishi() == ISHI_NONE) {
+                    var count = masu.set(ishi).roundReverse(false);
+                    masu.remove();
+                    if (count > 0) {
+                        return true;
+                    }
+                }
+            }
+        }
+    }
+
+
+     // ゲームをリセットする関数リセットボタンを押下時実行
+    function resetGame() {
+        initBoard(); // ボードを再初期化
+        ishi = ishiHuman; // 石の色をプレイヤーの色にリセット
+        $('div#status').html(humanFirst ? 'あなたの番' : 'CPUの番');
+        if (!humanFirst) {
+            setTimeout(cpuPlayTurn, 500); // CPUが先攻の場合、CPUのターンを始める
+        }
+    }
+
+    window.resetGame = resetGame;
+
+    initGame();
 });

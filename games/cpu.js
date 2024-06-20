@@ -15,11 +15,11 @@ class Masu {
     }
 
     set(ishi) {
-        var div = $('div', this.td); // クラスを変更するdiv要素を取得
+        var div = $('div', this.td);
 
-        if (ISHI_NONE == this.ishi()) { // 石が置かれていないとき
+        if (ISHI_NONE == this.ishi()) {
             div.removeClass('none');
-        } else { // 挟んだ石をひっくり返す
+        } else {
             div.removeClass(ishi == ISHI_BLACK ? 'white' : 'black');
         }
 
@@ -61,7 +61,6 @@ class Masu {
     }
 }
 
-// CPUクラスの定義
 class CPU {
     constructor(ishi) {
         this.ishi = ishi;
@@ -83,7 +82,6 @@ class CPU {
                     }
                 }
             }
-
             if (possibleMoves.length > 0) {
                 for (var i = 0; i < possibleMoves.length; i++) {
                     if (this.isCornerMove(possibleMoves[i].r, possibleMoves[i].c)) {
@@ -97,9 +95,9 @@ class CPU {
             } else {
                 alert("CPUがパスしました。");
                 this.ishi *= -1;
-                $('div#status').html((this.ishi == ISHI_BLACK ? '黒' : 'CPU') + 'の番');
+                $('div#status').html((ishi == ishiHuman ? 'プレイヤー' : 'CPU') + 'の番');
             }
-        }, 500); // 500ミリ秒(0.5秒)の遅延
+        }, 500);
     }
 
     isCornerMove(r, c) {
@@ -110,29 +108,3 @@ class CPU {
     }
 }
 
-// ゲームの初期化と先行後攻の設定
-$(document).ready(function() {
-    var queryString = window.location.search;
-    var urlParams = new URLSearchParams(queryString);
-    var order = parseInt(urlParams.get('order'));
-
-    var humanFirst = order === 1; // trueなら人間が先攻、それ以外はfalse
-    var ishiHuman = humanFirst ? ISHI_BLACK : ISHI_WHITE;
-    var ishiCPU = humanFirst ? ISHI_WHITE : ISHI_BLACK;
-
-    $('div#status').html(humanFirst ? 'じぶんの番' : 'CPUの番');
-
-    // 最初のターンを設定
-    var initialPlayer = humanFirst ? ishiHuman : ishiCPU;
-    var cpu = new CPU(ishiCPU);
-
-    // ゲームの初期化と最初のターン開始
-    initGame(initialPlayer);
-
-    function initGame(firstPlayer) {
-        // ゲームの初期化処理をここに記述する
-        if (!humanFirst) {
-            cpu.playTurn(); // CPUが先攻の場合、CPUのターンを始める
-        }
-    }
-});
