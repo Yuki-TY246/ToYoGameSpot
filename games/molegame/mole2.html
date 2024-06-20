@@ -65,6 +65,7 @@
         const animalArticle = document.querySelectorAll(".overlay")
         const scoreDisplay = document.getElementById('score');
         const timeDisplay = document.getElementById('time');
+        const hitSound = new Audio('sound/maou_se_system41.mp3');
         animalArticle.forEach(function(articles) {
           if (Math.random() > 0.1) {
             articles.setAttribute("style", "display: none;")
@@ -75,6 +76,8 @@
           articles.addEventListener("click", function(){
             articles.setAttribute("style", "display: none;")
             score++;
+            hitSound.currentTime = 0;
+            hitSound.play();
             scoreDisplay.textContent = `ポイント: ${score}`;
             setTimeout(function() {
             articles.removeAttribute("style") // または 'inline-block' など、元の表示スタイルに応じて設定する
