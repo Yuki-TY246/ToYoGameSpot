@@ -10,8 +10,8 @@
     <div class="back">
     <div class="game-main1" id="score">もぐらたたき</div>
     <div class="game-main2">
-      <button onclick="location.href='mole2.html';" class="start">もう一回！</button>
-      <button onclick="location.href='mole1.html';" class="start2">タイトルへ</button>
+      <button onclick="location.href='mole2.html';" class="restart">もう一回！</button>
+      <button onclick="location.href='mole1.html';" class="back_title">タイトルへ</button>
     </div>
 
   <script>
@@ -20,7 +20,7 @@
       const score = parseInt(urlParams.get('score'));
       const scoreDisplay = document.getElementById('score');
       scoreDisplay.textContent = `ポイント: ${score}`;
-      const playArticle = document.querySelectorAll(".start")
+      const playArticle = document.querySelectorAll(".restart")
       playArticle.forEach(function(articles) {
         articles.addEventListener("mouseover", function(){
           articles.setAttribute("style", "background-color: #000000; color: #ffffff;")
@@ -29,7 +29,7 @@
           articles.removeAttribute("style")
         })
       })
-      const ruleArticle = document.querySelectorAll(".start2")
+      const ruleArticle = document.querySelectorAll(".back_title")
       ruleArticle.forEach(function(articles) {
         articles.addEventListener("mouseover", function(){
           articles.setAttribute("style", "background-color: #000000; color: #ffffff;")

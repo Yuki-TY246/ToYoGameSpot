@@ -10,23 +10,13 @@
     <div class="back">
     <div class="game-main1">もぐらたたき</div>
     <div class="game-main2">
-      <button onclick="location.href='mole2.html';" class="start">ひとりであそぶ</button>
-      <button onclick="location.href='molerule.html';" class="start2">あそびかた</button>
+      <button onclick="location.href='mole2.html';" class="start">ゲームスタート！</button>
     </div>
 
   <script>
     window.addEventListener("load", function(){
       const playArticle = document.querySelectorAll(".start")
       playArticle.forEach(function(articles) {
-        articles.addEventListener("mouseover", function(){
-          articles.setAttribute("style", "background-color: #000000; color: #ffffff;")
-        })
-        articles.addEventListener("mouseout", function(){
-          articles.removeAttribute("style")
-        })
-      })
-      const ruleArticle = document.querySelectorAll(".start2")
-      ruleArticle.forEach(function(articles) {
         articles.addEventListener("mouseover", function(){
           articles.setAttribute("style", "background-color: #000000; color: #ffffff;")
         })
