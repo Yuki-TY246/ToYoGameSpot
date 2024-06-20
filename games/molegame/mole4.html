@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"> 
+    <link rel="stylesheet" href="mole.css">
+  </head>
+
+  <body>
+
+    <div class="back">
+    <div class="game-main1" id="score">もぐらたたき</div>
+    <div class="game-main2">
+      <button onclick="location.href='mole2.html';" class="start">もう一回！</button>
+      <button onclick="location.href='mole1.html';" class="start2">タイトルへ</button>
+    </div>
+
+  <script>
+    window.addEventListener("load", function(){
+      const urlParams = new URLSearchParams(window.location.search);
+      const score = parseInt(urlParams.get('score'));
+      const scoreDisplay = document.getElementById('score');
+      scoreDisplay.textContent = `ポイント: ${score}`;
+      const playArticle = document.querySelectorAll(".start")
+      playArticle.forEach(function(articles) {
+        articles.addEventListener("mouseover", function(){
+          articles.setAttribute("style", "background-color: #000000; color: #ffffff;")
+        })
+        articles.addEventListener("mouseout", function(){
+          articles.removeAttribute("style")
+        })
+      })
+      const ruleArticle = document.querySelectorAll(".start2")
+      ruleArticle.forEach(function(articles) {
+        articles.addEventListener("mouseover", function(){
+          articles.setAttribute("style", "background-color: #000000; color: #ffffff;")
+        })
+        articles.addEventListener("mouseout", function(){
+          articles.removeAttribute("style")
+        })
+      })
+    })
+  </script>
+
+  </body>
+</html>
