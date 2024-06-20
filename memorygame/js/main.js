@@ -36,21 +36,28 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     div.classList.remove('back');
+    div.classList.add('flip');
+    setTimeout(() => {
+      div.classList.remove('flip');
+    }, 300); // flipアニメーションの時間に合わせる
+
     if (firstCard === null) {
       firstCard = div;
     } else {
       secondCard = div;
       if (firstCard.num === secondCard.num) {
-        firstCard.classList.add('fadeout');
-        secondCard.classList.add('fadeout');
-        checkGameComplete();
-        [firstCard, secondCard] = [null, null];
+        setTimeout(() => {
+          firstCard.classList.add('fadeout');
+          secondCard.classList.add('fadeout');
+          checkGameComplete();
+          [firstCard, secondCard] = [null, null];
+        }, 300); // 一致した場合のフェードアウトアニメーション
       } else {
         setTimeout(() => {
           firstCard.classList.add('back');
           secondCard.classList.add('back');
           [firstCard, secondCard] = [null, null];
-        }, 1200);
+        }, 1200); // 一致しなかった場合の裏返しアニメーション
       }
     }
   };
@@ -162,5 +169,4 @@ document.addEventListener('DOMContentLoaded', () => {
   closeRuleBt.addEventListener('click', () => {
     ruleScreen.style.display = 'none';
   });
-
 });
