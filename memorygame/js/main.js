@@ -92,6 +92,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const timerDisplay = document.getElementById('timer');
   const gameResult = document.getElementById('gameResult');
   const backBt = document.getElementById('backBt');
+  const ruleBt = document.getElementById('ruleBt');
+  const ruleScreen = document.getElementById('ruleScreen');
+  const closeRuleBt = document.getElementById('closeRuleBt');
 
   startBt.addEventListener('click', () => {
     shuffleCards();
@@ -102,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gameStarted = false;
     firstCard = null;
     secondCard = null;
+    ruleBt.style.display = 'none'; // スタートボタンを押したらルールボタンを非表示にする
   });
 
   const startTimer = () => {
@@ -148,6 +152,15 @@ document.addEventListener('DOMContentLoaded', () => {
     timerDisplay.style.display = 'none';
     cardgrid.innerHTML = ''; // カードをクリアする
     gameStarted = false;
+    ruleBt.style.display = 'block'; // リセット時にルールボタンを再表示する
+  });
+
+  ruleBt.addEventListener('click', () => {
+    ruleScreen.style.display = 'block';
+  });
+
+  closeRuleBt.addEventListener('click', () => {
+    ruleScreen.style.display = 'none';
   });
 
 });

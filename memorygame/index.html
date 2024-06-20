@@ -10,6 +10,7 @@
 <body>
   <div id="title">神経衰弱</div>
   <button id="startBt">スタート</button>
+  <button id="ruleBt" class="rule-button">ルール</button>
   <div id="cardgrid"></div>
   <div id="timer">00:00</div>
   <div id="gameResult" class="centered">
@@ -17,6 +18,25 @@
       <h1>ゲームクリア！</h1>
       <p>クリアタイム: <span id="clearTime"></span></p>
       <button id="backBt">タイトルに戻る</button>
+    </div>
+  </div>
+  
+  <!-- ルール表示用のオーバーレイ -->
+  <div id="ruleScreen" class="centered">
+    <div id="ruleContent" class="rule-content">
+      <h2><ruby>神経衰弱<rt>しんけいすいじゃく</rt></ruby>のルール<br>----------------------------------------------------------------------</h2>
+      <p><ruby>裏返<rt>うらがえ</rt></ruby>>しになったカードの<ruby>中<rt>なか</rt></ruby>から、<ruby>同<rt>おな</rt></ruby>じ<ruby>数字<rt>すうじ</rt></ruby>が<ruby>書<rt>か</rt></ruby>かれているカードのペアを<ruby>作<rt>つく</rt></ruby>っていくゲームです！</p>
+      <p>最初に、２枚のめくるカードを選んでクリックします。</p>
+      <p>選んだ２枚のカードの数字が同じときは、その２枚のカードが取り除かれます。</p>
+      <p>でも、選んだ２枚のカードが違う数字のときは、そのカードはもう一度裏返しにもどります。</p>
+      <p>そのとき、自分がめくったカードの数字を覚えておきましょう！</p>
+      <p>すべてのペアをそろえて、並んでいるカードがなくなったらクリアです！</p>
+      <p>クリアするとクリアタイムが見れるので、たくさんチャレンジしてベストタイムを目指しましょう！</p>
+      <div>
+        <img src="images/maru.png">
+        <img src="images/batu.png">
+      </div>
+      <button id="closeRuleBt">閉じる</button>
     </div>
   </div>
 </body>
