@@ -120,7 +120,7 @@ $(document).ready(function() {
     var ishiHuman = humanFirst ? ISHI_BLACK : ISHI_WHITE;
     var ishiCPU = humanFirst ? ISHI_WHITE : ISHI_BLACK;
 
-    $('div#status').html(humanFirst ? '黒の番' : 'CPUの番');
+    $('div#status').html(humanFirst ? 'じぶんの番' : 'CPUの番');
 
     // 最初のターンを設定
     var initialPlayer = humanFirst ? ishiHuman : ishiCPU;

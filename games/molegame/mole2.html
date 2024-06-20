@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"> 
+    <link rel="stylesheet" href="mole.css">
+  </head>
+
+  <body>
+
+    <div class="back">
+      <div class="top_info">
+        <div class="time" id="time">じかん:30</div>
+        <div class="score" id="score">ポイント:0</div>
+      </div>
+      <div class="holes">
+        <div class="holes_line">
+          <div class="hole">
+            <img src="img/animal1.png" alt="Overlay Image" class="overlay">
+          </div>
+          <div class="hole">
+            <img src="img/animal1.png" alt="Overlay Image" class="overlay">
+          </div>
+          <div class="hole">
+            <img src="img/animal1.png" alt="Overlay Image" class="overlay">
+          </div>
+          <div class="hole">
+            <img src="img/animal1.png" alt="Overlay Image" class="overlay">
+          </div>
+        </div>
+        <div class="holes_line">
+          <div class="hole">
+            <img src="img/animal1.png" alt="Overlay Image" class="overlay">
+          </div>
+          <div class="hole">
+            <img src="img/animal1.png" alt="Overlay Image" class="overlay">
+          </div>
+          <div class="hole">
+            <img src="img/animal1.png" alt="Overlay Image" class="overlay">
+          </div>
+          <div class="hole">
+            <img src="img/animal1.png" alt="Overlay Image" class="overlay">
+          </div>
+        </div>
+        <div class="holes_line">
+          <div class="hole">
+            <img src="img/animal1.png" alt="Overlay Image" class="overlay">
+          </div>
+          <div class="hole">
+            <img src="img/animal1.png" alt="Overlay Image" class="overlay">
+          </div>
+          <div class="hole">
+            <img src="img/animal1.png" alt="Overlay Image" class="overlay">
+          </div>
+          <div class="hole">
+            <img src="img/animal1.png" alt="Overlay Image" class="overlay">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      window.addEventListener("load", function(){
+        let score = 0;
+        let timeLeft = 30;
+        const animalArticle = document.querySelectorAll(".overlay")
+        const scoreDisplay = document.getElementById('score');
+        const timeDisplay = document.getElementById('time');
+        const hitSound = new Audio('sound/maou_se_system41.mp3');
+        animalArticle.forEach(function(articles) {
+          if (Math.random() > 0.1) {
+            articles.setAttribute("style", "display: none;")
+            setTimeout(function() {
+              articles.removeAttribute("style") // または 'inline-block' など、元の表示スタイルに応じて設定する
+            }, Math.floor(Math.random() * (3000 - 1000 + 1)) + 1000);
+          };
+          articles.addEventListener("click", function(){
+            articles.setAttribute("style", "display: none;")
+            score++;
+            hitSound.currentTime = 0;
+            hitSound.play();
+            scoreDisplay.textContent = `ポイント: ${score}`;
+            setTimeout(function() {
+            articles.removeAttribute("style") // または 'inline-block' など、元の表示スタイルに応じて設定する
+            }, Math.floor(Math.random() * (15000 - 1000 + 1)) + 1000);
+          })
+        })
+        const timeInterval = setInterval(function() {
+          timeLeft--;
+          timeDisplay.textContent = `じかん: ${timeLeft}`;
+          if (timeLeft <= 0) {
+            clearInterval(timeInterval); // タイマー停止
+            location.href=`mole3.html?score=${score}`;
+          }
+        }, 1000);
+      });
+    </script>
+
+  </body>
+</html>
