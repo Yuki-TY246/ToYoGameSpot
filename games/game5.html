@@ -11,10 +11,11 @@
         }
         .win_or_loss {
             font-weight: bold;
-            font-size: 60px;
+            font-size: 100px;
             display: flex;
             justify-content: center;
-            margin-top: 40px;
+            padding-top: 70px;
+            height: 170px;
         }
         .result_container {
             text-align: center;
@@ -68,7 +69,7 @@
     </style>
 </head>
 <body>
-    <div  class="win_or_loss"><div id="win-loss"></div></div>
+    <div  class="win_or_loss"><div id="winloss"></div></div>
     <div class="result_container">
         <div class="circle white_circle"></div>
         <span><b>白のコマ数:</b> <span id="whiteCount"></span></span>
@@ -84,7 +85,12 @@
         var blackCount = localStorage.getItem('blackCount');
         document.getElementById('whiteCount').textContent = whiteCount;
         document.getElementById('blackCount').textContent = blackCount;
+        if(whiteCount > blackCount)
+        document.getElementById('winloss').textContent = 'しろのかち！';
+        if(whiteCount < blackCount)
+        document.getElementById('winloss').textContent = 'くろのかち！';
     });
+    
     </script>
     <div class="button_container">
         <button onclick="location.href='game1.html';" class="title_button">タイトルに戻る</button>
