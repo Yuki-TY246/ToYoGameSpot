@@ -80,10 +80,22 @@
     
     <script>
     document.addEventListener('DOMContentLoaded', function () {
+        var result = localStorage.getItem('result');
         var whiteCount = localStorage.getItem('whiteCount');
         var blackCount = localStorage.getItem('blackCount');
         document.getElementById('whiteCount').textContent = whiteCount;
         document.getElementById('blackCount').textContent = blackCount;
+        if (result) {
+            document.getElementById('winloss').textContent = result;
+        } else {
+            if (whiteCount > blackCount) {
+                document.getElementById('winloss').textContent = 'しろのかち！';
+            } else if (whiteCount < blackCount) {
+                document.getElementById('winloss').textContent = 'くろのかち！';
+            } else {
+                document.getElementById('winloss').textContent = 'ひきわけ';
+            }
+        }
     });
     </script>
     <div class="button_container">
