@@ -26,12 +26,7 @@ jQuery(function () {
                                 masu.roundReverse(true);
                                 ishi *= -1;
                                 updateStatus();
-                                if (ishi == ISHI_WHITE) {
-                                    setTimeout(cpuPlayTurn, 500); // CPUのターンを呼び出す
-                                }
-                                if (isBoardFull()) {
-                                    saveCountsAndRedirect();
-                                }
+                                checkPass();
                             } else {
                                 masu.remove();
                             }
@@ -72,6 +67,14 @@ jQuery(function () {
         
     }
 
+    function checkPass() {
+        if (!canPlay(ishi)) {
+            alert('パスしました');
+            ishi *= -1;
+            updateStatus();
+        }
+    }
+
     function saveCountsAndRedirect() {
         var blackCount = 0, whiteCount = 0;
         $('table#board td div').each(function () {
@@ -81,24 +84,6 @@ jQuery(function () {
         localStorage.setItem('blackCount', blackCount);
         localStorage.setItem('whiteCount', whiteCount);
         location.href = 'game5.html';
-    }
-
-    function isBoardFull() {
-        var full = true;
-        $('table#board td div').each(function () {
-            if ($(this).hasClass('none')) full = false;
-        });
-        return full;
-    }
-
-    function cpuPlayTurn() {
-        var cpu = new CPU(ISHI_WHITE);
-        cpu.playTurn();
-        ishi = ISHI_BLACK;
-        setTimeout(updateStatus, 500); // CPUのターン後にカウントを更新
-        if (isBoardFull()) {
-            saveCountsAndRedirect();
-        }
     }
 
     initBoard();

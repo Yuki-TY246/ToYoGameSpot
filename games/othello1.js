@@ -78,7 +78,7 @@ jQuery(function () {
             if ($(this).hasClass('black')) blackCount++;
             else if ($(this).hasClass('white')) whiteCount++;
         });
-        $('div#status').html(ishi == ishiHuman ? 'あなたの番' : 'CPUの番');
+        $('div#status').html(ishi == ishiHuman ? 'あなたの<ruby>番<rt>ばん</rt></ruby>:' : 'CPUの<ruby>番<rt>ばん</rt></ruby>:');
         if(ishiHuman==-1){//先行後攻の自分の色の表示の修正
             $('div#status1').html('<ruby>白<rt>しろ</rt></ruby>:' + whiteCount + '<ruby>枚<rt>まい</rt></ruby>');
             $('div#status2').html('<ruby>黒<rt>くろ</rt></ruby>:' + blackCount + '<ruby>枚<rt>まい</rt></ruby>');
@@ -139,7 +139,7 @@ jQuery(function () {
     }
      // パスをチェックする関数cpuのパス機能はcpu.jsに記述
     function checkPass() {
-        if (!canPlay(ishiHuman)) {
+        if (!canPlay(ishi)) {
             alert('あなたはパスしました');
             ishi *= -1;
             updateStatus();
@@ -159,7 +159,7 @@ jQuery(function () {
         ishiHuman = humanFirst ? ISHI_BLACK : ISHI_WHITE;
         ishiCPU = humanFirst ? ISHI_WHITE : ISHI_BLACK;
 
-        $('div#status').html(humanFirst ? 'あなたの番' : 'CPUの番');
+        $('div#status').html(humanFirst ? 'あなたの<ruby>番<rt>ばん</rt></ruby>:' : 'CPUの<ruby>番<rt>ばん</rt></ruby>:');
 
         ishi = ishiHuman;
         cpu = new CPU(ishiCPU);
@@ -167,7 +167,7 @@ jQuery(function () {
         initBoard();
 
         if (!humanFirst) {
-            $('div#status').html('CPUの番');
+            $('div#status').html('CPUの<ruby>番<rt>ばん</rt></ruby>:');
             setTimeout(cpuPlayTurn, 10); // CPUが先攻の場合、CPUのターンを始める
         }
     }
@@ -193,7 +193,7 @@ jQuery(function () {
     function resetGame() {
         initBoard(); // ボードを再初期化
         ishi = ishiHuman; // 石の色をプレイヤーの色にリセット
-        $('div#status').html(humanFirst ? 'あなたの番' : 'CPUの番');
+        $('div#status').html(humanFirst ? 'あなたの<ruby>番<rt>ばん</rt></ruby>:' : 'CPUの<ruby>番<rt>ばん</rt></ruby>:');
         if (!humanFirst) {
             setTimeout(cpuPlayTurn, 500); // CPUが先攻の場合、CPUのターンを始める
         }
