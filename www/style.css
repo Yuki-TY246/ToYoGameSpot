@@ -32,6 +32,8 @@ header {
     color: #ffffff;
     margin: 0;
     padding: 0;
+    color: #fff;
+    text-shadow: 2px 2px 10px #CDE7FF, -2px 2px 10px #4d9bc1, 2px -2px 10px #4d9bc1, -2px -2px 10px #4d9bc1;;
 }
 
 .menu-list {
@@ -51,14 +53,15 @@ header {
 .menu-list a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 .my-parts {
 	display: inline-block;
 	position: relative;
-	text-decoration: none;
+	text-decoration: none;color: #fff;
+    text-shadow: 2px 2px 10px #CDE7FF, -2px 2px 10px #4d9bc1, 2px -2px 10px #4d9bc1, -2px -2px 10px #4d9bc1;;
 }
 .my-parts::after {
 	position: absolute;

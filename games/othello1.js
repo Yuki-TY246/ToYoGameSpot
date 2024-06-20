@@ -80,11 +80,11 @@ jQuery(function () {
         });
         $('div#status').html(ishi == ishiHuman ? 'あなたの番' : 'CPUの番');
         if(ishiHuman==-1){//先行後攻の自分の色の表示の修正
-            $('div#status1').html(' 白: ' + whiteCount + '枚');
-            $('div#status2').html(' 黒: ' + blackCount + '枚');
+            $('div#status1').html('<ruby>白<rt>しろ</rt></ruby>:' + whiteCount + '<ruby>枚<rt>まい</rt></ruby>');
+            $('div#status2').html('<ruby>黒<rt>くろ</rt></ruby>:' + blackCount + '<ruby>枚<rt>まい</rt></ruby>');
         }else{
-            $('div#status1').html(' 黒: ' + blackCount + '枚');
-            $('div#status2').html(' 白: ' + whiteCount + '枚');
+            $('div#status1').html('<ruby>黒<rt>くろ</rt></ruby>:' + blackCount + '<ruby>枚<rt>まい</rt></ruby>');
+            $('div#status2').html('<ruby>白<rt>しろ</rt></ruby>:' + whiteCount + '<ruby>枚<rt>まい</rt></ruby>');
         }
          // ゲームが終了した場合、結果を保存してリダイレクト
         if (blackCount + whiteCount === 64 || blackCount === 0 || whiteCount === 0) {
@@ -97,6 +97,7 @@ jQuery(function () {
         if (ishi == ishiHuman) {
             highlightLegalMoves(ishi);
         }
+        
     }
      // カウントを保存してリダイレクトする関数
     function saveCountsAndRedirect() {

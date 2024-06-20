@@ -128,10 +128,10 @@ body, html {
 /* ゲーム一覧 */
 .game-ichiran-wrapper {
   text-align: left; /* 左揃え */
-  max-width: 800px; /* 内部コンテンツの最大幅を設定 */
+  max-width: 900px; /* 内部コンテンツの最大幅を設定 */
   margin: 10em auto;
   position: relative;
-  background: #eee; /* 背景色 */
+  background: #f2f5f6; /* 背景色 */
   padding: 3em 1em 2em; /* 内側余白（上・左右・下） */
 }
 
@@ -158,7 +158,7 @@ body, html {
 .game-ichiran {
   display: flex; /* フレックスコンテナとして設定 */
   align-items: start; 
-  padding: 30px 50px;
+  padding: 5px 50px;
 }
 
 .game-info {
@@ -169,11 +169,11 @@ body, html {
 
 .game-image {
   flex: none; /* 画像を伸縮しないようにする */
-  margin-left: 20px; /* 画像と説明の間の余白 */
+  margin-top: 50px; /* 画像と説明の間の余白 */
   margin-bottom: 0; /* 下の余白を0にする */
 }
 .game-image img {
-  max-width: 200px; /* 画像の最大幅を設定 */
+  max-width: 250px; /* 画像の最大幅を設定 */
   height: auto; /* 高さを自動調整 */
   }
 
@@ -186,6 +186,20 @@ body, html {
 }
 .game-name {
   display: inline-block;
+  font-size: 30px;
+}
+.game-setume{
+  font-size: 18px;
+}
+.game-name a{
+  text-decoration: none;
+  background: linear-gradient(transparent 50%, #bde4f7 50%);
+  padding: 0 0.1em;
+  font-weight: bold;
+}
+.game-name a:hover{
+  text-decoration: underline;
+  color: blue;
 }
 
 /* 区切り線 */
@@ -193,4 +207,8 @@ body, html {
   margin-top: 50px;
 	border-top: 5px dotted rgb(0, 166, 255);
   background-color: rgb(131, 228, 243);
+}
+
+.link{
+  text-decoration: none;
 }
