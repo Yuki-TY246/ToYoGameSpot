@@ -10,12 +10,34 @@
 <body>
   <div id="title">神経衰弱</div>
   <button id="startBt">スタート</button>
+  <button id="ruleBt" class="rule-button">ルール</button>
   <div id="cardgrid"></div>
   <div id="timer">00:00</div>
   <div id="gameResult" class="centered">
-    <h1>ゲームクリア！</h1>
-    <p>クリアタイム: <span id="clearTime"></span></p>
-    <button id="backBt">ゲームに戻る</button>
+    <div class="result-background">
+      <h1>ゲームクリア！</h1>
+      <p>クリアタイム: <span id="clearTime"></span></p>
+      <button id="backBt">タイトルに戻る</button>
+    </div>
+  </div>
+  
+  <!-- ルール表示用のオーバーレイ -->
+  <div id="ruleScreen" class="centered">
+    <div id="ruleContent" class="rule-content">
+      <h2><ruby>神経衰弱<rt>しんけいすいじゃく</rt></ruby>のルール</h2>
+      <p><ruby>裏返<rt>うらがえ</rt></ruby>しになったカードの<ruby>中<rt>なか</rt></ruby>から、<ruby>同<rt>おな</rt></ruby>じ<ruby>数字<rt>すうじ</rt></ruby>が<ruby>書<rt>か</rt></ruby>かれているカードのペアを<ruby>作<rt>つく</rt></ruby>っていくゲームです！</p>
+      <p><ruby>最初<rt>さいしょ</rt></ruby>に、２<ruby>枚<rt>まい</rt></ruby>のめくるカードを<ruby>選<rt>えら</rt></ruby>んでクリックします。</p>
+      <p><ruby>選<rt>えら</rt></ruby>んだ２<ruby>枚<rt>まい</rt></ruby>のカードの<ruby>数字<rt>すうじ</rt></ruby>が<ruby>同<rt>おな</rt></ruby>じときは、その２<ruby>枚<rt>まい</rt></ruby>のカードが<ruby>取<rt>と</rt></ruby>り<ruby>除<rt>のぞ</rt></ruby>かれます。</p>
+      <p>しかし、<ruby>選<rt>えら</rt></ruby>んだ２<ruby>枚<rt>まい</rt></ruby>のカードがちがう<ruby>数字<rt>すうじ</rt></ruby>のとき、カードは<ruby>裏返<rt>うらがえ</rt></ruby>しにもどります。</p>
+      <p><ruby>自分<rt>じぶん</rt></ruby>がめくったカードの<ruby>数字<rt>すうじ</rt></ruby>は<ruby>覚<rt>おぼ</rt></ruby>えておくようにしましょう！</p>
+      <p>すべてのペアをそろえて、<ruby>並<rt>なら</rt></ruby>んでいるカードがなくなったらクリアです！</p>
+      <p>クリアするとクリアタイムが<ruby>見<rt>み</rt></ruby>れるので、たくさんチャレンジしてベストタイムを<ruby>目指<rt>めざ</rt></ruby>しましょう！</p>
+      <div>
+        <img src="images/maru.png">
+        <img src="images/batu.png">
+      </div>
+      <button id="closeRuleBt">とじる</button>
+    </div>
   </div>
 </body>
 </html>
