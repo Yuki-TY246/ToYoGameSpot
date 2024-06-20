@@ -22,19 +22,9 @@ html{
 }
 
 .start{
-    width: 300px;
-    height: 80px;
-    font-size: 37px;
-    margin: 0 50px;
-    font-family:'Courier New', Courier, monospace;
-    border-radius: 60px;
-    background-color: #ffffff;
-}
-
-.start2{
-    width: 300px;
-    height: 80px;
-    font-size: 37px;
+    width: 500px;
+    height: 100px;
+    font-size: 40px;
     margin: 0 50px;
     font-family:'Courier New', Courier, monospace;
     border-radius: 60px;
@@ -123,6 +113,16 @@ a {
     font-size: 50px;
 }
 
+.time{
+    display: flex;
+    justify-content: center;
+}
+
+.score{
+    display: flex;
+    justify-content: center;
+}
+
 .holes{
     display: flex;
     flex-direction: column;
@@ -164,4 +164,35 @@ a {
     padding: 20px;
     background-color: #ffffff;
     border: 2px solid #333333;
+}
+
+/* 以下mole3 */
+.result{
+    width: 250px;
+    height: 80px;
+    font-size: 37px;
+    font-family:'Courier New', Courier, monospace;
+    border-radius: 60px;
+    background-color: #ffffff;
+}
+
+/* 以下mole4 */
+.restart{
+    width: 300px;
+    height: 80px;
+    font-size: 37px;
+    margin: 0 50px;
+    font-family:'Courier New', Courier, monospace;
+    border-radius: 60px;
+    background-color: #ffffff;
+}
+
+.back_title{
+    width: 300px;
+    height: 80px;
+    font-size: 37px;
+    margin: 0 50px;
+    font-family:'Courier New', Courier, monospace;
+    border-radius: 60px;
+    background-color: #ffffff;
 }
