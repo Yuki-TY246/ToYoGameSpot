@@ -30,19 +30,19 @@
         border-radius: 50%;
     }
 
-   .game1{
+   .games{
     width: 1000px;
       display: flex;
       justify-content: space-between;
     }
-    .game2{
+    .game1{
     width: 200px;
     }
-    .game3{
+    .game2{
     width: 600px;
     margin-top: 40px;
     }
-    .game4{
+    .game3{
     width: 200px;
     }
     .title_button{
@@ -99,32 +99,30 @@
 </head>
   <body>
 
-  <div class="game1">
-    <div class="game2">
-        <div id='status' class="side1">
-        </div>
+  <div class="games">
+    <div class="game1">
+        <div id='status' class="side1"></div>
         <div class="side">
-          <div class="side2">
-         <div id='status1' class="text2"></div>
+           <div class="side2">
+             <div id='status1' class="text2"></div>
+           </div>
         </div>
-        </div>
+    </div>
+
+    <div class="game2">
+      <table id='board' class="table"></table>
+      <div class="game-select">
+         <button onclick="location.href='game1.html';" class="title_button">タイトルに戻る</button>
+         <button onclick="location.href='game4.html';" class="title_button">リセット</button>
+      </div>
     </div>
 
     <div class="game3">
-      <table id='board' class="table">
-      </table>
-      <div class="game-select">
-      <button onclick="location.href='game1.html';" class="title_button">タイトルに戻る</button>
-      <button onclick="location.href='game4.html';" class="title_button">リセット</button>
-      </div>
-    </div>
-
-    <div class="game4">
       <div class="side">
-        <div class="side2">
-        <div id='status2' class="text2"></div>
+         <div class="side2">
+           <div id='status2' class="text2"></div>
+         </div>
       </div>
-    </div>
     </div>
     
   </body>
