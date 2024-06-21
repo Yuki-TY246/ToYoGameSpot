@@ -77,8 +77,9 @@ function highlightLegalMoves(ishi) {
     function updateStatus() {
         var blackCount = 0, whiteCount = 0;
         $('table#board td div').each(function () {
-            if ($(this).hasClass('black')) blackCount++;
+            if ($(this).hasClass('black')) blackCount++ ;
             else if ($(this).hasClass('white')) whiteCount++;
+            
         });
         $('div#status').html(ishi == ishiHuman ? 'あなたの<ruby>番<rt>ばん</rt></ruby>' : 'CPUの<ruby>番<rt>ばん</rt></ruby>');
         if(ishiHuman==-1){//先行後攻の自分の色の表示の修正
