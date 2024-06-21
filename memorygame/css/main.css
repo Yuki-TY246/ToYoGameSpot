@@ -18,11 +18,12 @@ body {
 
 div.card {
   aspect-ratio: 2 / 3;
-  background-size: contain;
+  background-size: cover;
 }
 
 div.back {
   background-image: url(../images/z01.png) !important;
+  background-size: cover;
 }
 
 @keyframes fadeout {
