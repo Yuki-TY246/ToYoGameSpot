@@ -66,6 +66,7 @@
         const scoreDisplay = document.getElementById('score');
         const timeDisplay = document.getElementById('time');
         const hitSound = new Audio('sound/maou_se_system41.mp3');
+        hitSound.volume = 0.5;
         animalArticle.forEach(function(articles) {
           if (Math.random() > 0.1) {
             articles.setAttribute("style", "display: none;")
@@ -81,9 +82,23 @@
             scoreDisplay.textContent = `ポイント: ${score}`;
             setTimeout(function() {
             articles.removeAttribute("style") // または 'inline-block' など、元の表示スタイルに応じて設定する
-            }, Math.floor(Math.random() * (15000 - 1000 + 1)) + 1000);
+            }, Math.floor(Math.random() * (5000 - 1000 + 1)) + 1000);
           })
         })
+        function toggleDisplay() {
+          animalArticle.forEach(function(articles) {
+            var randomProbability = Math.random();
+            if (randomProbability < 0.3) {
+              var currentDisplayStyle = articles.getAttribute("style")
+              if (currentDisplayStyle === "display: none;") {
+                articles.removeAttribute("style") // または元の表示スタイルに応じた設定
+              } else {
+                articles.setAttribute("style", "display: none;")
+              }
+            }
+          });
+        }
+        setInterval(toggleDisplay, Math.floor(Math.random() * (5000 - 3000 + 1)) + 3000);
         const timeInterval = setInterval(function() {
           timeLeft--;
           timeDisplay.textContent = `じかん: ${timeLeft}`;

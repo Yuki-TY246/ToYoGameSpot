@@ -46,6 +46,7 @@ jQuery(function () {
         updateStatus();
     }
 
+
     function updateStatus() {
         var blackCount = 0, whiteCount = 0;
         $('table#board td div').each(function () {
@@ -63,6 +64,12 @@ jQuery(function () {
                 saveCountsAndRedirect();
             }, 1500);
 
+        }
+        if (ishi == ISHI_BLACK) {
+            highlightLegalMoves1(ishi);
+        }
+        if (ishi == ISHI_WHITE) {
+            highlightLegalMoves2(ishi);
         }
         
     }
@@ -100,7 +107,7 @@ jQuery(function () {
         });
         localStorage.setItem('blackCount', blackCount);
         localStorage.setItem('whiteCount', whiteCount);
-        location.href = 'game5.html';
+        location.href = 'game6.html';
     }
 
     // ゲームをリセットする関数リセットボタンを押下時実行
@@ -111,4 +118,46 @@ jQuery(function () {
     window.resetGame = resetGame;
     window.checkPass = checkPass;
     initBoard();
+
+          // 置ける場所をハイライトする関数
+function highlightLegalMoves1(ishi) {
+    // 既存のハイライトをクリア
+    $('table#board td div').removeClass('highlight');
+    // 盤面全体をチェック
+    for (var r = 0; r < 8; r++) {
+        for (var c = 0; c < 8; c++) {
+            $('#r' + r + 'c' + c + ' div').addClass('highlight').parent().css('background-color', 'green');
+            var masu = new Masu(r, c);
+            if (masu.ishi() == ISHI_NONE) {
+                var count = masu.set(ishi).roundReverse(false);
+                masu.remove();
+                if (count > 0) {
+                    // ハイライトクラスを適用し、背景色を変える
+                    $('#r' + r + 'c' + c + ' div').addClass('highlight').parent().css('background-color', '#538955');
+                }
+            }
+        }
+    }
+}
+function highlightLegalMoves2(ishi) {
+    // 既存のハイライトをクリア
+    $('table#board td div').removeClass('highlight');
+    // 盤面全体をチェック
+    for (var r = 0; r < 8; r++) {
+        for (var c = 0; c < 8; c++) {
+            $('#r' + r + 'c' + c + ' div').addClass('highlight').parent().css('background-color', 'green');
+            var masu = new Masu(r, c);
+            if (masu.ishi() == ISHI_NONE) {
+                var count = masu.set(ishi).roundReverse(false);
+                masu.remove();
+                if (count > 0) {
+                    // ハイライトクラスを適用し、背景色を変える
+                    $('#r' + r + 'c' + c + ' div').addClass('highlight').parent().css('background-color', '#538955');
+                }
+            }
+        }
+    }
+}
 });
+
+

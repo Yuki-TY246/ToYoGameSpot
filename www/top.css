@@ -76,15 +76,15 @@ body, html {
   padding: 20px;
   max-width: 1250px; /* 最大幅を設定 */
   margin: 0 auto; /* 中央揃え */
-  padding: 150px 0 90px;
+  padding: 150px 0 10px;
 }
 
 .top-welcome {
   text-align: left; /* 左揃え */
-  max-width: 800px; /* 内部コンテンツの最大幅を設定 */
+  max-width: 1100px; /* 内部コンテンツの最大幅を設定 */
   margin: 2em auto; /* ボックスの余白 */
   background-color: #fefff9; /* ボックス背景色 */
-  padding: 2.5em 3em 2em; /* ボックス内側余白 */
+  padding: 5em 3em 2em; /* ボックス内側余白 */
   position: relative; /* 配置(ここを基準に) */
 }
 
@@ -97,7 +97,7 @@ body, html {
   font-size: 3.5em; /* タイトル文字の大きさ */
   color: #666; /* タイトル文字色 */
   padding: 15px 30px; /* タイトルの余白 */
-  line-height: 1; /* タイトルの行の高さ */
+  line-height: 1.5; /* タイトルの行の高さ */
   position: absolute; /* 配置(ここを動かす) */
   top: -100px; /* 上から（-10px）移動 */
   left: 35px; /* 左から(20px)移動 */
@@ -128,17 +128,17 @@ body, html {
 /* ゲーム一覧 */
 .game-ichiran-wrapper {
   text-align: left; /* 左揃え */
-  max-width: 900px; /* 内部コンテンツの最大幅を設定 */
-  margin: 10em auto;
+  max-width: 1250px; /* 内部コンテンツの最大幅を設定 */
+  margin: 20em auto;
   position: relative;
   background: #f2f5f6; /* 背景色 */
-  padding: 3em 1em 2em; /* 内側余白（上・左右・下） */
+  padding: 3em 1em 3em; /* 内側余白（上・左右・下） */
 }
 
 .game-ichiran-wrapper::before {
   position: absolute;
   content: "";
-  width: 95%;
+  width: 1000px;
   height: 10px;
   top: 0.5em;
   left: 0;
@@ -169,7 +169,7 @@ body, html {
 
 .game-image {
   flex: none; /* 画像を伸縮しないようにする */
-  margin-top: 50px; /* 画像と説明の間の余白 */
+  margin-top: 30px; /* 画像と説明の間の余白 */
   margin-bottom: 0; /* 下の余白を0にする */
 }
 .game-image img {
@@ -186,7 +186,7 @@ body, html {
 }
 .game-name {
   display: inline-block;
-  font-size: 30px;
+  font-size: 40px;
 }
 .game-setume{
   font-size: 18px;
@@ -211,4 +211,22 @@ body, html {
 
 .link{
   text-decoration: none;
+}
+
+.play{
+  font-size: 20px;
+  font-weight: bold;
+}
+a{
+  text-decoration-line: none;
+  color: #333333;
+}
+
+.shadow-img {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+.shadow-img:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.7);
 }

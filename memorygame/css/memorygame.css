@@ -17,7 +17,7 @@ body, html {
     margin: 20px 0;
 }
 #contentFrame {
-    width: 1250px;
+    width: 1025px;
     height: 725px;
     border: 2px solid black;
     box-sizing: border-box; 
@@ -38,3 +38,15 @@ body, html {
     background-size: 20px 20px;
     background-repeat: repeat;
   }
+  .game_operation {
+    font-size: 50px;
+    margin: 50px;
+    text-decoration: underline;
+    padding: 0 50px;
+}
+.operation_description {
+    height: 500px;
+    margin: 50px;
+    font-size: 30px;
+    padding: 0 50px;
+}

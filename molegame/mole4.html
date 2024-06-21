@@ -8,9 +8,9 @@
   <body>
 
     <div class="back">
-    <div class="game-main1" id="score">もぐらたたき</div>
+    <div class="final_score" id="score">もぐらたたき</div>
     <div class="game-main2">
-      <button onclick="location.href='mole2.html';" class="restart">もう一回！</button>
+      <button onclick="location.href='mole2.html';" class="restart">もう<ruby>一回<rt>いっかい</rt></ruby>！</button>
       <button onclick="location.href='mole1.html';" class="back_title">タイトルへ</button>
     </div>
 
@@ -19,7 +19,7 @@
       const urlParams = new URLSearchParams(window.location.search);
       const score = parseInt(urlParams.get('score'));
       const scoreDisplay = document.getElementById('score');
-      scoreDisplay.textContent = `ポイント: ${score}`;
+      scoreDisplay.textContent = `${score}ポイント`;
       const playArticle = document.querySelectorAll(".restart")
       playArticle.forEach(function(articles) {
         articles.addEventListener("mouseover", function(){

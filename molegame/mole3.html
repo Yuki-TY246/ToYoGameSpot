@@ -9,8 +9,8 @@
 
     <div class="back">
       <div class="top_info">
-        <div class="game_end" id="game_end">ゲーム終了！</div>
-        <button onclick="location.href='mole4.html';" class="result" id="result">結果を見る</button>
+        <div class="game_end" id="game_end">ゲーム<ruby>終了<rt>しゅうりょう</rt></ruby>！</div>
+        <button onclick="location.href='mole4.html';" class="result" id="result"><ruby>結果<rt>けっか</rt></ruby>をみる</button>
       </div>
       <div class="holes">
         <div class="holes_line">
@@ -60,9 +60,11 @@
     
     <script>
     window.addEventListener("load", function(){
+      const timeSound = new Audio('sound/maou_se_onepoint30.mp3');
+      timeSound.volume = 0.3;
+      timeSound.play();
       const urlParams = new URLSearchParams(window.location.search);
       const score = parseInt(urlParams.get('score'));
-
       const resultArticle = document.getElementById("result")
       resultArticle.addEventListener("mouseover", function(){
         resultArticle.setAttribute("style", "color: orange;")

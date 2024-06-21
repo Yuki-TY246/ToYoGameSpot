@@ -177,10 +177,21 @@ a {
 }
 
 /* 以下mole4 */
+.final_score{
+    height: 250px;
+    text-align: center;
+    width: 1000px;
+    font-size: 125px;
+    font-weight: 500;
+    padding-top: 150px;
+    color: gold;
+    text-shadow: 0 0 10px gold,0 0 15px gold;
+}
+
 .restart{
     width: 300px;
     height: 80px;
-    font-size: 37px;
+    font-size: 35px;
     margin: 0 50px;
     font-family:'Courier New', Courier, monospace;
     border-radius: 60px;
@@ -190,7 +201,7 @@ a {
 .back_title{
     width: 300px;
     height: 80px;
-    font-size: 37px;
+    font-size: 35px;
     margin: 0 50px;
     font-family:'Courier New', Courier, monospace;
     border-radius: 60px;

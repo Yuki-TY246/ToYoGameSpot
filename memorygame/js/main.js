@@ -36,21 +36,28 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     div.classList.remove('back');
+    div.classList.add('flip');
+    setTimeout(() => {
+      div.classList.remove('flip');
+    }, 300); // flipアニメーションの時間に合わせる
+
     if (firstCard === null) {
       firstCard = div;
     } else {
       secondCard = div;
       if (firstCard.num === secondCard.num) {
-        firstCard.classList.add('fadeout');
-        secondCard.classList.add('fadeout');
-        checkGameComplete();
-        [firstCard, secondCard] = [null, null];
+        setTimeout(() => {
+          firstCard.classList.add('fadeout');
+          secondCard.classList.add('fadeout');
+          checkGameComplete();
+          [firstCard, secondCard] = [null, null];
+        }, 300); // 一致した場合のフェードアウトアニメーション
       } else {
         setTimeout(() => {
           firstCard.classList.add('back');
           secondCard.classList.add('back');
           [firstCard, secondCard] = [null, null];
-        }, 1200);
+        }, 1200); // 一致しなかった場合の裏返しアニメーション
       }
     }
   };
@@ -142,6 +149,24 @@ document.addEventListener('DOMContentLoaded', () => {
     clearTimeSpan.textContent = clearTime;
     gameResult.style.display = 'block';
     timerDisplay.style.display = 'none';
+    let bestTimeSpan = document.getElementById('bestTime');
+  let bestTime = localStorage.getItem('bestTime'); // ローカルストレージからベストタイムを取得
+
+  if (!bestTime || elapsedTime < bestTime) {
+    localStorage.setItem('bestTime', elapsedTime); // 新しいベストタイムを保存
+    bestTime = elapsedTime;
+    document.getElementById('resultMessage').textContent = 'ベストタイム更新！おめでとう！';
+  } else {
+    document.getElementById('resultMessage').textContent = '残念、もう少し頑張ろう！';
+  }
+
+  // ベストタイムを表示
+  let bestMinutes = Math.floor(bestTime / 60000);
+  let bestSeconds = Math.floor((bestTime % 60000) / 1000);
+  bestTimeSpan.textContent = `${bestMinutes.toString().padStart(2, '0')}:${bestSeconds.toString().padStart(2, '0')}`;
+
+  gameResult.style.display = 'block';
+  timerDisplay.style.display = 'none';
   };
 
   backBt.addEventListener('click', () => {
@@ -162,5 +187,4 @@ document.addEventListener('DOMContentLoaded', () => {
   closeRuleBt.addEventListener('click', () => {
     ruleScreen.style.display = 'none';
   });
-
 });

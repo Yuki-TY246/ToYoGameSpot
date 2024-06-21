@@ -18,15 +18,16 @@ body {
 
 div.card {
   aspect-ratio: 2 / 3;
-  background-size: contain;
+  background-size: cover;
 }
 
 div.back {
   background-image: url(../images/z01.png) !important;
+  background-size: cover;
 }
 
 @keyframes fadeout {
-  40% {
+  0% {
     opacity: 1;
   }
   100% {
@@ -34,9 +35,39 @@ div.back {
   }
 }
 
+@keyframes flip {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.fadeout {
+  animation-name: fadeout;
+  animation-duration: 0.35s; /* フェードアウトの速度を調整 */
+  animation-fill-mode: forwards;
+}
+
+.flip {
+  animation-name: flip;
+  animation-duration: 0.3s; /* カードを裏返す速度を調整 */
+  animation-fill-mode: forwards;
+}
+
 div.fadeout {
   animation-name: fadeout;
-  animation-duration: 0.5s;
+  animation-duration: 0.2s; /* めくるアニメーションの速度を設定 */
+  animation-fill-mode: forwards;
+}
+
+div.fadein {
+  animation-name: fadein;
+  animation-duration: 0.01s; /* 裏返しに戻るアニメーションの速度を設定 */
   animation-fill-mode: forwards;
 }
 
@@ -241,4 +272,15 @@ z-index: 101; /* 閉じるボタンはルールボックスより手前に表示
   width: 300px; /* 画像の幅を調整 */
   height: auto; /* 高さは自動調整 */
   margin-right: 40px; /* 画像の間隔を設定 */
+}
+
+#clearTime{
+  font-size: 50px;
+  color: blue;
+  font-weight: bold;
+}
+#bestTime{
+  font-size: 60px;
+  color: red;
+  font-weight: bold;
 }
