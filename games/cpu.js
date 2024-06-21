@@ -15,10 +15,11 @@ class Masu {
     }
 
     set(ishi) {
-        var div = $('div', this.td);
+        var div = $('div', this.td);// クラスを変更するdiv要素を取得
 
-        if (ISHI_NONE == this.ishi()) {
+        if (ISHI_NONE == this.ishi()) {// 石が置かれていないとき
             div.removeClass('none');
+        // 挟んだ石をひっくり返す
         } else {
             div.removeClass(ishi == ISHI_BLACK ? 'white' : 'black');
         }
@@ -26,7 +27,7 @@ class Masu {
         div.addClass(ishi == ISHI_BLACK ? 'black' : 'white');
         return this;
     }
-
+    // 置いた石を除く
     remove() {
         $('div', this.td).removeClass('white').removeClass('black').addClass('none');
         return this;
@@ -61,45 +62,47 @@ class Masu {
     }
 }
 
+//ここから追加
 class CPU {
     constructor(ishi) {
         this.ishi = ishi;
     }
-
+     // すべてのマスをチェック
     playTurn() {
-        setTimeout(() => {
             var possibleMoves = [];
 
             for (var r = 0; r < 8; r++) {
                 for (var c = 0; c < 8; c++) {
                     var masu = new Masu(r, c);
-                    if (masu.ishi() == ISHI_NONE) {
+                    if (masu.ishi() == ISHI_NONE) {   // 石が置かれていない場合
                         var count = masu.set(this.ishi).roundReverse(false);
-                        if (count > 0) {
-                            possibleMoves.push({ r: r, c: c });
+                        if (count > 0) {  // 反転できる場合
+                            possibleMoves.push({ r: r, c: c });  // 有効な手として追加
                         }
-                        masu.remove();
+                        masu.remove();  // 一時的な設定を元に戻す
                     }
                 }
             }
-            if (possibleMoves.length > 0) {
+            if (possibleMoves.length > 0) { // 有効な手がある場合
+                // 角のマスが有効な手の中にあるかチェック
                 for (var i = 0; i < possibleMoves.length; i++) {
                     if (this.isCornerMove(possibleMoves[i].r, possibleMoves[i].c)) {
+                         // 角のマスに石を置いて反転する
                         new Masu(possibleMoves[i].r, possibleMoves[i].c).set(this.ishi).roundReverse(true);
-                        return;
+                        return; // 角に置けたらターン終了
                     }
                 }
-
+                // ランダムに有効な手を選択して石を置き、反転する
                 var randomMove = possibleMoves[Math.floor(Math.random() * possibleMoves.length)];
                 new Masu(randomMove.r, randomMove.c).set(this.ishi).roundReverse(true);
             } else {
-                alert("CPUがパスしました。");
-                this.ishi *= -1;
-                $('div#status').html((ishi == ishiHuman ? 'プレイヤー' : 'CPU') + 'の番');
+                // 有効な手がない場合はパス
+                if (parseInt(blackCount) + parseInt(whiteCount) != 63) {
+                    alert("CPUがパスしました。");
+                }
             }
-        }, 500);
     }
-
+    // 角のマスかどうかをチェックする関数
     isCornerMove(r, c) {
         return (r == 0 && c == 0) ||
                (r == 0 && c == 7) ||

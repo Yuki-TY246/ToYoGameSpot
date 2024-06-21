@@ -29,11 +29,11 @@ jQuery(function () {
                             var count = masu.set(ishi).roundReverse(false);
                             if (count > 0) {
                                 masu.roundReverse(true);
-                                ishi *= -1;
+                                ishi = ishiCPU;    
                                 updateStatus();
                                 $('table#board td div').removeClass('highlight'); // ハイライトをクリア
                                 if (ishi == ishiCPU) {
-                                    setTimeout(cpuPlayTurn, 500); // CPUのターンを呼び出す、500ミリ秒(0.5)後に実行
+                                    setTimeout(cpuPlayTurn, 500); // CPUのターンを呼び出す、500ミリ秒後に実行
                                 }
                             } else {
                                 masu.remove();
@@ -161,17 +161,16 @@ function highlightLegalMoves2(ishi) {
         cpu.playTurn();
         ishi = ishiHuman;
         setTimeout(updateStatus, 500); // CPUのターン後にカウントを更新
-        checkPass(); // CPUのターン後にパスをチェック
+        // checkPass(); // CPUのターン後にパスをチェック
     }
      // パスをチェックする関数cpuのパス機能はcpu.jsに記述
     function checkPass() {
-        if (!canPlay(ishi)) {
-            alert('あなたはパスしました');
-            ishi *= -1;
+        if (!canPlay(ishiHuman)) {
+            ishi = ishiCPU;
             updateStatus();
-            if (ishi == ISHI_WHITE) {
-                setTimeout(cpuPlayTurn, 500); // CPUのターンを呼び出す
-            }
+            setTimeout(cpuPlayTurn, 500); // CPUのターンを呼び出す
+        }else{
+            alert('ひかっているところにおけるよ!');
         }
     }
 
@@ -221,13 +220,15 @@ function highlightLegalMoves2(ishi) {
         ishi = ishiHuman; // 石の色をプレイヤーの色にリセット
         $('div#status').html(humanFirst ? 'あなたの<ruby>番<rt>ばん</rt></ruby>:' : 'CPUの<ruby>番<rt>ばん</rt></ruby>:');
         if (!humanFirst) {
-            setTimeout(cpuPlayTurn, 500); // CPUが先攻の場合、CPUのターンを始める
+            cpuPlayTurn(); // CPUが先攻の場合、CPUのターンを始める
         }
     }
 
     window.resetGame = resetGame;
 
+
     
+window.checkPass = checkPass;
 
     initGame();
 

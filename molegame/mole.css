@@ -104,6 +104,28 @@ a {
     background: url(images/967589.jpg); 
 }
 
+.title_moles{
+    display: flex;
+    justify-content: space-around;
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.mole_title.slide-in-bottom {
+    display: block;
+    animation: slideInFromBottom 0.5s ease forwards;
+}
+
+
 
 /* 以下mole2 */
 
@@ -166,6 +188,22 @@ a {
     border: 2px solid #333333;
 }
 
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(10%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.overlay.slide-in-bottom {
+    display: block;
+    animation: slideInFromBottom 0.5s ease forwards;
+}
+
 /* 以下mole3 */
 .result{
     width: 250px;
@@ -177,10 +215,21 @@ a {
 }
 
 /* 以下mole4 */
+.final_score{
+    height: 250px;
+    text-align: center;
+    width: 1000px;
+    font-size: 125px;
+    font-weight: 500;
+    padding-top: 150px;
+    color: gold;
+    text-shadow: 0 0 10px gold,0 0 15px gold;
+}
+
 .restart{
     width: 300px;
     height: 80px;
-    font-size: 37px;
+    font-size: 35px;
     margin: 0 50px;
     font-family:'Courier New', Courier, monospace;
     border-radius: 60px;
@@ -190,7 +239,7 @@ a {
 .back_title{
     width: 300px;
     height: 80px;
-    font-size: 37px;
+    font-size: 35px;
     margin: 0 50px;
     font-family:'Courier New', Courier, monospace;
     border-radius: 60px;

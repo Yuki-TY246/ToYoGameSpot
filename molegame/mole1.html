@@ -5,23 +5,49 @@
     <link rel="stylesheet" href="mole.css">
   </head>
 
+  <style>
+    body {
+      overflow: hidden;
+    }
+  </style>
+
   <body>
 
     <div class="back">
-    <div class="game-main1">もぐらたたき</div>
-    <div class="game-main2">
-      <button onclick="location.href='mole2.html';" class="start">ゲームスタート！</button>
+      <div class="game-main1">
+        もぐらたたき
+      </div>
+      <div class="game-main2">
+        <button onclick="location.href='mole2.html';" class="start">ゲームスタート！</button>
+      </div>
+      <div class="title_moles">
+        <img src="img/animal1.png" class="mole_title" id="animalImage1">
+        <img src="img/animal1.png" class="mole_title" id="animalImage2">
+        <img src="img/animal1.png" class="mole_title" id="animalImage3">
+        <img src="img/animal1.png" class="mole_title" id="animalImage4">
+      </div>
     </div>
 
   <script>
     window.addEventListener("load", function(){
       const playArticle = document.querySelectorAll(".start")
+      const titleAnimals = document.querySelectorAll(".mole_title")
+      titleAnimals.forEach(function(animals){
+        animals.setAttribute("style", "display: none;")
+      })
       playArticle.forEach(function(articles) {
         articles.addEventListener("mouseover", function(){
           articles.setAttribute("style", "background-color: #000000; color: #ffffff;")
+          titleAnimals.forEach(function(animals){
+            animals.removeAttribute("style")
+            animals.classList.add("slide-in-bottom");
+          })
         })
         articles.addEventListener("mouseout", function(){
           articles.removeAttribute("style")
+          titleAnimals.forEach(function(animals){
+            animals.setAttribute("style", "display: none;")
+          })
         })
       })
     })
