@@ -221,3 +221,12 @@ a{
   text-decoration-line: none;
   color: #333333;
 }
+
+.shadow-img {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+.shadow-img:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.7);
+}
