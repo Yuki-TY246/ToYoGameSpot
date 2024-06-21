@@ -54,7 +54,26 @@ jQuery(function () {
     }
 
       // 置ける場所をハイライトする関数
-function highlightLegalMoves(ishi) {
+function highlightLegalMoves1(ishi) {
+    // 既存のハイライトをクリア
+    $('table#board td div').removeClass('highlight');
+    // 盤面全体をチェック
+    for (var r = 0; r < 8; r++) {
+        for (var c = 0; c < 8; c++) {
+            var masu = new Masu(r, c);
+            $('#r' + r + 'c' + c + ' div').addClass('highlight').parent().css('background-color', 'green');
+            if (masu.ishi() == ISHI_NONE) {
+                var count = masu.set(ishi).roundReverse(false);
+                masu.remove();
+                if (count > 0) {
+                    // ハイライトクラスを適用し、背景色を変える
+                    $('#r' + r + 'c' + c + ' div').addClass('highlight').parent().css('background-color', '#538955');
+                }
+            }
+        }
+    }
+}
+function highlightLegalMoves2(ishi) {
     // 既存のハイライトをクリア
     $('table#board td div').removeClass('highlight');
     // 盤面全体をチェック
@@ -67,19 +86,19 @@ function highlightLegalMoves(ishi) {
                 masu.remove();
                 if (count > 0) {
                     // ハイライトクラスを適用し、背景色を変える
-                    $('#r' + r + 'c' + c + ' div').addClass('highlight').parent().css('background-color', '#538955');
+                    $('#r' + r + 'c' + c + ' div').addClass('highlight').parent().css('background-color', 'green');
                 }
             }
         }
     }
 }
+
     // ステータスを更新する関数 白黒のカウントと終了判定を行っている
     function updateStatus() {
         var blackCount = 0, whiteCount = 0;
         $('table#board td div').each(function () {
             if ($(this).hasClass('black')) blackCount++ ;
             else if ($(this).hasClass('white')) whiteCount++;
-            
         });
         $('div#status').html(ishi == ishiHuman ? 'あなたの<ruby>番<rt>ばん</rt></ruby>' : 'CPUの<ruby>番<rt>ばん</rt></ruby>');
         if(ishiHuman==-1){//先行後攻の自分の色の表示の修正
@@ -98,7 +117,10 @@ function highlightLegalMoves(ishi) {
         }
         // 自分のターンの最初に置ける場所をハイライト
         if (ishi == ishiHuman) {
-            highlightLegalMoves(ishi);
+            highlightLegalMoves1(ishi);
+        }
+        if (ishi == ishiCPU) {
+            highlightLegalMoves2(ishi);
         }
         
     }
