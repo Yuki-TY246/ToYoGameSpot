@@ -66,6 +66,7 @@
         const scoreDisplay = document.getElementById('score');
         const timeDisplay = document.getElementById('time');
         const hitSound = new Audio('sound/maou_se_system41.mp3');
+        hitSound.volume = 0.5;
         animalArticle.forEach(function(articles) {
           if (Math.random() > 0.1) {
             articles.setAttribute("style", "display: none;")
