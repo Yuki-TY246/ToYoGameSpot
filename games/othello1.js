@@ -7,6 +7,8 @@ var humanFirst; //プレイヤーが先行か後攻か判定
 var ishiHuman; //プレイヤーの石の色
 var ishiCPU;  //cpuの石の色
 var cpu;  // cpuのインスタンス
+var gameOver = false;
+
 
 jQuery(function () {
     // 盤面を初期化する関数
@@ -110,6 +112,7 @@ function highlightLegalMoves2(ishi) {
         }
          // ゲームが終了した場合、結果を保存してリダイレクト
         if (blackCount + whiteCount === 64 || blackCount === 0 || whiteCount === 0) {
+            gameOver = true;
             setTimeout(function () {
                 saveCountsAndRedirect();
             }, 1500);
@@ -160,7 +163,7 @@ function highlightLegalMoves2(ishi) {
         cpu.playTurn();
         ishi = ishiHuman;
         setTimeout(updateStatus, 500); // CPUのターン後にカウントを更新
-        // checkPass(); // CPUのターン後にパスをチェック
+
     }
      // パスをチェックする関数cpuのパス機能はcpu.jsに記述
     function checkPass() {

@@ -76,6 +76,7 @@ jQuery(function () {
 
     function checkPass() {
         if (!canPlay(ishi)) {
+            alert('パスしました');
             ishi *= -1;
             updateStatus();
         }else{
@@ -159,5 +160,4 @@ function highlightLegalMoves2(ishi) {
     }
 }
 });
-
 
