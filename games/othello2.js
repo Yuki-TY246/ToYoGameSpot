@@ -158,6 +158,7 @@ function highlightLegalMoves2(ishi) {
         }
     }
 }
+
 });
 
 

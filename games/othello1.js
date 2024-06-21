@@ -22,6 +22,7 @@ jQuery(function () {
                     }, function () {
                         $(this).removeClass('hover');
                     })
+                    
                     .click(function (e) {  // tdがクリックされたときの動作
                         var masu = new Masu($(this).attr('data-r'), $(this).attr('data-c'));
                         if (masu.ishi() == ISHI_NONE) {
@@ -224,6 +225,23 @@ function highlightLegalMoves2(ishi) {
     }
 
     window.resetGame = resetGame;
-    window.checkPass = checkPass;
+
+
+    
+window.checkPass = checkPass;
+
     initGame();
+
+    $(function() {
+        $('.btn').on('click', function() {
+            $('.btn').hide();
+            $('.loading').show();
+     
+            // 3秒後に元に戻す
+            setTimeout(function() {
+                $('.btn').show();
+                $('.loading').hide();
+            }, 3000);
+        });
+    });
 });
