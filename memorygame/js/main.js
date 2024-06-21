@@ -149,6 +149,24 @@ document.addEventListener('DOMContentLoaded', () => {
     clearTimeSpan.textContent = clearTime;
     gameResult.style.display = 'block';
     timerDisplay.style.display = 'none';
+    let bestTimeSpan = document.getElementById('bestTime');
+  let bestTime = localStorage.getItem('bestTime'); // ローカルストレージからベストタイムを取得
+
+  if (!bestTime || elapsedTime < bestTime) {
+    localStorage.setItem('bestTime', elapsedTime); // 新しいベストタイムを保存
+    bestTime = elapsedTime;
+    document.getElementById('resultMessage').textContent = 'ベストタイム更新！おめでとう！';
+  } else {
+    document.getElementById('resultMessage').textContent = '残念、もう少し頑張ろう！';
+  }
+
+  // ベストタイムを表示
+  let bestMinutes = Math.floor(bestTime / 60000);
+  let bestSeconds = Math.floor((bestTime % 60000) / 1000);
+  bestTimeSpan.textContent = `${bestMinutes.toString().padStart(2, '0')}:${bestSeconds.toString().padStart(2, '0')}`;
+
+  gameResult.style.display = 'block';
+  timerDisplay.style.display = 'none';
   };
 
   backBt.addEventListener('click', () => {

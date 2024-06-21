@@ -275,6 +275,11 @@ z-index: 101; /* 閉じるボタンはルールボックスより手前に表示
 
 #clearTime{
   font-size: 50px;
+  color: blue;
+  font-weight: bold;
+}
+#bestTime{
+  font-size: 60px;
   color: red;
   font-weight: bold;
 }
