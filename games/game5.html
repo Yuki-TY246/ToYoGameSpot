@@ -86,19 +86,8 @@
         var blackCount = localStorage.getItem('blackCount');
         document.getElementById('whiteCount').textContent = whiteCount;
         document.getElementById('blackCount').textContent = blackCount;
-        if (result) {
-            document.getElementById('winloss').textContent = result;
-        } else {
-            if (whiteCount > blackCount) {
-                document.getElementById('winloss').textContent = 'しろのかち！';
-            } else if (whiteCount < blackCount) {
-                document.getElementById('winloss').textContent = 'くろのかち！';
-            } else {
-                document.getElementById('winloss').textContent = 'ひきわけ';
-            }
-        }
+        document.getElementById('winloss').textContent = result;
     });
-    
     </script>
     <div class="button_container">
         <button onclick="location.href='game1.html';" class="title_button">タイトルに戻る</button>
