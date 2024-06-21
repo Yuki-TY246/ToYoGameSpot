@@ -129,10 +129,10 @@ body, html {
 .game-ichiran-wrapper {
   text-align: left; /* 左揃え */
   max-width: 1250px; /* 内部コンテンツの最大幅を設定 */
-  margin: 10em auto;
+  margin: 20em auto;
   position: relative;
   background: #f2f5f6; /* 背景色 */
-  padding: 3em 1em 1em; /* 内側余白（上・左右・下） */
+  padding: 3em 1em 3em; /* 内側余白（上・左右・下） */
 }
 
 .game-ichiran-wrapper::before {
