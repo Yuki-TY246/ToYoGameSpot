@@ -66,7 +66,6 @@
         const scoreDisplay = document.getElementById('score');
         const timeDisplay = document.getElementById('time');
         const hitSound = new Audio('sound/maou_se_system41.mp3');
-        const timeSound = new Audio('sound/maou_se_system27.mp3');
         animalArticle.forEach(function(articles) {
           if (Math.random() > 0.1) {
             articles.setAttribute("style", "display: none;")
@@ -102,9 +101,6 @@
         const timeInterval = setInterval(function() {
           timeLeft--;
           timeDisplay.textContent = `じかん: ${timeLeft}`;
-          if (timeLeft <= 5) {
-            timeSound.play();
-          }
           if (timeLeft <= 0) {
             clearInterval(timeInterval); // タイマー停止
             location.href=`mole3.html?score=${score}`;

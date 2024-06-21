@@ -60,6 +60,8 @@
     
     <script>
     window.addEventListener("load", function(){
+      const timeSound = new Audio('sound/maou_se_onepoint30.mp3');
+      timeSound.play();
       const urlParams = new URLSearchParams(window.location.search);
       const score = parseInt(urlParams.get('score'));
 
