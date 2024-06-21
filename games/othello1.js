@@ -135,17 +135,16 @@ jQuery(function () {
         cpu.playTurn();
         ishi = ishiHuman;
         setTimeout(updateStatus, 500); // CPUのターン後にカウントを更新
-        checkPass(); // CPUのターン後にパスをチェック
+        // checkPass(); // CPUのターン後にパスをチェック
     }
      // パスをチェックする関数cpuのパス機能はcpu.jsに記述
     function checkPass() {
         if (!canPlay(ishiHuman)) {
-            if(blackCount + whiteCount != 63){
-                alert('あなたはパスしました');
-            }
             ishi = ishiCPU;
             updateStatus();
             setTimeout(cpuPlayTurn, 500); // CPUのターンを呼び出す
+        }else{
+            alert('ひかっているところにおけるよ!');
         }
     }
 
@@ -200,6 +199,6 @@ jQuery(function () {
     }
 
     window.resetGame = resetGame;
-
+    window.checkPass = checkPass;
     initGame();
 });
