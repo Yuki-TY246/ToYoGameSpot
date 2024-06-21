@@ -28,7 +28,7 @@ jQuery(function () {
                             var count = masu.set(ishi).roundReverse(false);
                             if (count > 0) {
                                 masu.roundReverse(true);
-                                ishi *= -1;
+                                ishi = ishiCPU;
                                 updateStatus();
                                 $('table#board td div').removeClass('highlight'); // ハイライトをクリア
                                 if (ishi == ishiCPU) {
@@ -141,13 +141,14 @@ function highlightLegalMoves(ishi) {
     }
      // パスをチェックする関数cpuのパス機能はcpu.jsに記述
     function checkPass() {
-        if (!canPlay(ishi)) {
+        if (!canPlay(ishiHuman)) {
             alert('あなたはパスしました');
-            ishi *= -1;
-            updateStatus();
-            if (ishi == ISHI_WHITE) {
-                setTimeout(cpuPlayTurn, 500); // CPUのターンを呼び出す
+            ishi = ishiCPU;
+            if(blackCount + whiteCount === 63){
+                setTimeout(updateStatus, 10000);
             }
+            updateStatus();
+            setTimeout(cpuPlayTurn, 500); // CPUのターンを呼び出す
         }
     }
 
