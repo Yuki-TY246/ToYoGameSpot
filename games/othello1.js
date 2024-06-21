@@ -28,11 +28,11 @@ jQuery(function () {
                             var count = masu.set(ishi).roundReverse(false);
                             if (count > 0) {
                                 masu.roundReverse(true);
-                                ishi = ishiCPU;
+                                ishi = ishiCPU;    
                                 updateStatus();
                                 $('table#board td div').removeClass('highlight'); // ハイライトをクリア
                                 if (ishi == ishiCPU) {
-                                    setTimeout(cpuPlayTurn, 500); // CPUのターンを呼び出す、500ミリ秒(0.5)後に実行
+                                    setTimeout(cpuPlayTurn, 500); // CPUのターンを呼び出す、500ミリ秒後に実行
                                 }
                             } else {
                                 masu.remove();
@@ -140,11 +140,10 @@ jQuery(function () {
      // パスをチェックする関数cpuのパス機能はcpu.jsに記述
     function checkPass() {
         if (!canPlay(ishiHuman)) {
-            alert('あなたはパスしました');
-            ishi = ishiCPU;
-            if(blackCount + whiteCount === 63){
-                setTimeout(updateStatus, 10000);
+            if(blackCount + whiteCount != 63){
+                alert('あなたはパスしました');
             }
+            ishi = ishiCPU;
             updateStatus();
             setTimeout(cpuPlayTurn, 500); // CPUのターンを呼び出す
         }
@@ -196,7 +195,7 @@ jQuery(function () {
         ishi = ishiHuman; // 石の色をプレイヤーの色にリセット
         $('div#status').html(humanFirst ? 'あなたの<ruby>番<rt>ばん</rt></ruby>:' : 'CPUの<ruby>番<rt>ばん</rt></ruby>:');
         if (!humanFirst) {
-            setTimeout(cpuPlayTurn, 500); // CPUが先攻の場合、CPUのターンを始める
+            cpuPlayTurn(); // CPUが先攻の場合、CPUのターンを始める
         }
     }
 

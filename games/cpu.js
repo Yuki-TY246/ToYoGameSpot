@@ -69,7 +69,6 @@ class CPU {
     }
      // すべてのマスをチェック
     playTurn() {
-        setTimeout(() => {
             var possibleMoves = [];
 
             for (var r = 0; r < 8; r++) {
@@ -98,9 +97,10 @@ class CPU {
                 new Masu(randomMove.r, randomMove.c).set(this.ishi).roundReverse(true);
             } else {
                 // 有効な手がない場合はパス
-                alert("CPUがパスしました。");
+                if (parseInt(blackCount) + parseInt(whiteCount) != 63) {
+                    alert("CPUがパスしました。");
+                }
             }
-        }, 500);//遅延
     }
     // 角のマスかどうかをチェックする関数
     isCornerMove(r, c) {
