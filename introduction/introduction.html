@@ -36,7 +36,7 @@
           <a href="../games/othello_game.html">オセロゲーム</a>
         </div>
         <div class="intro_content">
-          <section id="image-carousel1" class="splide" aria-label="お気に入りの写真">
+          <section id="image-carousel1" class="splide" aria-label="ゲーム紹介画像">
             <div class="splide__track">
               <ul class="splide__list">
                 <li class="splide__slide">
@@ -73,7 +73,7 @@
                 </b>
               </div>
               <div class="intro_play_time">
-                プレイ時間目安:10分
+                プレイ時間目安:5分
               </div>
             </div>
           </div>
@@ -90,20 +90,17 @@
     <div class="intro_space">
       <div class="intro_contents">
         <div class="intro_game_title">
-          <a href="../games/othello_game.html">オセロゲーム</a>
+          <a href="../molegame/mole_game.html">もぐらたたき</a>
         </div>
         <div class="intro_content">
-          <section id="image-carousel2" class="splide" aria-label="お気に入りの写真">
+          <section id="image-carousel2" class="splide" aria-label="ゲーム紹介画像">
             <div class="splide__track">
               <ul class="splide__list">
                 <li class="splide__slide">
-                  <img src="img/othello1.png" alt="">
+                  <img src="img/mole1.png" alt="">
                 </li>
                 <li class="splide__slide">
-                  <img src="img/game2.png" alt="">
-                </li>
-                <li class="splide__slide">
-                  <img src="img/game3.png" alt="">
+                  <img src="img/mole2.png" alt="">
                 </li>
               </ul>
             </div>
@@ -119,26 +116,71 @@
           <div class="intro_textarea">
             <div class="intro_texts_main">
               <div class="intro_text_title">
-                ゲームのキャッチコピー
+                ゲームの<ruby>内容<rt>ないよう</rt></ruby>
               </div>
               <div class="intro_text">
                 ゲームの紹介文。このゲームはこういうゲームです。こんなことができるよ。
               </div>
               <div class="intro_play_time">
-                プレイ時間目安:300分
+                プレイ時間目安:1分
               </div>
-              <div class="intro_difficulty">
-                むずかしさ　★★★☆☆
-             </div>
             </div>
           </div>
           <div class="intro_play_btn">
-            <a href="../games/othello_game.html">🎮ゲームをプレイ！🎮</a>
+            <a href="../molegame/mole_game.html">🎮ゲームをプレイ！🎮</a>
           </div>
         </div>
       </div>
     </div>
     </div>
+
+    <div id="section-name">
+      <div class="intro_space">
+        <div class="intro_contents">
+          <div class="intro_game_title">
+            <a href="../memorygame/memorygame.html"><ruby>神経衰弱<rt>しんけいすいじゃく</rt></ruby></a>
+          </div>
+          <div class="intro_content">
+            <section id="image-carousel3" class="splide" aria-label="ゲーム紹介画像">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <img src="img/memory1.png" alt="">
+                  </li>
+                  <li class="splide__slide">
+                    <img src="img/memory2.png" alt="">
+                  </li>
+                </ul>
+              </div>
+              <div class="splide__arrows">
+                <button class="splide__arrow splide__arrow--prev">
+                  ＜
+                </button>
+                <button class="splide__arrow splide__arrow--next">
+                  ＞
+                </button>
+              </div>
+            </section>
+            <div class="intro_textarea">
+              <div class="intro_texts_main">
+                <div class="intro_text_title">
+                  ゲームの<ruby>内容<rt>ないよう</rt></ruby>
+                </div>
+                <div class="intro_text">
+                  ゲームの紹介文。このゲームはこういうゲームです。こんなことができるよ。
+                </div>
+                <div class="intro_play_time">
+                  プレイ時間目安:1分
+                </div>
+              </div>
+            </div>
+            <div class="intro_play_btn">
+              <a href="../memorygame/memorygame.html">🎮ゲームをプレイ！🎮</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
 
 
     <div class="andmore">
@@ -181,6 +223,9 @@
       } );
       document.addEventListener( 'DOMContentLoaded', function () {
         new Splide( '#image-carousel2' ).mount();
+      } );
+      document.addEventListener( 'DOMContentLoaded', function () {
+        new Splide( '#image-carousel3' ).mount();
       } );
     </script>
 
