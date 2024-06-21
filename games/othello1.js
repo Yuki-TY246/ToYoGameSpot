@@ -53,24 +53,26 @@ jQuery(function () {
         updateStatus();
     }
 
-        // 置ける場所をハイライトする関数
-        function highlightLegalMoves(ishi) {
-            // 既存のハイライトをクリア
-            $('table#board td div').removeClass('highlight');
-            // 盤面全体をチェック
-            for (var r = 0; r < 8; r++) {
-                for (var c = 0; c < 8; c++) {
-                    var masu = new Masu(r, c);
-                    if (masu.ishi() == ISHI_NONE) {
-                        var count = masu.set(ishi).roundReverse(false);
-                        masu.remove();
-                        if (count > 0) {
-                            $('#r' + r + 'c' + c + ' div').addClass('highlight'); // ハイライトクラスを適用
-                        }
-                    }
+      // 置ける場所をハイライトする関数
+function highlightLegalMoves(ishi) {
+    // 既存のハイライトをクリア
+    $('table#board td div').removeClass('highlight');
+    // 盤面全体をチェック
+    for (var r = 0; r < 8; r++) {
+        for (var c = 0; c < 8; c++) {
+            $('#r' + r + 'c' + c + ' div').addClass('highlight').parent().css('background-color', 'green');
+            var masu = new Masu(r, c);
+            if (masu.ishi() == ISHI_NONE) {
+                var count = masu.set(ishi).roundReverse(false);
+                masu.remove();
+                if (count > 0) {
+                    // ハイライトクラスを適用し、背景色を変える
+                    $('#r' + r + 'c' + c + ' div').addClass('highlight').parent().css('background-color', '#658E31');
                 }
             }
         }
+    }
+}
     // ステータスを更新する関数 白黒のカウントと終了判定を行っている
     function updateStatus() {
         var blackCount = 0, whiteCount = 0;
@@ -78,7 +80,7 @@ jQuery(function () {
             if ($(this).hasClass('black')) blackCount++;
             else if ($(this).hasClass('white')) whiteCount++;
         });
-        $('div#status').html(ishi == ishiHuman ? 'あなたの<ruby>番<rt>ばん</rt></ruby>:' : 'CPUの<ruby>番<rt>ばん</rt></ruby>:');
+        $('div#status').html(ishi == ishiHuman ? 'あなたの<ruby>番<rt>ばん</rt></ruby>' : 'CPUの<ruby>番<rt>ばん</rt></ruby>');
         if(ishiHuman==-1){//先行後攻の自分の色の表示の修正
             $('div#status1').html('<ruby>白<rt>しろ</rt></ruby>:' + whiteCount + '<ruby>枚<rt>まい</rt></ruby>');
             $('div#status2').html('<ruby>黒<rt>くろ</rt></ruby>:' + blackCount + '<ruby>枚<rt>まい</rt></ruby>');
