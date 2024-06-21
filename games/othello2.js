@@ -7,6 +7,7 @@ var ishi = ISHI_BLACK;  // 石の白黒
 jQuery(function () {
     // 盤面を初期化する関数
     function initBoard() {
+        $('table#board').empty(); // ボードをクリア
         for (var r = 0; r < 8; r++) {
             var tr = $("<tr>");
             for (var c = 0; c < 8; c++) {
@@ -26,7 +27,6 @@ jQuery(function () {
                                 masu.roundReverse(true);
                                 ishi *= -1;
                                 updateStatus();
-                                checkPass();
                             } else {
                                 masu.remove();
                             }
@@ -69,9 +69,26 @@ jQuery(function () {
 
     function checkPass() {
         if (!canPlay(ishi)) {
-            alert('パスしました');
             ishi *= -1;
             updateStatus();
+        }else{
+            alert('ひかっているところにおけるよ!');
+        }
+    }
+
+     // 指定された色で置けるかできるかどうかを判定する関数
+     function canPlay(ishi) {
+        for (var r = 0; r < 8; r++) {
+            for (var c = 0; c < 8; c++) {
+                var masu = new Masu(r, c);
+                if (masu.ishi() == ISHI_NONE) {
+                    var count = masu.set(ishi).roundReverse(false);
+                    masu.remove();
+                    if (count > 0) {
+                        return true;
+                    }
+                }
+            }
         }
     }
 
@@ -86,5 +103,12 @@ jQuery(function () {
         location.href = 'game5.html';
     }
 
+    // ゲームをリセットする関数リセットボタンを押下時実行
+    function resetGame() {
+        initBoard(); // ボードを再初期化
+    }
+
+    window.resetGame = resetGame;
+    window.checkPass = checkPass;
     initBoard();
 });
