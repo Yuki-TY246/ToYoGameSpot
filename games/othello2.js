@@ -3,6 +3,7 @@ const ISHI_WHITE = -1;
 const ISHI_NONE = 0;
 
 var ishi = ISHI_BLACK;  // 石の白黒
+var intermediate_end;//特定の状況で強制終了するための変数
 
 jQuery(function () {
     // 盤面を初期化する関数

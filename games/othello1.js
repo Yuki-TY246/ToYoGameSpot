@@ -7,7 +7,8 @@ var humanFirst; //プレイヤーが先行か後攻か判定
 var ishiHuman; //プレイヤーの石の色
 var ishiCPU;  //cpuの石の色
 var cpu;  // cpuのインスタンス
-var gameOver = false;
+var gameOver = false;//ゲーム終了時のアラート
+
 
 
 jQuery(function () {
