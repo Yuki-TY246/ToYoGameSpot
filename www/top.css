@@ -170,13 +170,18 @@ body, html {
 
 .game-image {
   flex: none; /* 画像を伸縮しないようにする */
-  margin-top: 30px; /* 画像と説明の間の余白 */
+  margin-top: 60px; /* 画像と説明の間の余白 */
   margin-bottom: 0; /* 下の余白を0にする */
 }
 .game-image img {
-  max-width: 250px; /* 画像の最大幅を設定 */
+  max-width: 350px; /* 画像の最大幅を設定 */
   height: auto; /* 高さを自動調整 */
   }
+  .shadow-img {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease;
+  }
+
 
 .game-info > div {
   margin-bottom: 0; /* 各要素の下の余白を0にする */
@@ -188,6 +193,7 @@ body, html {
 .game-name {
   display: inline-block;
   font-size: 40px;
+  font-weight: bold;
 }
 .game-setume{
   font-size: 18px;
@@ -197,10 +203,6 @@ body, html {
   background: linear-gradient(transparent 50%, #bde4f7 50%);
   padding: 0 0.1em;
   font-weight: bold;
-}
-.game-name a:hover{
-  text-decoration: underline;
-  color: blue;
 }
 
 /* 区切り線 */
@@ -223,11 +225,26 @@ a{
   color: #333333;
 }
 
-.shadow-img {
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-  transition: box-shadow 0.3s ease;
-}
 
-.shadow-img:hover {
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.7);
+.btn-ichiran {
+  display: flex;
+  justify-content: center;
+}
+a.btn_02 {
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 230px;  /* 幅を広げる */
+  margin: 25px 10px 0 0;  /* 右側に10pxのマージンを追加 */
+  padding: 1rem 2rem;  /* パディングを調整 */
+	font-weight: bold;
+	border: 2px solid #27acd9;
+	background: #27acd9;
+	color: #fff;
+	transition: 0.5s;
+}
+a.btn_02:hover {
+	color: #27acd9;
+	background: #fff;
 }
