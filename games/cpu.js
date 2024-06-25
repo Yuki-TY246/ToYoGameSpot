@@ -91,15 +91,18 @@ class CPU {
                     if (this.isCornerMove(possibleMoves[i].r, possibleMoves[i].c)) {
                          // 角のマスに石を置いて反転する
                         new Masu(possibleMoves[i].r, possibleMoves[i].c).set(this.ishi).roundReverse(true);
+                        intermediate_end = 0;
                         return; // 角に置けたらターン終了
                     }
                 }
                 // ランダムに有効な手を選択して石を置き、反転する
                 var randomMove = possibleMoves[Math.floor(Math.random() * possibleMoves.length)];
                 new Masu(randomMove.r, randomMove.c).set(this.ishi).roundReverse(true);
+                intermediate_end = 0;
             } else {
                 // 有効な手がない場合はパス
                     alert("CPUがパスしました。");
+                    intermediate_end += 1;
             }
     }
     // 角のマスかどうかをチェックする関数
