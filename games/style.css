@@ -76,10 +76,7 @@ header {
 }
 .my-parts:hover {
 	cursor: pointer;
-}
-.my-parts:hover::after {
-	bottom: 0;
-	opacity: 1;
+    color: #ffff66; 
 }
 
 /* ----------top button------------ */
