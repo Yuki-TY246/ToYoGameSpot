@@ -1,0 +1,250 @@
+body, html {
+    margin: 0 auto; /* 水平方向に中央揃え */
+    padding: 0;
+    height: 100%;
+    width: 1250px; /* 幅を1250pxに固定 */
+    background-color: #CDE7FF;
+    font-family: YuGothic,'Yu Gothic',sans-serif;
+    color: #333333;
+}
+
+/* タイトル */
+.container {
+    display: flex;
+    justify-content: center; /* 要素を中央に配置する */
+    align-items: center; /* 要素を垂直方向に中央に配置する */
+    padding: 350px 0 200px;
+    /* 背景画像の指定↓ */
+    width: 100%;
+    height: 200px;
+    background-image: url(../www/img/haikei-niji.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.left-img img {
+    max-width: 120px; /* 画像の最大幅を指定 */
+    height: auto; /* 高さを自動調整 */
+    margin-right: 80px; /* 画像の右側に余白を追加 */
+}
+.left-img {
+    transform: rotate(-10deg);
+}
+.right-img img {
+    max-width: 120px; /* 画像の最大幅を指定 */
+    height: auto; /* 高さを自動調整 */
+    margin-left: 70px; /* 画像の右側に余白を追加 */
+}
+.right-img {
+    transform: rotate(10deg);
+}
+
+.fuwafuwa-left {
+    animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
+  }
+  @keyframes floating-y {
+    0% {
+      transform: translateY(-10%);
+    }
+    100% {
+      transform: translateY(15%);
+    }
+}
+.fuwafuwa-right {
+    animation: floating-y 2.0s ease-in-out infinite alternate-reverse;
+  }
+  @keyframes floating-y {
+    0% {
+      transform: translateY(-10%);
+    }
+    100% {
+      transform: translateY(15%);
+    }
+}
+
+.message {
+    color: #006eff;
+    font-size: 100px;
+    line-height: 1.2;
+    -webkit-box-reflect: below -10px -webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0) 10%,rgba(0,0,0,.6));
+    margin-bottom: calc(1em + 20px);
+}
+
+/* 本文 */
+.top-welcome-wrapper {
+  display: flex;
+  justify-content: center; /* コンテンツを中央に揃える */
+  padding: 20px;
+  max-width: 1250px; /* 最大幅を設定 */
+  margin: 0 auto; /* 中央揃え */
+  padding: 150px 0 10px;
+}
+
+.top-welcome {
+  text-align: left; /* 左揃え */
+  max-width: 1100px; /* 内部コンテンツの最大幅を設定 */
+  margin: 2em auto; /* ボックスの余白 */
+  background-color: #fefff9; /* ボックス背景色 */
+  padding: 5em 3em 2em; /* ボックス内側余白 */
+  position: relative; /* 配置(ここを基準に) */
+}
+
+.top-welcome .box-title {
+  background-color: rgba(120, 169, 255, 0.1); /* テープ背景色と透過 */
+  border-left: 2px dotted rgba(0,0,0,.1); /* テープのギザギザ左 */
+  border-right: 2px dotted rgba(0,0,0,.1); /* テープのギザギザ右 */
+  box-shadow: 0 0 5px rgba(0,0,0,0.2); /* テープ影 */
+  transform: rotate(-2deg); /* テープの傾き */
+  font-size: 3.5em; /* タイトル文字の大きさ */
+  color: #666; /* タイトル文字色 */
+  padding: 15px 30px; /* タイトルの余白 */
+  line-height: 1.5; /* タイトルの行の高さ */
+  position: absolute; /* 配置(ここを動かす) */
+  top: -100px; /* 上から（-10px）移動 */
+  left: 35px; /* 左から(20px)移動 */
+}
+
+.text-item {
+  font-size: 23px;
+}
+.under-dot{
+  text-emphasis: circle #4d9bc1;
+  text-emphasis-position: under;
+}
+.text-border{
+  border-bottom: 8px double #4d9bc1;
+}
+.under-dot-mini{
+  background: linear-gradient(transparent 50%, #bde4f7 50%);
+  padding: 0 0.1em;
+  font-weight: bold;
+}
+.text-item-end{
+  font-size: 35px;
+  font-weight: bold;
+  padding-top: 20px;
+  background: linear-gradient(transparent 50%, #bde4f7 50%);
+  padding: 0 0.1em;
+}
+
+/* ゲーム一覧 */
+.game-ichiran-wrapper {
+  text-align: left; /* 左揃え */
+  max-width: 1250px; /* 内部コンテンツの最大幅を設定 */
+  margin: 5em auto;
+  position: relative;
+  background: #f2f5f6; /* 背景色 */
+  padding: 3em 1em 3em; /* 内側余白（上・左右・下） */
+}
+
+.game-ichiran-wrapper::before {
+  position: absolute;
+  content: "";
+  width: 1000px;
+  height: 10px;
+  top: 0.5em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  border-top: dotted 10px #fff; /* ドットの形・大きさ・色 */
+}
+.ichiran-title{
+  text-align: center;
+  border-bottom: 5px solid #29546a;
+  font-weight: bolder;
+  font-size: 50px;
+  padding-bottom: 30px;
+}
+
+.game-ichiran {
+  display: flex; /* フレックスコンテナとして設定 */
+  align-items: start; 
+  padding: 5px 50px;
+}
+
+.game-info {
+  flex: 1; /* 残りのスペースを均等に分配 */
+  margin-right: 20px; /* 右側の余白 */
+  margin-bottom: 0; /* 下の余白を0にする */
+}
+
+.game-image {
+  flex: none; /* 画像を伸縮しないようにする */
+  margin-top: 60px; /* 画像と説明の間の余白 */
+  margin-bottom: 0; /* 下の余白を0にする */
+}
+.game-image img {
+  max-width: 350px; /* 画像の最大幅を設定 */
+  height: auto; /* 高さを自動調整 */
+  }
+  .shadow-img {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease;
+  }
+
+
+.game-info > div {
+  margin-bottom: 0; /* 各要素の下の余白を0にする */
+}
+.game-info a{
+  text-decoration-line: none;
+  color: #333333;
+}
+.game-name {
+  display: inline-block;
+  font-size: 40px;
+  font-weight: bold;
+}
+.game-setume{
+  font-size: 18px;
+}
+.game-name a{
+  text-decoration: none;
+  background: linear-gradient(transparent 50%, #bde4f7 50%);
+  padding: 0 0.1em;
+  font-weight: bold;
+}
+
+/* 区切り線 */
+.cp_hr03 {
+  margin-top: 50px;
+	border-top: 5px dotted rgb(0, 166, 255);
+  background-color: rgb(131, 228, 243);
+}
+
+.link{
+  text-decoration: none;
+}
+
+.play{
+  font-size: 20px;
+  font-weight: bold;
+}
+a{
+  text-decoration-line: none;
+  color: #333333;
+}
+
+
+.btn-ichiran {
+  display: flex;
+  justify-content: center;
+}
+a.btn_02 {
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 230px;  /* 幅を広げる */
+  margin: 25px 10px 0 0;  /* 右側に10pxのマージンを追加 */
+  padding: 1rem 2rem;  /* パディングを調整 */
+	font-weight: bold;
+	border: 2px solid #27acd9;
+	background: #27acd9;
+	color: #fff;
+	transition: 0.5s;
+}
+a.btn_02:hover {
+	color: #27acd9;
+	background: #fff;
+}
