@@ -28,8 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const flip = (eve) => {
     if (!gameStarted) {
-      startTimer();
-      gameStarted = true;
+      return;
     }
     let div = eve.target;
     if (!div.classList.contains('back') || secondCard !== null) {
@@ -106,10 +105,11 @@ document.addEventListener('DOMContentLoaded', () => {
   startBt.addEventListener('click', () => {
     shuffleCards();
     initCardGrid();
+    startTimer(); // タイマーを開始
+    gameStarted = true;
     startBt.classList.add('hidden');
     title.classList.add('hidden');
     timerDisplay.style.display = 'block';
-    gameStarted = false;
     firstCard = null;
     secondCard = null;
     ruleBt.style.display = 'none'; // スタートボタンを押したらルールボタンを非表示にする
@@ -150,23 +150,23 @@ document.addEventListener('DOMContentLoaded', () => {
     gameResult.style.display = 'block';
     timerDisplay.style.display = 'none';
     let bestTimeSpan = document.getElementById('bestTime');
-  let bestTime = localStorage.getItem('bestTime'); // ローカルストレージからベストタイムを取得
+    let bestTime = localStorage.getItem('bestTime'); // ローカルストレージからベストタイムを取得
 
-  if (!bestTime || elapsedTime < bestTime) {
-    localStorage.setItem('bestTime', elapsedTime); // 新しいベストタイムを保存
-    bestTime = elapsedTime;
-    document.getElementById('resultMessage').textContent = 'ベストタイム更新！おめでとう！';
-  } else {
-    document.getElementById('resultMessage').textContent = '残念、もう少し頑張ろう！';
-  }
+    if (!bestTime || elapsedTime < bestTime) {
+      localStorage.setItem('bestTime', elapsedTime); // 新しいベストタイムを保存
+      bestTime = elapsedTime;
+      document.getElementById('resultMessage').textContent = 'ベストタイム更新！おめでとう！';
+    } else {
+      document.getElementById('resultMessage').textContent = '残念、もう少し頑張ろう！';
+    }
 
-  // ベストタイムを表示
-  let bestMinutes = Math.floor(bestTime / 60000);
-  let bestSeconds = Math.floor((bestTime % 60000) / 1000);
-  bestTimeSpan.textContent = `${bestMinutes.toString().padStart(2, '0')}:${bestSeconds.toString().padStart(2, '0')}`;
+    // ベストタイムを表示
+    let bestMinutes = Math.floor(bestTime / 60000);
+    let bestSeconds = Math.floor((bestTime % 60000) / 1000);
+    bestTimeSpan.textContent = `${bestMinutes.toString().padStart(2, '0')}:${bestSeconds.toString().padStart(2, '0')}`;
 
-  gameResult.style.display = 'block';
-  timerDisplay.style.display = 'none';
+    gameResult.style.display = 'block';
+    timerDisplay.style.display = 'none';
   };
 
   backBt.addEventListener('click', () => {
