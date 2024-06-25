@@ -8,6 +8,7 @@ var ishiHuman; //プレイヤーの石の色
 var ishiCPU;  //cpuの石の色
 var cpu;  // cpuのインスタンス
 var gameOver = false;//ゲーム終了時のアラート
+var intermediate_end = 0;//特定の状況で強制終了するための変数
 
 
 
@@ -32,7 +33,8 @@ jQuery(function () {
                             var count = masu.set(ishi).roundReverse(false);
                             if (count > 0) {
                                 masu.roundReverse(true);
-                                ishi = ishiCPU;    
+                                ishi = ishiCPU;
+                                intermediate_end = 0    
                                 updateStatus();
                                 $('table#board td div').removeClass('highlight'); // ハイライトをクリア
                                 if (ishi == ishiCPU) {
@@ -113,7 +115,7 @@ function highlightLegalMoves2(ishi) {
             $('div#status2').html('<ruby>白<rt>しろ</rt></ruby>:' + whiteCount + '<ruby>枚<rt>まい</rt></ruby>');
         }
          // ゲームが終了した場合、結果を保存してリダイレクト
-        if (blackCount + whiteCount === 64 || blackCount === 0 || whiteCount === 0) {
+        if (blackCount + whiteCount === 64 || blackCount === 0 || whiteCount === 0 || intermediate_end >= 2) { //パス連打で積む可能性を考え>= 
             gameOver = true;
             setTimeout(function () {
                 saveCountsAndRedirect();
@@ -171,6 +173,7 @@ function highlightLegalMoves2(ishi) {
     function checkPass() {
         if (!canPlay(ishiHuman)) {
             ishi = ishiCPU;
+            intermediate_end += 1
             updateStatus();
             setTimeout(cpuPlayTurn, 500); // CPUのターンを呼び出す
         }else{
