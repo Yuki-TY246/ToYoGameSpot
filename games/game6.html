@@ -46,10 +46,10 @@
             padding: 10px 20px;
             font-size: 16px;
             -webkit-transition: all 1s ease;
-        -moz-transition: all 106s ease;
-        -o-transition: all 1s ease;
-        transition: all  1s ease;
-        background-color: aliceblue;
+            -moz-transition: all 106s ease;
+            -o-transition: all 1s ease;
+            transition: all  1s ease;
+            background-color: aliceblue;
         }
         .title_button:hover{
             background-color: rgb(255, 255, 255);
@@ -87,14 +87,14 @@
         document.getElementById('whiteCount').textContent = whiteCount;
         document.getElementById('blackCount').textContent = blackCount;
   
-            if (whiteCount > blackCount) {
-                document.getElementById('winloss').textContent = 'しろのかち！';
-            } else if (whiteCount < blackCount) {
-                document.getElementById('winloss').textContent = 'くろのかち！';
-            } else {
-                document.getElementById('winloss').textContent = 'ひきわけ';
-            }
+        if (whiteCount > blackCount) {
+           document.getElementById('winloss').textContent = 'しろのかち！';
+        } else if (whiteCount < blackCount) {
+           document.getElementById('winloss').textContent = 'くろのかち！';
+        } else {
+           document.getElementById('winloss').textContent = 'ひきわけ';
         }
+    }
     );
     
     </script>

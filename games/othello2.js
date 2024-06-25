@@ -133,7 +133,7 @@ function highlightLegalMoves1(ishi) {
                 masu.remove();
                 if (count > 0) {
                     // ハイライトクラスを適用し、背景色を変える
-                    $('#r' + r + 'c' + c + ' div').addClass('highlight').parent().css('background-color', '#538955');
+                    $('#r' + r + 'c' + c + ' div').addClass('highlight').parent().css('background-color', '#638955');
                 }
             }
         }
@@ -152,7 +152,7 @@ function highlightLegalMoves2(ishi) {
                 masu.remove();
                 if (count > 0) {
                     // ハイライトクラスを適用し、背景色を変える
-                    $('#r' + r + 'c' + c + ' div').addClass('highlight').parent().css('background-color', '#538955');
+                    $('#r' + r + 'c' + c + ' div').addClass('highlight').parent().css('background-color', '#638955');
                 }
             }
         }
