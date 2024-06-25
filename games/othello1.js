@@ -191,7 +191,7 @@ function highlightLegalMoves2(ishi) {
         ishiHuman = humanFirst ? ISHI_BLACK : ISHI_WHITE;
         ishiCPU = humanFirst ? ISHI_WHITE : ISHI_BLACK;
 
-        $('div#status').html(humanFirst ? 'あなたの<ruby>番<rt>ばん</rt></ruby>:' : 'CPUの<ruby>番<rt>ばん</rt></ruby>:');
+        $('div#status').html(humanFirst ? 'あなたの<ruby>番<rt>ばん</rt></ruby>' : 'CPUの<ruby>番<rt>ばん</rt></ruby>');
 
         ishi = ishiHuman;
         cpu = new CPU(ishiCPU);
@@ -199,7 +199,7 @@ function highlightLegalMoves2(ishi) {
         initBoard();
 
         if (!humanFirst) {
-            $('div#status').html('CPUの<ruby>番<rt>ばん</rt></ruby>:');
+            $('div#status').html('CPUの<ruby>番<rt>ばん</rt></ruby>');
             setTimeout(cpuPlayTurn, 10); // CPUが先攻の場合、CPUのターンを始める
         }
     }
@@ -225,7 +225,7 @@ function highlightLegalMoves2(ishi) {
     function resetGame() {
         initBoard(); // ボードを再初期化
         ishi = ishiHuman; // 石の色をプレイヤーの色にリセット
-        $('div#status').html(humanFirst ? 'あなたの<ruby>番<rt>ばん</rt></ruby>:' : 'CPUの<ruby>番<rt>ばん</rt></ruby>:');
+        $('div#status').html(humanFirst ? 'あなたの<ruby>番<rt>ばん</rt></ruby>' : 'CPUの<ruby>番<rt>ばん</rt></ruby>');
         if (!humanFirst) {
             cpuPlayTurn(); // CPUが先攻の場合、CPUのターンを始める
         }
