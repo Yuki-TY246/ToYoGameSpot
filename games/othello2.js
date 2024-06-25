@@ -116,6 +116,7 @@ jQuery(function () {
 
     // ゲームをリセットする関数リセットボタンを押下時実行
     function resetGame() {
+        ishi = ISHI_BLACK;
         initBoard(); // ボードを再初期化
     }
 
