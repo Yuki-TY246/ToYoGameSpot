@@ -1,6 +1,6 @@
-const ISHI_BLACK = 1;
-const ISHI_WHITE = -1;
-const ISHI_NONE = 0;
+const ISHI_BLACK = 1; //盤面黒
+const ISHI_WHITE = -1;  //盤面白
+const ISHI_NONE = 0;  //盤面なし
 
 var ishi = ISHI_BLACK;  // 石の白黒
 var intermediate_end = 0;//特定の状況で強制終了するための変数
@@ -15,11 +15,6 @@ jQuery(function () {
                 // tdにid, data-r, data-c属性を設定する
                 tr.append($('<td><div class="none"></div></td>')
                     .attr({ 'id': 'r' + r + 'c' + c, 'data-r': r, 'data-c': c })
-                    .hover(function () {
-                        $(this).addClass('hover');
-                    }, function () {
-                        $(this).removeClass('hover');
-                    })
                     .click(function (e) {  // tdがクリックされたときの動作
                         var masu = new Masu($(this).attr('data-r'), $(this).attr('data-c'));
                         if (masu.ishi() == ISHI_NONE) {
@@ -75,7 +70,7 @@ jQuery(function () {
         }
         
     }
-
+    //パスボタンを押したときの処理
     function checkPass() {
         if (!canPlay(ishi)) {
             alert('パスしました');
@@ -102,7 +97,7 @@ jQuery(function () {
             }
         }
     }
-
+     // カウントを保存してリダイレクトする関数
     function saveCountsAndRedirect() {
         var blackCount = 0, whiteCount = 0;
         $('table#board td div').each(function () {
@@ -111,6 +106,7 @@ jQuery(function () {
         });
         localStorage.setItem('blackCount', blackCount);
         localStorage.setItem('whiteCount', whiteCount);
+        //保存した内容をgame5に送信
         location.href = 'game6.html';
     }
 

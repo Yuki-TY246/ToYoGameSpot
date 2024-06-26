@@ -1,30 +1,29 @@
 class Masu {
     constructor(r, c) {
-        r = parseInt(r);
-        c = parseInt(c);
-        if (r < 0 || r >= 8 || c < 0 || c >= 8) throw 'ボード外です';
-        this.r = r;
-        this.c = c;
-        this.id = 'r' + r + 'c' + c;
-        this.td = $('#' + this.id);
+        r = parseInt(r);// 行の位置を整数に変換
+        c = parseInt(c);// 列の位置を整数に変換
+        if (r < 0 || r >= 8 || c < 0 || c >= 8) throw 'ボード外です';// 範囲チェック
+        this.r = r;// 行の位置を保存
+        this.c = c;// 列の位置を保存
+        this.id = 'r' + r + 'c' + c; // idを作成
+        this.td = $('#' + this.id);// jQueryを使ってこのidに対応する<td>要素を取得
     }
-
+    //マスに置かれている石の色を返す
     ishi() {
         var div = $('div', this.td);
         return div.hasClass('black') ? ISHI_BLACK : (div.hasClass('white') ? ISHI_WHITE : ISHI_NONE);
     }
-
+    //石を増すに置くための処理
     set(ishi) {
         var div = $('div', this.td);// クラスを変更するdiv要素を取得
 
         if (ISHI_NONE == this.ishi()) {// 石が置かれていないとき
-            div.removeClass('none');
-        // 挟んだ石をひっくり返す
+            div.removeClass('none');// 'none' クラスを除去して、マスに何も置かれていない状態を解除
         } else {
-            div.removeClass(ishi == ISHI_BLACK ? 'white' : 'black');
+            div.removeClass(ishi == ISHI_BLACK ? 'white' : 'black');// 既にマスに置かれている石の色のクラスを除去
         }
 
-        div.addClass(ishi == ISHI_BLACK ? 'black' : 'white');
+        div.addClass(ishi == ISHI_BLACK ? 'black' : 'white');// 指定された石の色のクラスを追加して石を置く
         return this;
     }
     // 置いた石を除く
@@ -32,7 +31,7 @@ class Masu {
         $('div', this.td).removeClass('white').removeClass('black').addClass('none');
         return this;
     }
-
+    //反転可能な石をすべて反転させる処理
     roundReverse(exec) {
         var count = 0;
         for (var dr of [-1, 0, 1]) {
@@ -43,7 +42,7 @@ class Masu {
         }
         return count;
     }
-
+    //ひっくり返す処理
     reverse(count, a0, dr, dc, exec) {
         try {
             var neighbor = new Masu(this.r + dr, this.c + dc);
@@ -54,15 +53,14 @@ class Masu {
             if (exec && count > 0) {
                 this.set(a0.ishi());
             }
-
             return count;
+        // 盤面の外のとき0を返す    
         } catch (e) {
             return 0;
         }
     }
 }
 
-//ここから追加
 class CPU {
     constructor(ishi) {
         this.ishi = ishi;
