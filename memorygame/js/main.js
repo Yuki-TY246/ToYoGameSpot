@@ -133,12 +133,13 @@ document.addEventListener('DOMContentLoaded', () => {
     endTime = new Date().getTime();
   };
 
+  // タイマーの時間経過処理
   const updateTimer = () => {
     let currentTime = new Date().getTime();
     let elapsedTime = currentTime - startTime;
     displayTimer(elapsedTime);
   };
-
+  // タイマーの表示処理
   const displayTimer = (elapsedTime) => {
     let seconds = Math.floor(elapsedTime / 1000);
     let minutes = Math.floor(seconds / 60);
@@ -191,10 +192,11 @@ document.addEventListener('DOMContentLoaded', () => {
     ruleBt.style.display = 'block'; // リセット時にルールボタンを再表示する
   });
 
+  // ルールボタンをクリックしたらルールを表示
   ruleBt.addEventListener('click', () => {
     ruleScreen.style.display = 'block';
   });
-
+  // 「とじる」をクリックしたらルールを非表示
   closeRuleBt.addEventListener('click', () => {
     ruleScreen.style.display = 'none';
   });
