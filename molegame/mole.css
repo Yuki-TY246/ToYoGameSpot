@@ -104,6 +104,28 @@ a {
     background: url(images/967589.jpg); 
 }
 
+.title_moles{
+    display: flex;
+    justify-content: space-around;
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.mole_title.slide-in-bottom {
+    display: block;
+    animation: slideInFromBottom 0.5s ease forwards;
+}
+
+
 
 /* 以下mole2 */
 
@@ -164,6 +186,22 @@ a {
     padding: 20px;
     background-color: #ffffff;
     border: 2px solid #333333;
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(10%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.overlay.slide-in-bottom {
+    display: block;
+    animation: slideInFromBottom 0.5s ease forwards;
 }
 
 /* 以下mole3 */

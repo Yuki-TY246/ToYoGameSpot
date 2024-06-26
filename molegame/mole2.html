@@ -5,6 +5,12 @@
     <link rel="stylesheet" href="mole.css">
   </head>
 
+  <style>
+    body {
+      overflow: hidden;
+    }
+  </style>
+
   <body>
 
     <div class="back">
@@ -60,53 +66,55 @@
     
     <script>
       window.addEventListener("load", function(){
-        let score = 0;
+        let score = 0; 
         let timeLeft = 30;
         const animalArticle = document.querySelectorAll(".overlay")
         const scoreDisplay = document.getElementById('score');
         const timeDisplay = document.getElementById('time');
-        const hitSound = new Audio('sound/maou_se_system41.mp3');
-        hitSound.volume = 0.5;
+        const hitSound = new Audio('sound/maou_se_system41.mp3'); /* 音声ファイルの定義 */
+        hitSound.volume = 0.5; /* 音声ファイルの音量調整 */
         animalArticle.forEach(function(articles) {
-          if (Math.random() > 0.1) {
-            articles.setAttribute("style", "display: none;")
+          if (Math.random() > 0.1) { /* 0.9の確率のランダム処理 */
+            articles.setAttribute("style", "display: none;") /* 画面に表示させないようにする */
             setTimeout(function() {
-              articles.removeAttribute("style") // または 'inline-block' など、元の表示スタイルに応じて設定する
-            }, Math.floor(Math.random() * (3000 - 1000 + 1)) + 1000);
+              articles.removeAttribute("style")  /* style属性を取り除くことで画面に表示 */
+              articles.classList.add("slide-in-bottom"); /* スライドインのアニメーションを適用 */
+            }, Math.floor(Math.random() * (3000 - 1000 + 1)) + 1000); /* １～３秒ごとに処理 */
           };
-          articles.addEventListener("click", function(){
-            articles.setAttribute("style", "display: none;")
-            score++;
-            hitSound.currentTime = 0;
-            hitSound.play();
-            scoreDisplay.textContent = `ポイント: ${score}`;
+          articles.addEventListener("click", function(){ /* clickされたときに処理 */
+            articles.setAttribute("style", "display: none;") /* 画面に表示させないようにする */
+            score++; /* スコアを１増加 */
+            hitSound.currentTime = 0; /* 音声ファイルの再生開始位置の初期化 */
+            hitSound.play(); /* 音声ファイルの再生 */
+            scoreDisplay.textContent = `ポイント: ${score}`; /* ポイント表示の更新 */
             setTimeout(function() {
-            articles.removeAttribute("style") // または 'inline-block' など、元の表示スタイルに応じて設定する
-            }, Math.floor(Math.random() * (5000 - 1000 + 1)) + 1000);
+            articles.removeAttribute("style")  /* style属性を取り除くことで画面に表示 */
+            }, Math.floor(Math.random() * (5000 - 1000 + 1)) + 1000); /* １～５秒ごとに処理 */
           })
         })
         function toggleDisplay() {
           animalArticle.forEach(function(articles) {
             var randomProbability = Math.random();
-            if (randomProbability < 0.3) {
-              var currentDisplayStyle = articles.getAttribute("style")
-              if (currentDisplayStyle === "display: none;") {
-                articles.removeAttribute("style") // または元の表示スタイルに応じた設定
-              } else {
-                articles.setAttribute("style", "display: none;")
+            if (randomProbability < 0.3) { /* 0.3の確率のランダム処理 */
+              var currentDisplayStyle = articles.getAttribute("style") /* style属性の値を取得することで表示状態判定 */
+              if (currentDisplayStyle === "display: none;") { /* 表示されていない場合に処理 */
+                articles.removeAttribute("style")  /* style属性を取り除くことで画面に表示 */
+                articles.classList.add("slide-in-bottom"); /* スライドインのアニメーションを適用 */
+              } else { /* 表示されている場合に処理 */
+                articles.setAttribute("style", "display: none;") /* 画面に表示させないようにする */
               }
             }
           });
         }
-        setInterval(toggleDisplay, Math.floor(Math.random() * (5000 - 3000 + 1)) + 3000);
+        setInterval(toggleDisplay, Math.floor(Math.random() * (5000 - 3000 + 1)) + 3000); /* toggleDisplayを３～５秒ごとに実行 */
         const timeInterval = setInterval(function() {
-          timeLeft--;
-          timeDisplay.textContent = `じかん: ${timeLeft}`;
-          if (timeLeft <= 0) {
-            clearInterval(timeInterval); // タイマー停止
-            location.href=`mole3.html?score=${score}`;
+          timeLeft--; /* timeLeftを１減らす */
+          timeDisplay.textContent = `じかん: ${timeLeft}`; /* じかんの表示を更新 */
+          if (timeLeft <= 0) { /* じかんがなくなった時に処理 */
+            clearInterval(timeInterval); /* タイマー停止 */
+            location.href=`mole3.html?score=${score}`; /* スコアを保存してページ遷移 */
           }
-        }, 1000);
+        }, 1000); /* １秒ごとに処理 */
       });
     </script>
 

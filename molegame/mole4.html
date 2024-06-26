@@ -16,8 +16,8 @@
 
   <script>
     window.addEventListener("load", function(){
-      const urlParams = new URLSearchParams(window.location.search);
-      const score = parseInt(urlParams.get('score'));
+      const urlParams = new URLSearchParams(window.location.search); /* 遷移前のページから送られたデータを取り出して定義 */
+      const score = parseInt(urlParams.get('score')); /* 送信されたデータを代入して新たに定義 */
       const scoreDisplay = document.getElementById('score');
       scoreDisplay.textContent = `${score}ポイント`;
       const playArticle = document.querySelectorAll(".restart")
