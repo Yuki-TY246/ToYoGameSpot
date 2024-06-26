@@ -1,6 +1,6 @@
-const ISHI_BLACK = 1;  
-const ISHI_WHITE = -1; 
-const ISHI_NONE = 0;
+const ISHI_BLACK = 1;  //盤面黒
+const ISHI_WHITE = -1; //盤面白
+const ISHI_NONE = 0;  //盤面なし
 
 var ishi = ISHI_BLACK;  // 石の白黒
 var humanFirst; //プレイヤーが先行か後攻か判定
@@ -11,30 +11,24 @@ var gameOver = false;//ゲーム終了時のアラート
 var intermediate_end = 0;//特定の状況で強制終了するための変数
 
 
-
 jQuery(function () {
-    // 盤面を初期化する関数
+    // 盤面を作成する関数
     function initBoard() {
         $('table#board').empty(); // ボードをクリア
         for (var r = 0; r < 8; r++) {
             var tr = $("<tr>");
             for (var c = 0; c < 8; c++) {
                 tr.append($('<td><div class="none"></div></td>')
-                    .attr({ 'id': 'r' + r + 'c' + c, 'data-r': r, 'data-c': c })
-                    .hover(function () {
-                        $(this).addClass('hover');
-                    }, function () {
-                        $(this).removeClass('hover');
-                    })
+                    .attr({ 'id': 'r' + r + 'c' + c, 'data-r': r, 'data-c': c })//位置を設定
                     .click(function (e) {  // tdがクリックされたときの動作
                         var masu = new Masu($(this).attr('data-r'), $(this).attr('data-c'));
                         if (masu.ishi() == ISHI_NONE) {
-                            var count = masu.set(ishi).roundReverse(false);
+                            var count = masu.set(ishi).roundReverse(false); //
                             if (count > 0) {
-                                masu.roundReverse(true);
-                                ishi = ishiCPU;
-                                intermediate_end = 0    
-                                updateStatus();
+                                masu.roundReverse(true); //おける時
+                                ishi = ishiCPU; //ターン変更
+                                intermediate_end = 0   //パスの回数リセット
+                                updateStatus(); //情報の更新
                                 $('table#board td div').removeClass('highlight'); // ハイライトをクリア
                                 if (ishi == ishiCPU) {
                                     setTimeout(cpuPlayTurn, 500); // CPUのターンを呼び出す、500ミリ秒後に実行
@@ -125,6 +119,7 @@ function highlightLegalMoves2(ishi) {
         if (ishi == ishiHuman) {
             highlightLegalMoves1(ishi);
         }
+        // cpuのターン時にハイライトを消す
         if (ishi == ishiCPU) {
             highlightLegalMoves2(ishi);
         }
@@ -158,6 +153,7 @@ function highlightLegalMoves2(ishi) {
                 localStorage.setItem('result', 'ひきわけ');
             }
         }
+        //保存した内容をgame5に送信
         location.href = 'game5.html';
     }
 
@@ -182,11 +178,12 @@ function highlightLegalMoves2(ishi) {
 
     // ゲームを初期化する関数
     function initGame() {
-        var queryString = window.location.search;
-        var urlParams = new URLSearchParams(queryString);
-        var order = parseInt(urlParams.get('order'));
+        var queryString = window.location.search;//URLパラメータを取得
+        var urlParams = new URLSearchParams(queryString);//URLSearchParams オブジェクトを使って queryString を解析し、クエリパラメータを操作できるようにします
+        var order = parseInt(urlParams.get('order'));//orderの値を整数に変換して受け取り格納
 
-        humanFirst = order === 1;
+        humanFirst = order === 1; //orderが1ならhumanFirstをtrueにする
+        //先攻後攻判定
         ishiHuman = humanFirst ? ISHI_BLACK : ISHI_WHITE;
         ishiCPU = humanFirst ? ISHI_WHITE : ISHI_BLACK;
 
@@ -229,8 +226,9 @@ function highlightLegalMoves2(ishi) {
             cpuPlayTurn(); // CPUが先攻の場合、CPUのターンを始める
         }
     }
-
+    //htmlで関数を呼び出す際に必要
     window.resetGame = resetGame;
     window.checkPass = checkPass;
+
     initGame();
 });
