@@ -7,7 +7,7 @@
 
   <style>
     body {
-      overflow: hidden;
+      overflow: hidden; /* 画面の大きさが変わってもスクロールバーを表示させない */
     }
   </style>
 
@@ -33,20 +33,20 @@
       const playArticle = document.querySelectorAll(".start")
       const titleAnimals = document.querySelectorAll(".mole_title")
       titleAnimals.forEach(function(animals){
-        animals.setAttribute("style", "display: none;")
+        animals.setAttribute("style", "display: none;") /* 画面に表示させないようにする */
       })
       playArticle.forEach(function(articles) {
-        articles.addEventListener("mouseover", function(){
-          articles.setAttribute("style", "background-color: #000000; color: #ffffff;")
+        articles.addEventListener("mouseover", function(){ /* マウスカーソルが乗った時に処理 */
+          articles.setAttribute("style", "background-color: #000000; color: #ffffff;") /* 文字色と背景色を変更 */
           titleAnimals.forEach(function(animals){
-            animals.removeAttribute("style")
-            animals.classList.add("slide-in-bottom");
+            animals.removeAttribute("style") /* style属性を取り除くことで表示させる */
+            animals.classList.add("slide-in-bottom"); /* スライドインのアニメーションを適用 */
           })
         })
-        articles.addEventListener("mouseout", function(){
-          articles.removeAttribute("style")
+        articles.addEventListener("mouseout", function(){ /* マウスカーソルが外れた時に処理 */
+          articles.removeAttribute("style") /* style属性を取り除くことで背景色と文字色を元に戻す */
           titleAnimals.forEach(function(animals){
-            animals.setAttribute("style", "display: none;")
+            animals.setAttribute("style", "display: none;") /* 画面に表示させないようにする */
           })
         })
       })

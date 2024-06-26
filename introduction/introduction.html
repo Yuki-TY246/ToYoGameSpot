@@ -36,7 +36,7 @@
           <a href="../games/othello_game.html">オセロゲーム</a>
         </div>
         <div class="intro_content">
-          <section id="image-carousel1" class="splide" aria-label="ゲーム紹介画像">
+          <section id="image-carousel1" class="splide" aria-label="ゲーム紹介画像"> 
             <div class="splide__track">
               <ul class="splide__list">
                 <li class="splide__slide">
@@ -93,7 +93,7 @@
           <a href="../molegame/mole_game.html">もぐらたたき</a>
         </div>
         <div class="intro_content">
-          <section id="image-carousel2" class="splide" aria-label="ゲーム紹介画像">
+          <section id="image-carousel2" class="splide" aria-label="ゲーム紹介画像"> <!-- スライダー用の要素、以下同様のひな型で使うsplideのライブラリを使用 -->
             <div class="splide__track">
               <ul class="splide__list">
                 <li class="splide__slide">
@@ -201,9 +201,6 @@
       <img src="../www/img/yajirushi.png" alt="Top Arrow" class="scrollToTopImg">
     </button>
 
-
-    <script src="../splide-master/dist/js/splide.min.js"></script>
-
     <script>
       window.addEventListener("load", function(){
         const playArticle = document.querySelectorAll(".intro_play_btn")
@@ -227,9 +224,11 @@
       })
     </script>
 
+    <!-- 以下スライダー用のスクリプト -->
+    <script src="../splide-master/dist/js/splide.min.js"></script> 
     <script>
       document.addEventListener( 'DOMContentLoaded', function () {
-        new Splide( '#image-carousel1' ).mount();
+        new Splide( '#image-carousel1' ).mount(); /* sectionのidで指定しスライダーとして動かせるように定義 */
       } );
       document.addEventListener( 'DOMContentLoaded', function () {
         new Splide( '#image-carousel2' ).mount();
@@ -238,6 +237,7 @@
         new Splide( '#image-carousel3' ).mount();
       } );
     </script>
+    <!-- 以上スライダー用のスクリプト -->
 
     <script>
     function scrollToTop() {
