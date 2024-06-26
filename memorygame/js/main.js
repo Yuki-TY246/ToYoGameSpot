@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let startTime = null;
   let endTime = null;
 
+  // カードの画像指定
   class Card {
     constructor(suit, num) {
       this.suit = suit;
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // カードを並べて表示
   const cards = [];
   const suits = ['s', 'd', 'h', 'c'];
   for (let i = 0; i < suits.length; i++) {
@@ -23,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // カードをめくるときの指定
   let firstCard = null;
   let secondCard = null;
 
@@ -61,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // ゲームを終了させるかの判定
   const checkGameComplete = () => {
     if (document.querySelectorAll('.fadeout').length === cards.length) {
       stopTimer();
@@ -68,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // カードの表示
   const cardgrid = document.getElementById('cardgrid');
 
   const initCardGrid = () => {
@@ -85,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // カードの並びをシャッフルする
   const shuffleCards = () => {
     let i = cards.length;
     while (i) {
@@ -102,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const ruleScreen = document.getElementById('ruleScreen');
   const closeRuleBt = document.getElementById('closeRuleBt');
 
+  // スタートボタンを押したときの処理
   startBt.addEventListener('click', () => {
     shuffleCards();
     initCardGrid();
@@ -115,11 +122,12 @@ document.addEventListener('DOMContentLoaded', () => {
     ruleBt.style.display = 'none'; // スタートボタンを押したらルールボタンを非表示にする
   });
 
+  // タイマーのスタートの処理
   const startTimer = () => {
     startTime = new Date().getTime();
     timerInterval = setInterval(updateTimer, 1000);
   };
-
+  // タイマーのストップの処理
   const stopTimer = () => {
     clearInterval(timerInterval);
     endTime = new Date().getTime();
@@ -138,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
     timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   };
 
+  // クリアタイムの処理
   const showGameResult = () => {
     let elapsedTime = endTime - startTime;
     let seconds = Math.floor(elapsedTime / 1000);
@@ -145,6 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     seconds %= 60;
     let clearTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 
+    // クリアタイムとベストタイムの比較
     let clearTimeSpan = document.getElementById('clearTime');
     clearTimeSpan.textContent = clearTime;
     gameResult.style.display = 'block';
@@ -169,6 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
     timerDisplay.style.display = 'none';
   };
 
+  // タイトルへ戻るボタンを押したときの処理
   backBt.addEventListener('click', () => {
     gameResult.style.display = 'none';
     startBt.classList.remove('hidden');
